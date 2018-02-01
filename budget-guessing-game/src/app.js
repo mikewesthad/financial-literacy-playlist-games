@@ -48,6 +48,9 @@ export default class App extends Component {
             render={() => <LunchResults nextRoute="/outro" guess={lunchGuess} />}
           />
           <Route exact path="/outro" component={Outro} />
+          <Link className="restart" to="/">
+            Start Over
+          </Link>
         </div>
       </Router>
     );
