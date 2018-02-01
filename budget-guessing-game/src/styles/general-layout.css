@@ -1,0 +1,27 @@
+.fullscreen-container {
+  background-color: #171717;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  max-width: 650px;
+  font-size: 1.8rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section *:first-child {
+  margin-top: 0;
+}
+
+.section *:last-child {
+  margin-bottom: 0;
+}
