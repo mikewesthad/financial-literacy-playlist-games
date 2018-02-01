@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "../components/horizontal-slider";
 import { Link } from "react-router-dom";
 import lunchIcon from "../images/lunch-pin.svg";
-import { map } from "../utils";
+import map from "../utils/map";
 
 const range = { min: 1, max: 7000 };
 
@@ -49,7 +49,7 @@ export default class LunchGuess extends Component {
 
     return (
       <div className="fullscreen-container">
-        <div className="content">
+        <div className="content text-center">
           <div className="question section">
             <p>
               How much do you think it would cost - on average - if you ate out for lunch every day

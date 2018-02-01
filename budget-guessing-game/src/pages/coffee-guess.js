@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "../components/horizontal-slider";
 import { Link } from "react-router-dom";
 import coffeeIcon from "../images/coffee-pin.svg";
-import { map } from "../utils";
+import map from "../utils/map";
 
 const range = { min: 1, max: 1300 };
 
@@ -49,9 +49,9 @@ export default class CoffeeGuess extends Component {
 
     return (
       <div className="fullscreen-container">
-        <div className="content">
+        <div className="content text-center">
           <div className="question section">
-            <p>Guess how much someone spends - on average - per year on coffee?</p>
+            <p>Guess how much it would cost if you bought a coffee every day for a year?</p>
           </div>
           <div className="slider-container section">
             <Slider

@@ -9,13 +9,12 @@
 .content {
   color: white;
   font-weight: 700;
-  text-align: center;
   max-width: 650px;
   font-size: 1.8rem;
 }
 
 .section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .section *:first-child {
