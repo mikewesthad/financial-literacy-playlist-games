@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { formatAsIntCurrency } from "../utils";
+import { formatAsIntCurrency } from "../utils/currency-conversion";
 import { TweenLite } from "gsap";
 import PropTypes from "prop-types";
 

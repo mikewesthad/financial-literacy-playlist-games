@@ -15,7 +15,3 @@ export function formatAsCurrency(number) {
 export function formatAsDecimalCurrency(number) {
   return numeral(number).format("$0,0.00");
 }
-
-export function map(val, min, max, newMin, newMax) {
-  return (val - min) / (max - min) * (newMax - newMin) + newMin;
-}
