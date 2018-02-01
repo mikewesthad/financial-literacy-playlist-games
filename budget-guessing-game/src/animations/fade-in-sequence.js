@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { TweenLite, TimelineMax } from "gsap";
-import PropTypes from "prop-types";
+import { recursiveMapChildren } from "../utils/react-utils";
 
-export default class FadeInSequence extends Component {
+// A simple data wrapper that exposes its only child element
+export function SequenceElement({ duration, delay, children }) {
+  return getSingleValidChild(children);
+}
+
+export class FadeInSequence extends Component {
   static defaultProps = {
     defaultDuration: 1,
     defaultDelay: 0
@@ -36,24 +41,36 @@ export default class FadeInSequence extends Component {
   render() {
     const { defaultDuration, defaultDelay } = this.props;
 
-    const newChildren = this.props.children.map((child, i) => {
-      let { delay, duration, style, ...otherProps } = child.props;
+    const newChildren = recursiveMapChildren(this.props.children, child => {
+      if (child.type !== SequenceElement) return child;
+
+      let { delay, duration, children } = child.props;
+      const sequenceChild = getSingleValidChild(children);
 
       // Override ONLY the opacity
-      const newStyle = Object.assign({}, style, { opacity: 0 });
+      const newStyle = Object.assign({}, sequenceChild.props.style, { opacity: 0 });
 
       // Grab the individual child's animation properties
       if (delay === undefined) delay = defaultDelay;
       if (duration === undefined) duration = defaultDuration;
 
-      return React.cloneElement(child, {
-        key: i,
+      return React.cloneElement(sequenceChild, {
         style: newStyle,
-        ref: el => this.elements.push({ ref: el, delay, duration }),
-        ...otherProps
+        ref: el => this.elements.push({ ref: el, delay, duration })
       });
     });
 
     return newChildren;
   }
+}
+
+function getSingleValidChild(children) {
+  if (React.Children.count(children) !== 1) {
+    throw new Error("SequenceElement must have only one child.");
+  }
+  const child = React.Children.toArray(children)[0];
+  if (!React.isValidElement(child)) {
+    throw new Error("SequenceElement expected a valid React element (e.g. not a string)");
+  }
+  return child;
 }
