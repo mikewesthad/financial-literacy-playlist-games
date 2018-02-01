@@ -16,10 +16,13 @@
   "prettier": {
     "printWidth": 100
   },
+  "homepage": "https://www.mikewesthad.com/financial-literacy-playlist-games/budget-guessing-game",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run \"build\"",
+    "deploy": "gh-pages --dist ./build --dest budget-guessing-game --add"
   }
 }
