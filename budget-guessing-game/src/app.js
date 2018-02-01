@@ -4,7 +4,8 @@ import CoffeeGuess from "./pages/coffee-guess";
 import CoffeeResults from "./pages/coffee-results";
 import LunchGuess from "./pages/lunch-guess";
 import LunchResults from "./pages/lunch-results";
-import Intro from "./pages/intro";
+import Intro1 from "./pages/intro-1";
+import Intro2 from "./pages/intro-2";
 import Outro from "./pages/outro";
 
 export default class App extends Component {
@@ -24,7 +25,8 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" render={() => <Intro nextRoute="/coffee-guess" />} />
+          <Route exact path="/" render={() => <Intro1 nextRoute="/intro2" />} />
+          <Route exact path="/intro2" render={() => <Intro2 nextRoute="/coffee-guess" />} />
           <Route
             exact
             path="/coffee-guess"
