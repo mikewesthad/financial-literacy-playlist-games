@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Slider from "../components/horizontal-slider";
 import { Link } from "react-router-dom";
 import lunchIcon from "../images/lunch-pin.svg";
-import map from "../utils/map";
+import { snapWithinRange } from "../utils/math";
 
-const range = { min: 1, max: 7000 };
+const range = { min: 0, max: 7000, step: 50 };
 
 // https://freeiconshop.com/icon/burger-icon-flat/
 const LunchSliderImage = () => (
@@ -25,13 +25,12 @@ const LunchSliderImage = () => (
 export default class LunchGuess extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      sliderValue: 0.5
-    };
-  }
 
-  getGuess() {
-    return Math.round(map(this.state.sliderValue, 0, 1, range.min, range.max));
+    let initialValue = (range.max - range.min) / 2 + range.min;
+    initialValue = snapWithinRange(initialValue, range.step, range.min, range.max);
+    this.state = {
+      sliderValue: initialValue
+    };
   }
 
   onSliderChange = value => {
@@ -39,13 +38,12 @@ export default class LunchGuess extends Component {
   };
 
   onSubmit = () => {
-    this.props.onSubmit(this.getGuess());
+    this.props.onSubmit(this.state.sliderValue);
   };
 
   render() {
     const { sliderValue } = this.state;
     const { nextRoute } = this.props;
-    const guess = this.getGuess();
 
     return (
       <div className="fullscreen-container">
@@ -58,8 +56,10 @@ export default class LunchGuess extends Component {
           </div>
           <div className="slider-container section">
             <Slider
+              min={range.min}
+              max={range.max}
+              step={range.step}
               value={sliderValue}
-              width={650}
               onChange={this.onSliderChange}
               sliderElement={LunchSliderImage()}
               trackColor="#f57e25"
@@ -70,7 +70,7 @@ export default class LunchGuess extends Component {
             </div>
           </div>
           <div className="guess section">
-            <div>${guess}</div>
+            <div>${sliderValue}</div>
           </div>
           <div className="submit section">
             <Link onClick={this.onSubmit} to={nextRoute} className="button-link">
