@@ -33,7 +33,7 @@ export default class App extends Component {
           {!dev && <Route component={ForceVisitIndex} />}
 
           <Switch>
-            <Route exact path="/" render={() => <Intro1 nextRoute="/intro2" onVisit />} />
+            <Route exact path="/" render={() => <Intro1 nextRoute="/intro2" />} />
             <Route exact path="/intro2" render={() => <Intro2 nextRoute="/coffee-guess" />} />
             <Route
               exact
