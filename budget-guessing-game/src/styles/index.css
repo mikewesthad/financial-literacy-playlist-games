@@ -3,6 +3,10 @@
 @import "./typography.css";
 @import "./general-layout.css";
 
+#root {
+  position: relative;
+}
+
 .centered-image {
   margin: 0 auto;
   display: block;
