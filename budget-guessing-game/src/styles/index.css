@@ -30,6 +30,17 @@
   text-align: left;
 }
 
+.slider-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 750px) {
+  .slider-container {
+    width: 100%;
+  }
+}
+
 .slider__labels {
   display: flex;
   justify-content: space-between;
@@ -65,12 +76,13 @@
 }
 
 .results__currency-text {
-  margin-top: 20px;
+  margin-top: 1rem;
   font-size: 5rem;
   color: #30f11a;
 }
 
 .restart {
+  cursor: pointer;
   font-size: 1.5rem;
   color: white;
   position: absolute;

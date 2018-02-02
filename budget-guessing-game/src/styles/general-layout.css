@@ -11,10 +11,23 @@
   font-weight: 700;
   max-width: 650px;
   font-size: 1.8rem;
+  padding: 2rem;
+}
+
+@media (min-width: 675px) {
+  .content {
+    padding: 0;
+  }
 }
 
 .section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 375px) {
+  .section {
+    margin-bottom: 3rem;
+  }
 }
 
 .section *:first-child {
