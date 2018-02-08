@@ -88,4 +88,12 @@
   position: absolute;
   left: 1rem;
   bottom: 1rem;
+  padding: 0.25rem 0.5rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.restart:hover {
+  background: white;
+  color: black;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
