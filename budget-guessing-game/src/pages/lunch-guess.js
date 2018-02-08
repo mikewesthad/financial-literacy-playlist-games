@@ -15,6 +15,7 @@ const LunchSliderImage = () => (
       height: "100px",
       userDrag: "none",
       userSelect: "none",
+      cursor: "move",
       transform: "translateX(-50%)",
       verticalAlign: "top"
     }}
