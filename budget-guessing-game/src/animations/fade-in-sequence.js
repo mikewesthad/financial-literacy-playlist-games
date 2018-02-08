@@ -23,7 +23,7 @@ export class FadeInSequence extends Component {
   componentDidMount() {
     this.timeline = new TimelineMax();
 
-    this.elements.map(({ ref, duration, delay }) => {
+    this.elements.forEach(({ ref, duration, delay }) => {
       const tween = TweenLite.to(ref, duration, {
         opacity: 1,
         delay: delay

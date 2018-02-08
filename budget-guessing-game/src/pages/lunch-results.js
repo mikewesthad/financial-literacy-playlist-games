@@ -7,10 +7,6 @@ import { FadeInSequence, SequenceElement } from "../animations/fade-in-sequence"
 const actualCost = 4015;
 
 export default class LunchResults extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { guess, nextRoute } = this.props;
 

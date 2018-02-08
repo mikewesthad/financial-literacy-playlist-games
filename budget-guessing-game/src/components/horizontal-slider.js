@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
-import PropTypes from "prop-types";
-import { map, clamp, snap, snapWithinRange } from "../utils/math";
+import { map, snapWithinRange } from "../utils/math";
 
 export default class Slider extends Component {
   static defaultProps = {
@@ -51,7 +50,7 @@ export default class Slider extends Component {
   };
 
   render() {
-    let { min, max, step, value, width, trackHeight, trackColor } = this.props;
+    let { min, max, step, value, trackHeight, trackColor } = this.props;
     const { pixelWidth } = this.state;
     const range = max - min;
     const pixelStep = step * (pixelWidth / range);

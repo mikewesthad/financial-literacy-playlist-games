@@ -7,10 +7,6 @@ import { FadeInSequence, SequenceElement } from "../animations/fade-in-sequence"
 const actualCost = 1186;
 
 export default class CoffeeGuess extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { guess, nextRoute } = this.props;
 

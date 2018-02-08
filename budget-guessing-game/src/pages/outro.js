@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { FadeInSequence, SequenceElement } from "../animations/fade-in-sequence";
 
 import celebrate from "../images/celebrate.gif";
@@ -18,8 +17,14 @@ export default function Outro() {
             </SequenceElement>
           </div>
           <div className="section">
-            <SequenceElement delay={0}>
-              <p>Now that you can see why budgeting matters, let’s head back to LRNG and try it.</p>
+            <SequenceElement>
+              <p>
+                Now you can see why budgeting matters. Even small expenses can add up! Be sure to
+                budget, track your spending and have emergency savings to back you up.
+              </p>
+            </SequenceElement>
+            <SequenceElement>
+              <p>Let's try it! Visit LRNG to create your own budget.</p>
             </SequenceElement>
           </div>
         </FadeInSequence>

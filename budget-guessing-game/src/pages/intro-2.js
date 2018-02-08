@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { TweenLite, TimelineMax } from "gsap";
 import { FadeInSequence, SequenceElement } from "../animations/fade-in-sequence";
 
 export default class Intro2 extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { nextRoute } = this.props;
 
