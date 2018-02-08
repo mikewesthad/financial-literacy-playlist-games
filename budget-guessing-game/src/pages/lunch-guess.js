@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import lunchIcon from "../images/lunch-pin.svg";
 import { snapWithinRange } from "../utils/math";
 
-const range = { min: 0, max: 7000, step: 50 };
+const range = { min: 0, max: 5000, step: 50 };
 
 // https://freeiconshop.com/icon/burger-icon-flat/
 const LunchSliderImage = () => (
@@ -51,8 +51,8 @@ export default class LunchGuess extends Component {
         <div className="content text-center">
           <div className="question section">
             <p>
-              How much do you think it would cost - on average - if you ate out for lunch every day
-              for one year?
+              How much do you think it would cost - on average - if you bought a fast food lunch
+              every day for one year?
             </p>
           </div>
           <div className="slider-container section">
