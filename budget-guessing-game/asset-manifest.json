@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.a075281b.css",
-  "main.css.map": "static/css/main.a075281b.css.map",
-  "main.js": "static/js/main.7329b4e6.js",
-  "main.js.map": "static/js/main.7329b4e6.js.map",
+  "main.css": "static/css/main.ddd31b77.css",
+  "main.css.map": "static/css/main.ddd31b77.css.map",
+  "main.js": "static/js/main.d1eaeb02.js",
+  "main.js.map": "static/js/main.d1eaeb02.js.map",
   "static\\media\\CaviarDreams-webfont.woff": "static/media/CaviarDreams-webfont.5ac122f3.woff",
   "static\\media\\CaviarDreams_BoldItalic-webfont.woff": "static/media/CaviarDreams_BoldItalic-webfont.c8490a88.woff",
   "static\\media\\CaviarDreams_Italic-webfont.woff": "static/media/CaviarDreams_Italic-webfont.abf751fd.woff",
@@ -10,5 +10,6 @@
   "static\\media\\balance.gif": "static/media/balance.c5ce3e63.gif",
   "static\\media\\celebrate.gif": "static/media/celebrate.416e281b.gif",
   "static\\media\\coffee-pin.svg": "static/media/coffee-pin.968e2aa7.svg",
-  "static\\media\\lunch-pin.svg": "static/media/lunch-pin.223096b2.svg"
+  "static\\media\\lunch-pin.svg": "static/media/lunch-pin.223096b2.svg",
+  "static\\media\\soda-pin.svg": "static/media/soda-pin.5cc6adfe.svg"
 }
