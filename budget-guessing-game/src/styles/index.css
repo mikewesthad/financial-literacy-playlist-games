@@ -60,7 +60,7 @@
   user-select: none;
   cursor: move;
   vertical-align: top;
-  transform: "translateX(-50%)";
+  transform: translateX(-50%);
 }
 
 .orange {
