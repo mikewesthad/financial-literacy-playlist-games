@@ -50,7 +50,7 @@ export default class LunchGuess extends Component {
         <div className="content text-center">
           <div className="question section">
             <p>
-              How much do you think it would cost if you bought a snack and a soda every day for one
+              How much do you think it would cost if you bought a snack and soda every day for one
               year?
             </p>
           </div>
