@@ -1,26 +1,11 @@
 import React, { Component } from "react";
 import Slider from "../components/horizontal-slider";
 import { Link } from "react-router-dom";
-import sodaIcon from "../images/soda-pin.svg";
 import { snapWithinRange } from "../utils/math";
 
-const range = { min: 0, max: 1000, step: 50 };
+import sodaIcon from "../images/soda-pin.svg";
 
-const SodaSliderImage = () => (
-  <img
-    src={sodaIcon}
-    draggable={false}
-    style={{
-      height: "100px",
-      userDrag: "none",
-      userSelect: "none",
-      cursor: "move",
-      transform: "translateX(-50%)",
-      verticalAlign: "top"
-    }}
-    alt=""
-  />
-);
+const range = { min: 0, max: 1000, step: 50 };
 
 export default class LunchGuess extends Component {
   constructor(props) {
@@ -61,7 +46,14 @@ export default class LunchGuess extends Component {
               step={range.step}
               value={sliderValue}
               onChange={this.onSliderChange}
-              sliderElement={SodaSliderImage()}
+              sliderElement={
+                <img
+                  src={sodaIcon}
+                  draggable={false}
+                  className={"slider__draggable-image"}
+                  alt=""
+                />
+              }
               trackColor="#f57e25"
             />
             <div className="slider__labels">

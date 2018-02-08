@@ -1,27 +1,12 @@
 import React, { Component } from "react";
 import Slider from "../components/horizontal-slider";
 import { Link } from "react-router-dom";
-import coffeeIcon from "../images/coffee-pin.svg";
 import { snapWithinRange } from "../utils/math";
 
-const range = { min: 0, max: 1300, step: 10 };
-
 // https://freeiconshop.com/icon/coffee-takeaway-icon-flat/
-const CoffeeSliderImage = () => (
-  <img
-    src={coffeeIcon}
-    draggable={false}
-    style={{
-      height: "100px",
-      userDrag: "none",
-      userSelect: "none",
-      cursor: "move",
-      transform: "translateX(-50%)",
-      verticalAlign: "top"
-    }}
-    alt=""
-  />
-);
+import coffeeIcon from "../images/coffee-pin.svg";
+
+const range = { min: 0, max: 1300, step: 10 };
 
 export default class CoffeeGuess extends Component {
   constructor(props) {
@@ -59,7 +44,14 @@ export default class CoffeeGuess extends Component {
               step={range.step}
               value={sliderValue}
               onChange={this.onSliderChange}
-              sliderElement={CoffeeSliderImage()}
+              sliderElement={
+                <img
+                  src={coffeeIcon}
+                  draggable={false}
+                  className={"slider__draggable-image"}
+                  alt=""
+                />
+              }
               trackColor="#f57e25"
             />
             <div className="slider__labels">

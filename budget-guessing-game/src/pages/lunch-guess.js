@@ -1,27 +1,12 @@
 import React, { Component } from "react";
 import Slider from "../components/horizontal-slider";
 import { Link } from "react-router-dom";
-import lunchIcon from "../images/lunch-pin.svg";
 import { snapWithinRange } from "../utils/math";
 
-const range = { min: 0, max: 5000, step: 50 };
-
 // https://freeiconshop.com/icon/burger-icon-flat/
-const LunchSliderImage = () => (
-  <img
-    src={lunchIcon}
-    draggable={false}
-    style={{
-      height: "100px",
-      userDrag: "none",
-      userSelect: "none",
-      cursor: "move",
-      transform: "translateX(-50%)",
-      verticalAlign: "top"
-    }}
-    alt=""
-  />
-);
+import lunchIcon from "../images/lunch-pin.svg";
+
+const range = { min: 0, max: 5000, step: 50 };
 
 export default class LunchGuess extends Component {
   constructor(props) {
@@ -62,7 +47,14 @@ export default class LunchGuess extends Component {
               step={range.step}
               value={sliderValue}
               onChange={this.onSliderChange}
-              sliderElement={LunchSliderImage()}
+              sliderElement={
+                <img
+                  src={lunchIcon}
+                  draggable={false}
+                  className={"slider__draggable-image"}
+                  alt=""
+                />
+              }
               trackColor="#f57e25"
             />
             <div className="slider__labels">

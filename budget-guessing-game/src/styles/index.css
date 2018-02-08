@@ -55,6 +55,14 @@
   text-align: right;
 }
 
+.slider__draggable-image {
+  height: 100px;
+  user-select: none;
+  cursor: move;
+  vertical-align: top;
+  transform: "translateX(-50%)";
+}
+
 .orange {
   color: #f57e25;
 }
