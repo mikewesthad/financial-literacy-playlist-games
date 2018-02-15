@@ -38,10 +38,12 @@ export default class SplittingPay extends Component {
                 <CyclingItem>shoeboxes</CyclingItem>
                 <CyclingItem>my pockets</CyclingItem>
                 <CyclingItem isAnswer>both checking & saving accounts</CyclingItem>
+                <CyclingItem>tiny little pieces</CyclingItem>
               </CyclingList>
               <p>or</p>
               <CyclingList>
                 <CyclingItem>a couple duffle bags</CyclingItem>
+                <CyclingItem>multiple checking accounts</CyclingItem>
                 <CyclingItem isAnswer>a payroll card & saving product</CyclingItem>
               </CyclingList>
               <p>Youth who split their pay save more.</p>

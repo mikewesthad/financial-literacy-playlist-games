@@ -37,6 +37,7 @@ export default class CompletingMyTimesheet extends Component {
               <CyclingList>
                 <CyclingItem>the decade.</CyclingItem>
                 <CyclingItem>the day.</CyclingItem>
+                <CyclingItem>the hour.</CyclingItem>
                 <CyclingItem isAnswer>the 1/4 hour.</CyclingItem>
                 <CyclingItem>the millisecond.</CyclingItem>
               </CyclingList>
@@ -45,6 +46,7 @@ export default class CompletingMyTimesheet extends Component {
                 <CyclingItem>Beyoncé.</CyclingItem>
                 <CyclingItem>my mom.</CyclingItem>
                 <CyclingItem isAnswer>my supervisor.</CyclingItem>
+                <CyclingItem>my co-worker.</CyclingItem>
               </CyclingList>
             </CyclingPuzzle>
           </div>

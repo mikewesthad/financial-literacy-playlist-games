@@ -37,20 +37,44 @@ export default class ProtectingMyFunds extends Component {
               <ul>
                 <li style={{ marginBottom: "0.75rem" }}>
                   <CyclingList>
-                    <CyclingItem>posting my PIN to my Insta followers</CyclingItem>
-                    <CyclingItem isAnswer>NOT keeping my pin with my card</CyclingItem>
+                    <CyclingItem>
+                      posting my PIN to my <br className="responsive-break" /> Insta followers
+                    </CyclingItem>
+                    <CyclingItem>
+                      using my birthday <br className="responsive-break" /> as my PIN
+                    </CyclingItem>
+                    <CyclingItem isAnswer>
+                      not keeping my pin <br className="responsive-break" /> with my card
+                    </CyclingItem>
                   </CyclingList>
                 </li>
                 <li style={{ marginBottom: "0.75rem" }}>
                   <CyclingList>
-                    <CyclingItem>taking checks from strangers</CyclingItem>
-                    <CyclingItem isAnswer>NOT taking checks from people I do not trust</CyclingItem>
+                    <CyclingItem>
+                      taking checks from <br className="responsive-break" />strangers
+                    </CyclingItem>
+                    <CyclingItem isAnswer>
+                      not taking checks from <br className="responsive-break" />people I don't trust
+                    </CyclingItem>
+                    <CyclingItem>
+                      signing checks without <br className="responsive-break" />depositing them
+                    </CyclingItem>
                   </CyclingList>
                 </li>
                 <li style={{ marginBottom: "0.75rem" }}>
                   <CyclingList>
-                    <CyclingItem isAnswer>NOT sharing my account information</CyclingItem>
-                    <CyclingItem>giving my account info a friend</CyclingItem>
+                    <CyclingItem>
+                      letting my friend log <br className="responsive-break" />into my account
+                    </CyclingItem>
+                    <CyclingItem>
+                      writting my password down <br className="responsive-break" />in my notebook
+                    </CyclingItem>
+                    <CyclingItem isAnswer>
+                      not sharing <br className="responsive-break" />my account information
+                    </CyclingItem>
+                    <CyclingItem>
+                      using my pet's name as <br className="responsive-break" />my account password
+                    </CyclingItem>
                   </CyclingList>
                 </li>
               </ul>

@@ -39,7 +39,7 @@ export default class BankingSmart extends Component {
                   Check my account to make sure I
                   <CyclingList>
                     <CyclingItem>always have</CyclingItem>
-                    <CyclingItem isAnswer>do NOT have</CyclingItem>
+                    <CyclingItem isAnswer>do not have</CyclingItem>
                   </CyclingList>
                   overdraft protection.
                 </li>
@@ -47,8 +47,8 @@ export default class BankingSmart extends Component {
                 <li>
                   Only use
                   <CyclingList>
+                    <CyclingItem>out-of-network</CyclingItem>
                     <CyclingItem isAnswer>in network</CyclingItem>
-                    <CyclingItem>really shady</CyclingItem>
                   </CyclingList>
                   ATMs.
                 </li>
@@ -63,6 +63,7 @@ export default class BankingSmart extends Component {
                   Mark any checks that I have deposited by mobile deposit as
                   <CyclingList>
                     <CyclingItem>"do not touch"</CyclingItem>
+                    <CyclingItem>"void"</CyclingItem>
                     <CyclingItem isAnswer>"deposited"</CyclingItem>
                   </CyclingList>
                   as those cannot be cashed or deposited again.
@@ -70,8 +71,8 @@ export default class BankingSmart extends Component {
                 <li>
                   Check my account for any
                   <CyclingList>
-                    <CyclingItem>flees</CyclingItem>
                     <CyclingItem>bees</CyclingItem>
+                    <CyclingItem>fleas</CyclingItem>
                     <CyclingItem isAnswer>fees</CyclingItem>
                   </CyclingList>
                   and ask my banker if I have questions about them.

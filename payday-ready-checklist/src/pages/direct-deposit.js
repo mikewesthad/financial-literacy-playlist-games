@@ -43,6 +43,10 @@ export default class DirectDeposit extends Component {
             </CyclingPuzzle>
           </div>
 
+          <div className="section">
+            <p style={{ fontStyle: "italic" }}>(Click the text to cycle through possibilities.)</p>
+          </div>
+
           <div className="section" style={{ visibility: !isSolved ? "" : "" }}>
             <FadeInSequence startFade={isSolved} defaultDuration={1} defaultDelay={0.5}>
               <SequenceElement delay={1}>
