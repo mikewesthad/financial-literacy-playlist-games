@@ -6,7 +6,7 @@ import { snapWithinRange } from "../utils/math";
 // https://freeiconshop.com/icon/burger-icon-flat/
 import lunchIcon from "../images/lunch-pin.svg";
 
-const range = { min: 0, max: 5000, step: 50 };
+const range = { min: 0, max: 4500, step: 50 };
 
 export default class LunchGuess extends Component {
   constructor(props) {
