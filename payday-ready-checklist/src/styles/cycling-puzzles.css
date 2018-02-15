@@ -1,0 +1,45 @@
+.cycling-list {
+  text-align: left;
+  overflow: hidden;
+}
+
+.cycling-list__item {
+  padding: 0px 10px;
+  font-family: "Permanent Marker", sans-serif;
+  color: #ec12ff;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.25s ease 0.35s;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.cycling-list {
+  display: inline-block;
+  vertical-align: text-bottom;
+  border: 3px solid transparent;
+  position: relative;
+  transition: border 0.25s ease 0.35s;
+  margin: 0px 10px;
+  z-index: 1000;
+}
+
+.cycling-list__underline {
+  position: absolute;
+  left: 50%;
+  width: 0%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  border-bottom: 3px dashed white;
+}
+
+.cycling-list--solved .cycling-list__underline {
+  border-bottom: 3px solid #ec12ff;
+}
+
+.cycling-list--solved .cycling-list__item--answer {
+  cursor: initial;
+  color: white;
+}

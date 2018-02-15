@@ -1,0 +1,33 @@
+html {
+  font-size: 65%;
+}
+
+@media (min-width: 375px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Permanent Marker", sans-serif;
+  font-weight: 100;
+  color: #ec12ff;
+  text-align: center;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Kelson Sans", sans-serif;
+  font-weight: 100;
+}

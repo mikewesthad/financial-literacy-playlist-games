@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Kelson Sans";
+  src: url("kelson_sans_bold-webfont.woff2") format("woff2"),
+    url("kelson_sans_bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kelson Sans";
+  src: url("kelson_sans_light-webfont.woff2") format("woff2"),
+    url("kelson_sans_light-webfont.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kelson Sans";
+  src: url("kelson_sans_regular-webfont.woff2") format("woff2"),
+    url("kelson_sans_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
