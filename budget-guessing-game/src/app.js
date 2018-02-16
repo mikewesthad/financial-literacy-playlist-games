@@ -10,8 +10,9 @@ import Intro1 from "./pages/intro-1";
 import Intro2 from "./pages/intro-2";
 import Outro from "./pages/outro";
 import ForceVisitIndex from "./components/force-visit-index.js";
+import Analytics from "./components/analytics";
 
-const dev = false;
+const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
 
 export default class App extends Component {
@@ -34,6 +35,8 @@ export default class App extends Component {
     return (
       <Router>
         <div>
+          <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} />
+
           {!dev && <Route component={ForceVisitIndex} />}
 
           <Switch>

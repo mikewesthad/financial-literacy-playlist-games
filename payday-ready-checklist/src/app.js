@@ -8,8 +8,9 @@ import Protecting from "./pages/protecting-my-funds";
 import Timesheet from "./pages/completing-my-timesheet";
 import Banking from "./pages/banking-smart";
 import ForceVisitIndex from "./components/force-visit-index.js";
+import Analytics from "./components/analytics";
 
-const dev = true;
+const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
 
 const routeSequence = [
@@ -39,18 +40,18 @@ export default class App extends Component {
     return (
       <Router>
         <div>
+          <Route render={props => <Analytics trackingId="UA-114340105-1" {...props} />} />
           {!dev && <Route component={ForceVisitIndex} />}
-
           <Switch>
             {routes}
 
             {/* Redirect to home if no page found */}
             <Redirect to="/" />
           </Switch>
-
           <Link className="restart" to="/">
             Start Over
           </Link>
+          }
         </div>
       </Router>
     );
