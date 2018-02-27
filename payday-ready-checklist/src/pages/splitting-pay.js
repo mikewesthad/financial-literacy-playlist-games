@@ -51,7 +51,7 @@ export default class SplittingPay extends Component {
             </CyclingPuzzle>
           </div>
 
-          <div className="section" style={{ visibility: !isSolved ? "" : "" }}>
+          <div className="section">
             <FadeInSequence startFade={isSolved} defaultDuration={1} defaultDelay={0.5}>
               <SequenceElement delay={1}>
                 <div>

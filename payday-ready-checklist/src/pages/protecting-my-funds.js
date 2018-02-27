@@ -82,8 +82,8 @@ export default class ProtectingMyFunds extends Component {
             </CyclingPuzzle>
           </div>
 
-          <FadeInSequence startFade={isSolved} defaultDuration={1} defaultDelay={0.5}>
-            <div className="section" style={{ visibility: !isSolved ? "" : "" }}>
+          <div className="section">
+            <FadeInSequence startFade={isSolved} defaultDuration={1} defaultDelay={0.5}>
               <SequenceElement delay={1}>
                 <div>
                   <h1 className={isSolved ? "tada-animation animation-delay-1s" : ""}>Nice job!</h1>
@@ -94,8 +94,8 @@ export default class ProtectingMyFunds extends Component {
                   </div>
                 </div>
               </SequenceElement>
-            </div>
-          </FadeInSequence>
+            </FadeInSequence>
+          </div>
 
           {isSolved && <ScrollHinter />}
         </div>
