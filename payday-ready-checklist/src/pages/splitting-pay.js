@@ -52,6 +52,12 @@ export default class SplittingPay extends Component {
           </div>
 
           <div className="section">
+            <p style={{ fontStyle: "italic" }}>
+              (Slighty harder this time - solve both to advance.)
+            </p>
+          </div>
+
+          <div className="section">
             <FadeInSequence startFade={isSolved} defaultDuration={1} defaultDelay={0.5}>
               <SequenceElement delay={1}>
                 <div>
