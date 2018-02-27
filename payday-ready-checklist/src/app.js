@@ -9,6 +9,7 @@ import Timesheet from "./pages/completing-my-timesheet";
 import Banking from "./pages/banking-smart";
 import ForceVisitIndex from "./components/force-visit-index.js";
 import Analytics from "./components/analytics";
+import ScrollToTop from "./components/scroll-to-top";
 
 const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
@@ -41,6 +42,8 @@ export default class App extends Component {
       <Router>
         <div>
           <Route render={props => <Analytics trackingId="UA-114340105-1" {...props} />} />
+          <ScrollToTop />
+
           {!dev && <Route component={ForceVisitIndex} />}
           <Switch>
             {routes}
