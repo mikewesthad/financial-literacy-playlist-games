@@ -44,7 +44,10 @@ export default class DirectDeposit extends Component {
           </div>
 
           <div className="section">
-            <p style={{ fontStyle: "italic" }}>(Click the text to cycle through possibilities.)</p>
+            <p style={{ fontStyle: "italic" }}>
+              (Click the <span className="purple-text">purple</span> text above to cycle through
+              possibilities.)
+            </p>
           </div>
 
           <div className="section" style={{ visibility: !isSolved ? "" : "" }}>
