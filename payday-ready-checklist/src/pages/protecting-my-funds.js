@@ -5,7 +5,7 @@ import CyclingPuzzle from "../components/cycling-puzzle";
 import { FadeInSequence, SequenceElement } from "../animations/fade-in-sequence";
 import ScrollHinter from "../components/scroll-hinter";
 
-import protectGif from "../images/protect-optimized.gif";
+import protectGif from "../images/privacy-optimized.gif";
 
 export default class ProtectingMyFunds extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FadeInSequence, SequenceElement } from "../animations/fade-in-sequence";
 
-import perfectShotGif from "../images/perfect-shot-loop-optimized.gif";
+import perfectShotGif from "../images/master-shot-optimized.gif";
 
 export default class Outro extends Component {
   render() {
