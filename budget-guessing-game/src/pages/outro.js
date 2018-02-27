@@ -24,7 +24,7 @@ export default function Outro() {
               </p>
             </SequenceElement>
             <SequenceElement>
-              <p>Let's try it! Visit LRNG to create your own budget.</p>
+              <p>Let's try it. Close this tab and return to LRNG to complete your budget.</p>
             </SequenceElement>
           </div>
         </FadeInSequence>

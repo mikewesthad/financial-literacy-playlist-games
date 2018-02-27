@@ -22,7 +22,7 @@ export default class Outro extends Component {
                 </SequenceElement>
               </p>
               <SequenceElement>
-                <p>Visit LRNG to continue mastering budgeting and savings techniques.</p>
+                <p>Close this tab and return to LRNG to complete this XP.</p>
               </SequenceElement>
             </div>
           </FadeInSequence>
