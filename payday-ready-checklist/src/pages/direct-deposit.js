@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CyclingList, CyclingItem } from "../components/cycling-list";
 import CyclingPuzzle from "../components/cycling-puzzle";
 import { FadeInSequence, SequenceElement } from "../animations/fade-in-sequence";
+import ScrollHinter from "../components/scroll-hinter";
 
 import depositGif from "../images/cat-deposit-optimized.gif";
 
@@ -64,6 +65,8 @@ export default class DirectDeposit extends Component {
               </SequenceElement>
             </FadeInSequence>
           </div>
+
+          {isSolved && <ScrollHinter />}
         </div>
       </div>
     );

@@ -5,6 +5,14 @@
   animation-iteration-count: 1;
 }
 
+.hover-animation {
+  animation-name: hover;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 .animation-delay-1s {
   animation-delay: 1s;
 }
@@ -31,5 +39,22 @@
 
   to {
     transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes hover {
+  from,
+  2% {
+    transform: translateY(-0.6rem);
+  }
+
+  48%,
+  52% {
+    transform: translateY(0rem);
+  }
+
+  98%,
+  to {
+    transform: translateY(-0.6rem);
   }
 }

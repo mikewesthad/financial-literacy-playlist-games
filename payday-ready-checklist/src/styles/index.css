@@ -64,3 +64,24 @@
   color: black;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+.scroll-hint {
+  font-size: 1.5rem;
+  color: white;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.5rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scroll-hint::after {
+  display: block;
+  content: "";
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-left: 1.25rem solid transparent;
+  border-right: 1.25rem solid transparent;
+  border-top: 0.9375rem solid #ec12ff;
+}
