@@ -54,7 +54,6 @@ export default class App extends Component {
           <Link className="restart" to="/">
             Start Over
           </Link>
-          }
         </div>
       </Router>
     );
