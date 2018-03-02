@@ -61,7 +61,7 @@ export default class BankingSmart extends Component {
                   </CyclingList>
                 </li>
                 <li>
-                  Mark any checks that I have deposited by mobile deposit as
+                  Mark any paper checks that I have deposited through a mobile app as
                   <CyclingList>
                     <CyclingItem>"do not touch"</CyclingItem>
                     <CyclingItem>"void"</CyclingItem>
