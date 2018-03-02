@@ -53,7 +53,8 @@ export default class SplittingPay extends Component {
 
           <div className="section">
             <p style={{ fontStyle: "italic" }}>
-              (Slighty harder this time - solve both to advance.)
+              (Slighty harder now - solve both together. When both are correct, a message will
+              appear and you can advance.)
             </p>
           </div>
 
