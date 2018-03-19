@@ -1,0 +1,33 @@
+{
+  "name": "loan-interview-game",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cross-env": "^5.1.4",
+    "gh-pages": "^1.1.0",
+    "gsap": "^1.20.4",
+    "lodash.throttle": "^4.1.1",
+    "prettier": "^1.11.1",
+    "prop-types": "^15.6.1",
+    "raleway-webfont": "^3.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-ga": "^2.4.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0",
+    "react-typist": "^2.0.4"
+  },
+  "prettier": {
+    "printWidth": 100
+  },
+  "homepage": "https://www.mikewesthad.com/financial-literacy-playlist-games/loan-game",
+  "scripts": {
+    "start": "cross-env REACT_APP_ENV=development react-scripts start",
+    "start:prod": "cross-env REACT_APP_ENV=production react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run \"build\"",
+    "deploy": "gh-pages --dist ./build --dest loan-game --add"
+  }
+}
