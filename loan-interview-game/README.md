@@ -4,6 +4,10 @@ An interview game checklist to teach the basic concept of credit for 2018 studen
 
 Built with React & GSAP.
 
+## Dialogue
+
+Since this game is dialogue-based, the conversation trees are generated using [mikewesthad/Talkit](https://github.com/mikewesthad/Talkit) - a fork of a non-linear dialogue editor.
+
 ## Running
 
 ```
