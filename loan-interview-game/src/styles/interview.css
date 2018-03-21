@@ -17,8 +17,11 @@
 
 .fixed-navbar__portrait {
   height: 80%;
-  /* border-radius: 50%; */
-  /* border: 2px solid white; */
+}
+
+.fixed-navbar__portrait #outline {
+  /* SVG ID from illustrator */
+  stroke: white;
 }
 
 .fixed-navbar__help {

@@ -2,9 +2,8 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import Conversation from "./conversation";
 
-import hannahDarkRingImage from "../images/hannah-dark-ring.svg";
-import hannahWhiteRingImage from "../images/hannah-white-ring.svg";
-import helpIcon from "../images/question-circle.svg";
+import Hannah from "../images/hannah.svg";
+import QuestionCircle from "../images/question-circle.svg";
 
 export default class Interview extends Component {
   componentWillUpdate(nextProps) {
@@ -18,19 +17,15 @@ export default class Interview extends Component {
     return (
       <div>
         <div className="fixed-navbar">
-          <img
-            className="fixed-navbar__portrait"
-            src={hannahWhiteRingImage}
-            alt="Hannah Portrait"
-          />
+          <Hannah className="fixed-navbar__portrait" />
           <div className="fixed-navbar__center">Interviewing Paola</div>
-          <img className="fixed-navbar__help" src={helpIcon} alt="Help" />
+          <QuestionCircle className="fixed-navbar__help" />
         </div>
 
         <Conversation messages={conversationTree.conversationHistory.slice()} />
 
         <div className="options-menu">
-          <img className="options-menu__portrait" src={hannahDarkRingImage} alt="Hannah Portrait" />
+          <Hannah className="options-menu__portrait" />
           <ul className="options-menu__list">
             {choices.map((node, i) => {
               const { id, text, completed } = node;
