@@ -1,0 +1,14 @@
+@import "./reset.css";
+@import "../../node_modules/raleway-webfont/raleway.css";
+@import "./typography.css";
+@import "./general-layout.css";
+@import "./interview.css";
+@import "./scrollbar.css";
+
+#root {
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
