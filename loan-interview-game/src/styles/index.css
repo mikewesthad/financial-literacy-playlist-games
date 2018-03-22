@@ -4,6 +4,7 @@
 @import "./general-layout.css";
 @import "./interview.css";
 @import "./scrollbar.css";
+@import "./grid.css";
 
 #root {
   position: relative;
