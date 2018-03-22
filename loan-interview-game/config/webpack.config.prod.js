@@ -142,7 +142,10 @@ module.exports = {
           {
             test: /\.svg$/,
             exclude: /node_modules/,
-            loader: "svg-react-loader"
+            loader: "svg-react-loader",
+            query: {
+              classIdPrefix: true // Required for multiple SVGs on the same page
+            }
           },
           // Process JS with Babel.
           {
