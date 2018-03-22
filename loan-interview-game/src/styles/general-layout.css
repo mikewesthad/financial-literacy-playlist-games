@@ -1,5 +1,4 @@
 .fullscreen-container {
-  background-color: black;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -17,7 +16,6 @@
 }
 
 .content {
-  color: white;
   max-width: 700px;
   width: 100%;
   font-size: 1.5rem;

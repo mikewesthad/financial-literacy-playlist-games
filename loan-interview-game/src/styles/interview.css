@@ -1,6 +1,17 @@
+.anthony-background-color {
+  background-color: #2098e3;
+}
+
+.hannah-background-color {
+  background-color: #90278e;
+}
+
+.taylor-background-color {
+  background-color: #f25a28;
+}
+
 .fixed-navbar {
   width: 100%;
-  background: #90278e;
   color: white;
   position: fixed;
   top: 0;
@@ -74,7 +85,6 @@
 .conversation__bubble {
   position: relative;
   display: inline-block;
-  background: #90278e;
   color: white;
   border-radius: 0.4em;
   padding: 0.55rem 1.5rem;
@@ -112,8 +122,33 @@
   left: 92.5%;
   border-bottom: 0;
   border-right: 0;
+}
+
+.conversation__bubble--anthony {
+  background-color: #2098e3;
+}
+
+.conversation__bubble--anthony:after {
+  color: #2098e3;
+  border-top-color: #2098e3;
+}
+
+.conversation__bubble--hannah {
+  background-color: #90278e;
+}
+
+.conversation__bubble--hannah:after {
   color: #90278e;
   border-top-color: #90278e;
+}
+
+.conversation__bubble--taylor {
+  background-color: #f25a28;
+}
+
+.conversation__bubble--taylor:after {
+  color: #f25a28;
+  border-top-color: #f25a28;
 }
 
 .options-menu {
@@ -192,4 +227,8 @@
 .options-menu__list-item--6 {
   transform: translate(0, -50%);
   text-align: left;
+}
+
+.avatar-portrait__caption {
+  text-align: center;
 }
