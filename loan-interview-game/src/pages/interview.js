@@ -1,31 +1,29 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Conversation from "./conversation";
 
-import Hannah from "../images/hannah.svg";
 import QuestionCircle from "../images/question-circle.svg";
 
 export default class Interview extends Component {
-  componentWillUpdate(nextProps) {
-    // console.log(conversationTree.getChoices());
-  }
-
   render() {
-    const { conversationTree } = this.props;
+    const { conversationTree, name } = this.props;
+    const lowercaseName = name.toLowerCase();
     const choices = conversationTree.getChoices();
+    const SvgAvatar = require(`../images/avatars/${lowercaseName}.svg`);
+    const bgColorClass = `${lowercaseName}-background-color`;
 
     return (
       <div>
-        <div className="fixed-navbar">
-          <Hannah className="fixed-navbar__portrait" />
-          <div className="fixed-navbar__center">Interviewing Paola</div>
+        <div className={`fixed-navbar ${bgColorClass}`}>
+          <SvgAvatar className="fixed-navbar__portrait" />
+          <div className="fixed-navbar__center">Interviewing {name}</div>
           <QuestionCircle className="fixed-navbar__help" />
         </div>
 
         <Conversation messages={conversationTree.conversationHistory.slice()} />
 
         <div className="options-menu">
-          <Hannah className="options-menu__portrait" />
+          <SvgAvatar className="options-menu__portrait" />
           <ul className="options-menu__list">
             {choices.map((node, i) => {
               const { id, text, completed } = node;
@@ -51,7 +49,7 @@ export default class Interview extends Component {
                 className="options-menu__list-item options-menu__list-item--6"
                 onClick={() => {}}
               >
-                Talk to someone else.
+                <Link to="/">Talk to someone else.</Link>
               </li>
             ) : (
               <li

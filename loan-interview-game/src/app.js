@@ -36,9 +36,7 @@ class App extends Component {
             <Route
               exact
               path="/interview-hannah"
-              render={() => (
-                <Interview conversationTree={hannahTree} name="Hannah" color="#2098e3" />
-              )}
+              render={() => <Interview conversationTree={hannahTree} name="Hannah" />}
             />
             <Route
               exact
@@ -48,7 +46,7 @@ class App extends Component {
             <Route
               exact
               path="/interview-taylor"
-              render={() => <Interview conversationTree={taylorTree} name="taylor" />}
+              render={() => <Interview conversationTree={taylorTree} name="Taylor" />}
             />
           </Switch>
         </div>

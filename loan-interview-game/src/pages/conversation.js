@@ -55,12 +55,16 @@ export default class Conversation extends Component {
         <div className="conversation__wrapper">
           {messages.map((node, i) => {
             const { id, speaker, text } = node;
-            const classes =
-              "conversation__message conversation__message--" +
-              (speaker === "Player" ? "left" : "right");
+            const classes = `conversation__message conversation__message--${
+              speaker === "Player" ? "left" : "right"
+            }`;
             return (
               <div key={id} className={classes} ref={ref => (this.messageRefs[i] = ref)}>
-                <div className="conversation__bubble">{text}</div>
+                <div
+                  className={`conversation__bubble conversation__bubble--${speaker.toLowerCase()}`}
+                >
+                  {text}
+                </div>
               </div>
             );
           })}
