@@ -59,7 +59,7 @@ export default class Conversation extends Component {
               speaker === "Player" ? "left" : "right"
             }`;
             return (
-              <div key={id} className={classes} ref={ref => (this.messageRefs[i] = ref)}>
+              <div key={id + i} className={classes} ref={ref => (this.messageRefs[i] = ref)}>
                 <div
                   className={`conversation__bubble conversation__bubble--${speaker.toLowerCase()}`}
                 >
