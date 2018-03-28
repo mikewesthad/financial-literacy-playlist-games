@@ -1,7 +1,8 @@
 const NODE_TYPES = {
   STARTING_TEXT: "StartingText",
   TEXT: "Text",
-  CHOICE: "Choice"
+  CHOICE: "Choice",
+  SET: "Set"
 };
 
 class DialogueNode {
@@ -18,6 +19,12 @@ export default class ConversationTree {
     this.currentNode = this.findNode(startingNodeId);
     this.mainDialogueNode = this.findNode(startingNodeId);
     this.conversationHistory = [];
+    this.cluesFound = [];
+
+    this.totalNumClues = 0;
+    this.forEachRecursive(this.currentNode, node => {
+      if (node.type === NODE_TYPES.SET) this.totalNumClues++;
+    });
 
     this.idsVisited = new Set();
     this.lastNode = this.currentNode;
@@ -38,6 +45,9 @@ export default class ConversationTree {
       if (node.type === NODE_TYPES.TEXT || node.type === NODE_TYPES.STARTING_TEXT) {
         const { actor, name, id } = node;
         this.conversationHistory.push(new DialogueNode(actor, name, id));
+      } else if (node.type === NODE_TYPES.SET) {
+        const value = node.value;
+        if (!this.cluesFound.includes(value)) this.cluesFound.push(value);
       }
 
       if (node.next) {
@@ -51,6 +61,23 @@ export default class ConversationTree {
     if (!this.currentNode.choices) {
       this.goBackToLastDecisionPoint();
     }
+  }
+
+  forEachRecursive(startingNode, callback) {
+    const processNode = (node, callback) => {
+      callback(node);
+      if (node.next) {
+        const nextNode = this.findNode(node.next);
+        processNode(nextNode, callback);
+      } else if (node.choices) {
+        node.choices.map(choiceId => {
+          const nextNode = this.findNode(choiceId);
+          processNode(nextNode, callback);
+        });
+      }
+    };
+
+    processNode(startingNode, callback);
   }
 
   goToMainDialogueNode() {
