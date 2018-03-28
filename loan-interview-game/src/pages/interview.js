@@ -10,7 +10,7 @@ export default class Interview extends Component {
   }
 
   render() {
-    const { conversationTree, name } = this.props;
+    const { conversationTree, name, menuRoute } = this.props;
     const lowercaseName = name.toLowerCase();
     const choices = conversationTree.getChoices();
     const SvgAvatar = require(`../images/avatars/${lowercaseName}.svg`);
@@ -53,7 +53,7 @@ export default class Interview extends Component {
                 className="options-menu__list-item options-menu__list-item--6"
                 onClick={() => {}}
               >
-                <Link to="/">Talk to someone else.</Link>
+                <Link to={menuRoute}>Talk to someone else.</Link>
               </li>
             ) : (
               <li

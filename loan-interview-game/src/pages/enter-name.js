@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 
-const EnterName = observer(({ gameData }) => (
+const EnterName = observer(({ gameData, nextRoute }) => (
   <div className="fullscreen-container">
     <div className="content">
       <div className="section text-center">
@@ -19,7 +19,7 @@ const EnterName = observer(({ gameData }) => (
         />
       </div>
       <div className="section text-center">
-        <Link to="/start" className="button-link">
+        <Link to={nextRoute} className="button-link">
           Play →
         </Link>
       </div>

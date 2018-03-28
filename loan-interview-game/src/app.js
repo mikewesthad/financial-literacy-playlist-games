@@ -35,11 +35,15 @@ const App = observer(
             {/* {!dev && <Route component={ForceVisitIndex} />} */}
 
             <Switch>
-              <Route exact path="/" render={() => <EnterName gameData={gameData} />} />
+              <Route
+                exact
+                path="/"
+                render={() => <EnterName gameData={gameData} nextRoute="/interview-menu" />}
+              />
 
               <Route
                 exact
-                path="/start"
+                path="/interview-menu"
                 render={() => {
                   return (
                     <InterviewMenu
@@ -54,21 +58,36 @@ const App = observer(
                 exact
                 path="/interview-hannah"
                 render={() => (
-                  <Interview gameData={gameData} conversationTree={hannahTree} name="Hannah" />
+                  <Interview
+                    menuRoute="/interview-menu"
+                    gameData={gameData}
+                    conversationTree={hannahTree}
+                    name="Hannah"
+                  />
                 )}
               />
               <Route
                 exact
                 path="/interview-anthony"
                 render={() => (
-                  <Interview gameData={gameData} conversationTree={anthonyTree} name="Anthony" />
+                  <Interview
+                    menuRoute="/interview-menu"
+                    gameData={gameData}
+                    conversationTree={anthonyTree}
+                    name="Anthony"
+                  />
                 )}
               />
               <Route
                 exact
                 path="/interview-taylor"
                 render={() => (
-                  <Interview gameData={gameData} conversationTree={taylorTree} name="Taylor" />
+                  <Interview
+                    menuRoute="/interview-menu"
+                    gameData={gameData}
+                    conversationTree={taylorTree}
+                    name="Taylor"
+                  />
                 )}
               />
 
