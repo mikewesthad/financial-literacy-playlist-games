@@ -232,3 +232,11 @@
 .avatar-portrait__caption {
   text-align: center;
 }
+
+.avatar-portrait {
+  transition: transform 0.25s ease;
+}
+
+.avatar-portrait:hover {
+  transform: scale(1.02);
+}
