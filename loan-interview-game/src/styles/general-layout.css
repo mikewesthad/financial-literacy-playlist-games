@@ -55,3 +55,8 @@
   list-style-type: disc;
   margin-bottom: 1.5rem;
 }
+
+.text-input {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+}

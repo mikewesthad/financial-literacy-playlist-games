@@ -5,16 +5,24 @@ import { observer } from "mobx-react";
 const EnterName = observer(({ gameData }) => (
   <div className="fullscreen-container">
     <div className="content">
-      <h1>Before we start the game, what’s you name?</h1>
-      <h2>(Don’t worry - it doesn’t have to be your real name)</h2>
-      <input
-        type="text"
-        value={gameData.playerName}
-        onChange={e => gameData.setPlayerName(e.target.value)}
-      />
-      <Link to="/start" className="button-link">
-        Play →
-      </Link>
+      <div className="section text-center">
+        <h1>Before we start the game, what’s your name?</h1>
+        <p>(Don’t worry - it doesn’t have to be your real name.)</p>
+      </div>
+      <div className="section text-center">
+        <input
+          className="text-input"
+          placeholder="Name..."
+          type="text"
+          value={gameData.playerName}
+          onChange={e => gameData.setPlayerName(e.target.value)}
+        />
+      </div>
+      <div className="section text-center">
+        <Link to="/start" className="button-link">
+          Play →
+        </Link>
+      </div>
     </div>
   </div>
 ));
