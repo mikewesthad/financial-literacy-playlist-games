@@ -32,7 +32,9 @@ export default class InterviewMenu extends Component {
     const { numBorrowersInterviewed } = this.props;
     const { modalOpen } = this.state;
 
-    const heading = `Who do you want to interview ${numBorrowersInterviewed > 0 ? "now" : "first"}`;
+    const heading = `Who do you want to interview ${
+      numBorrowersInterviewed > 0 ? "now" : "first"
+    }?`;
 
     return (
       <div className="fullscreen-container">
