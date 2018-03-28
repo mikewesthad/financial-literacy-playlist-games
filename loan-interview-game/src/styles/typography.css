@@ -31,7 +31,8 @@ body {
   font-weight: 400;
 }
 
-input {
+input,
+button {
   outline: 0;
   font-family: "Raleway", sans-serif;
 }

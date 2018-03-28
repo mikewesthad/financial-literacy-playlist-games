@@ -44,11 +44,12 @@ const App = observer(
               <Route
                 exact
                 path="/interview-menu"
-                render={() => {
+                render={props => {
                   return (
                     <InterviewMenu
                       gameData={gameData}
                       numBorrowersInterviewed={gameData.borrowersInterviewed.length}
+                      {...props}
                     />
                   );
                 }}

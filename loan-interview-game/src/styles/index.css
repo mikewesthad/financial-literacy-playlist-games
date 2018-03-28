@@ -6,6 +6,7 @@
 @import "./scrollbar.css";
 @import "./grid.css";
 @import "./button-link.css";
+@import "./modal.css";
 
 #root {
   position: relative;
