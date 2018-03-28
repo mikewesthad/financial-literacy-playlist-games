@@ -5,6 +5,10 @@ import Conversation from "./conversation";
 import QuestionCircle from "../images/question-circle.svg";
 
 export default class Interview extends Component {
+  componentDidMount() {
+    this.props.gameData.addBorrowerInterviewed(this.props.name);
+  }
+
   render() {
     const { conversationTree, name } = this.props;
     const lowercaseName = name.toLowerCase();
