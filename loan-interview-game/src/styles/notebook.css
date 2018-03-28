@@ -1,0 +1,48 @@
+.notebook {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 5px solid #d6d6d6;
+  padding: 2rem;
+  min-height: 60vh;
+}
+
+.notebook > * {
+  margin: 1.5rem 0;
+}
+
+.notebook:first-child {
+  margin-top: 0;
+}
+
+.notebook:last-child {
+  margin-bottom: 0;
+}
+
+.notebook__name {
+  font-size: 1.75rem;
+  display: inline-block;
+  border-bottom: 2px solid black;
+}
+
+.notebook__clues-list {
+  margin-top: 1rem;
+  list-style-type: disc;
+  padding-left: 2rem;
+}
+
+.notebook__clues-item {
+  margin-bottom: 0.5rem;
+}
+
+.notebook__clues-message {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #131313;
+}
+
+.notebook__portrait {
+  margin: 0 auto;
+  display: block;
+  max-width: 200px;
+  width: 70%;
+}
