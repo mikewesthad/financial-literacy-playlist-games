@@ -70,7 +70,7 @@ export default class ConversationTree {
         const nextNode = this.findNode(node.next);
         processNode(nextNode, callback);
       } else if (node.choices) {
-        node.choices.map(choiceId => {
+        node.choices.forEach(choiceId => {
           const nextNode = this.findNode(choiceId);
           processNode(nextNode, callback);
         });
