@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import AvatarPortrait from "../components/avatar-portrait";
 import Modal from "../components/modal";
 import Hannah from "../images/avatars/hannah.svg";
 import Anthony from "../images/avatars/anthony.svg";
@@ -50,7 +49,7 @@ export default class InterviewMenu extends Component {
           <div className="row">
             <div className="col-3 text-center">
               <Link to="/interview-hannah">
-                <AvatarPortrait Svg={Hannah} name="Hannah" />
+                <Hannah className="button-image" />
               </Link>
               <Link className="button-link button-link--hannah" to="/interview-hannah">
                 Hannah →
@@ -58,7 +57,7 @@ export default class InterviewMenu extends Component {
             </div>
             <div className="col-3 text-center" to="/interview-anthony">
               <Link to="/interview-anthony">
-                <AvatarPortrait Svg={Anthony} name="Anthony" />
+                <Anthony className="button-image" />
               </Link>
               <Link className="button-link button-link--anthony" to="/interview-anthony">
                 Anthony →
@@ -66,7 +65,7 @@ export default class InterviewMenu extends Component {
             </div>
             <div className="col-3 text-center" to="/interview-taylor">
               <Link to="/interview-taylor">
-                <AvatarPortrait Svg={Taylor} name="Taylor" />
+                <Taylor className="button-image" />
               </Link>
               <Link className="button-link button-link--taylor" to="/interview-taylor">
                 Taylor →

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import AvatarPortrait from "../components/avatar-portrait";
 import Hannah from "../images/avatars/hannah.svg";
 import Anthony from "../images/avatars/anthony.svg";
 import Taylor from "../images/avatars/taylor.svg";
