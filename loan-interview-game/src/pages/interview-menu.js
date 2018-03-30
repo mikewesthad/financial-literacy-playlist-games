@@ -75,12 +75,7 @@ export default class InterviewMenu extends Component {
 
           <div className="text-center">
             <h1>Or, ready to make a decision?</h1>
-            <Link
-              className="button-link"
-              onClick={this.showModal}
-              to="/review-notes"
-              style={{ marginRight: "2rem" }}
-            >
+            <Link className="button-link" to="/review-notes" style={{ marginRight: "2rem" }}>
               Review Notes →
             </Link>
             <button className="button-link" onClick={this.goToDecisionPage}>
