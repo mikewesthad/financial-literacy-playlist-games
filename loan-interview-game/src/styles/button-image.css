@@ -1,0 +1,8 @@
+.button-image {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.button-image:hover {
+  transform: scale(1.02);
+}

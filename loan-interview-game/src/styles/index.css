@@ -8,6 +8,7 @@
 @import "./button-link.css";
 @import "./modal.css";
 @import "./notebook.css";
+@import "./button-image.css";
 
 #root {
   position: relative;
