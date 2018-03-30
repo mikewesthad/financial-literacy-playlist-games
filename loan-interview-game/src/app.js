@@ -3,6 +3,7 @@ import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-r
 import gameData from "./store";
 import { observer } from "mobx-react";
 import EnterName from "./pages/enter-name";
+import DecisionMenu from "./pages/decision-menu";
 import Interview from "./pages/interview";
 import InterviewMenu from "./pages/interview-menu";
 import ConversationTree from "./conversation-tree/conversation-tree";
@@ -33,7 +34,6 @@ const App = observer(
           <div>
             {/* <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
             {/* {!dev && <Route component={ForceVisitIndex} />} */}
-
             <Switch>
               <Route
                 exact
@@ -102,6 +102,18 @@ const App = observer(
                     taylorTree={taylorTree}
                   />
                 )}
+              />
+
+              <Route
+                exact
+                path="/make-decision"
+                render={props => <DecisionMenu gameData={gameData} {...props} />}
+              />
+
+              <Route
+                exact
+                path="/decision-outcome"
+                render={() => <p>{gameData.selectedBorrower}</p>}
               />
             </Switch>
           </div>
