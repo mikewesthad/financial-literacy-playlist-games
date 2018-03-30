@@ -372,7 +372,10 @@ html[data-debug-view] .debug.hidden,
 html[data-debug-view] .debug.hidden .debug {
 	background-color: #bbb;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.saves.autosave = false;
+Config.saves.autoload = false;
+
+UIBar.destroy();
 
 // Google Analytics - mock when editing on twinery.org
 if (window.location.hostname === "twinery.org") {
