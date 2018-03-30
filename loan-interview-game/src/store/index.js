@@ -3,9 +3,9 @@ import { observable, decorate, action } from "mobx";
 class GameData {
   playerName = "";
   borrowersInterviewed = [];
+  selectedBorrower = null;
 
   setPlayerName = playerName => {
-    console.log(playerName);
     this.playerName = playerName;
   };
   addBorrowerInterviewed = borrowerName => {
@@ -13,13 +13,17 @@ class GameData {
       this.borrowersInterviewed.push(borrowerName);
     }
   };
+  setSelectedBorrower = borrowerName => {
+    this.selectedBorrower = borrowerName;
+  };
 }
 
 decorate(GameData, {
   playerName: observable,
   borrowersInterviewed: observable,
   setPlayerName: action,
-  setBorrowerInterviewed: action
+  setBorrowerInterviewed: action,
+  setSelectedBorrower: action
 });
 
 const data = new GameData();
