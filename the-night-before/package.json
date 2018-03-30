@@ -1,0 +1,14 @@
+{
+  "name": "the-night-before",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages --dist ./build --dest the-night-before --add"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}
