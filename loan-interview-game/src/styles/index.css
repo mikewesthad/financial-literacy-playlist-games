@@ -9,6 +9,7 @@
 @import "./modal.css";
 @import "./notebook.css";
 @import "./button-image.css";
+@import "./page-transitions.css";
 
 #root {
   position: relative;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-router-dom";
 import gameData from "./store";
 import { observer } from "mobx-react";
@@ -34,88 +35,97 @@ const App = observer(
           <div>
             {/* <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
             {/* {!dev && <Route component={ForceVisitIndex} />} */}
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => <EnterName gameData={gameData} nextRoute="/interview-menu" />}
-              />
 
-              <Route
-                exact
-                path="/interview-menu"
-                render={props => {
-                  return (
-                    <InterviewMenu
-                      gameData={gameData}
-                      numBorrowersInterviewed={gameData.borrowersInterviewed.length}
-                      {...props}
-                    />
-                  );
-                }}
-              />
+            <Route
+              render={({ location }) => (
+                <TransitionGroup>
+                  <CSSTransition key={location.pathname} timeout={500} classNames="fade-transition">
+                    <Switch location={location}>
+                      <Route
+                        exact
+                        path="/"
+                        render={() => <EnterName gameData={gameData} nextRoute="/interview-menu" />}
+                      />
 
-              <Route
-                exact
-                path="/interview-hannah"
-                render={() => (
-                  <Interview
-                    menuRoute="/interview-menu"
-                    gameData={gameData}
-                    conversationTree={hannahTree}
-                    name="Hannah"
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/interview-anthony"
-                render={() => (
-                  <Interview
-                    menuRoute="/interview-menu"
-                    gameData={gameData}
-                    conversationTree={anthonyTree}
-                    name="Anthony"
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/interview-taylor"
-                render={() => (
-                  <Interview
-                    menuRoute="/interview-menu"
-                    gameData={gameData}
-                    conversationTree={taylorTree}
-                    name="Taylor"
-                  />
-                )}
-              />
+                      <Route
+                        exact
+                        path="/interview-menu"
+                        render={props => {
+                          return (
+                            <InterviewMenu
+                              gameData={gameData}
+                              numBorrowersInterviewed={gameData.borrowersInterviewed.length}
+                              {...props}
+                            />
+                          );
+                        }}
+                      />
 
-              <Route
-                exact
-                path="/review-notes"
-                render={() => (
-                  <ReviewNotes
-                    hannahTree={hannahTree}
-                    anthonyTree={anthonyTree}
-                    taylorTree={taylorTree}
-                  />
-                )}
-              />
+                      <Route
+                        exact
+                        path="/interview-hannah"
+                        render={() => (
+                          <Interview
+                            menuRoute="/interview-menu"
+                            gameData={gameData}
+                            conversationTree={hannahTree}
+                            name="Hannah"
+                          />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/interview-anthony"
+                        render={() => (
+                          <Interview
+                            menuRoute="/interview-menu"
+                            gameData={gameData}
+                            conversationTree={anthonyTree}
+                            name="Anthony"
+                          />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/interview-taylor"
+                        render={() => (
+                          <Interview
+                            menuRoute="/interview-menu"
+                            gameData={gameData}
+                            conversationTree={taylorTree}
+                            name="Taylor"
+                          />
+                        )}
+                      />
 
-              <Route
-                exact
-                path="/make-decision"
-                render={props => <DecisionMenu gameData={gameData} {...props} />}
-              />
+                      <Route
+                        exact
+                        path="/review-notes"
+                        render={() => (
+                          <ReviewNotes
+                            hannahTree={hannahTree}
+                            anthonyTree={anthonyTree}
+                            taylorTree={taylorTree}
+                          />
+                        )}
+                      />
 
-              <Route
-                exact
-                path="/decision-outcome"
-                render={() => <p>{gameData.selectedBorrower}</p>}
-              />
-            </Switch>
+                      <Route
+                        exact
+                        path="/make-decision"
+                        render={props => <DecisionMenu gameData={gameData} {...props} />}
+                      />
+
+                      <Route
+                        exact
+                        path="/decision-outcome"
+                        render={() => <p>{gameData.selectedBorrower}</p>}
+                      />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            />
           </div>
         </Router>
       );
