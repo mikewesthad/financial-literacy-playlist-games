@@ -152,14 +152,13 @@ a:before {
   height: 2px;
   position: absolute;
   bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   transition: width 0.2s ease-in-out;
   width: 100%;
 }
 
 a:hover:before {
-  width: 20%;
+  width: 0;
   background-color: #b36200;
 }
 
@@ -380,7 +379,26 @@ html[data-debug-view] .debug.hidden,
 html[data-debug-view] .debug.hidden .debug {
 	background-color: #bbb;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();</script><tw-passagedata pid="1" name="Start" tags="" position="823,412.5" size="100,100">Before we start, enter your name and a company you’d love to work for. If you can&#39;t think of one, feel free to make something up.
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">UIBar.destroy();
+
+// Google Analytics - mock when editing on twinery.org
+if (window.location.hostname === "twinery.org") {
+	window.gtag = function () {
+		console.log("GA: " + JSON.stringify(Array.prototype.slice.call(arguments), null, 2));
+	};
+} else {
+	var gaScript = document.createElement("script");
+	gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=UA-114340105-3';
+	document.getElementsByTagName("head")[0].appendChild(gaScript);
+	window.dataLayer = window.dataLayer || [];
+	window.gtag = function gtag(){ dataLayer.push(arguments); }
+}
+
+window.gtag('js', new Date());
+window.gtag('config', 'UA-114340105-3');
+window.gtag('event', 'Game Started', { 'event_category': 'Game' });
+
+</script><tw-passagedata pid="1" name="Start" tags="" position="819,409.5" size="100,100">Before we start, enter your name and a company you’d love to work for. If you can&#39;t think of one, feel free to make something up.
 
 @@text-align:center;
 &lt;input id=&quot;textbox-name&quot; type=&quot;text&quot; placeholder=&quot;Enter name&quot;&gt;
@@ -388,7 +406,7 @@ html[data-debug-view] .debug.hidden .debug {
 &lt;input id=&quot;textbox-company&quot; type=&quot;text&quot; placeholder=&quot;Enter company&quot;&gt;
 @@
 
-@@#start-link;display: none;
+@@#start-link;display: none;text-align: center;
 [[Start-&gt;Night Before]]
 @@
 
@@ -423,7 +441,7 @@ $(document).one(&#39;:passagedisplay&#39;, function (ev) {
   });
 });
 
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Night Before" tags="" position="826,553.5" size="100,100">[img[&quot;http://i.giphy.com/ypqHf6pQ5kQEg.gif&quot;]]
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Night Before" tags="" position="821,602.5" size="100,100">[img[&quot;http://i.giphy.com/ypqHf6pQ5kQEg.gif&quot;]]
 
 &#39;Sup $name!
 
@@ -431,45 +449,41 @@ Congratulations on your interview at $company! Interviewing can be both exciting
 
 Play through this game to see how you can prepare. What choices will you make? 
 
-[[Start your adventure.-&gt;Prep]]
-</tw-passagedata><tw-passagedata pid="3" name="Prep" tags="" position="821,704.5" size="100,100">[img[&quot;https://media.giphy.com/media/l46CvRFB1GqPYAOis/giphy.gif&quot;]]
+[[Start your adventure.-&gt;Prep]]</tw-passagedata><tw-passagedata pid="3" name="Prep" tags="" position="821,775.5" size="100,100">[img[&quot;https://media.giphy.com/media/l46CvRFB1GqPYAOis/giphy.gif&quot;]]
 
 You’ve finally landed an interview at $company. It’s the night before. You are excited and a little bit nervous. You decide to spend some time prepping tonight, so that everything will go smoothly tomorrow.
 
-&lt;&lt;include [[Prep Decisions]]&gt;&gt;
-
-
-</tw-passagedata><tw-passagedata pid="4" name="Plan Outfit" tags="" position="615,973.5" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Plan Outfit" tags="" position="613,972.5" size="100,100">&lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $outfit = true&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 [img[&quot;http://i.giphy.com/MpIEkmGZ2UWbK.gif&quot;]]
 
 You dig through your clothes and find the perfect outfit for tomorrow. You iron it and hang it up in your closet.
 
-&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Set alarm" tags="" position="763,965.5" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Set alarm" tags="" position="761,964.5" size="100,100">&lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $alarm = true&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 [img[&quot;https://media.giphy.com/media/AfyEB4T0Io4BW/giphy.gif&quot;]]
 
 You set an alarm for tomorrow morning at 6:00a. You choose one that sounds like a car alarm -- that should do the trick.
 
-&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Plan route" tags="" position="913,962.5" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Plan route" tags="" position="911,961.5" size="100,100">&lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $route = true&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 [img[&quot;https://media.giphy.com/media/qRY3cPYRkyQh2/giphy.gif&quot;]]
 
 You were originally planning to bike to $company tomorrow, but you noticed that the forecast tomorrow is full of rain. You open up your Metra app and plan an alternate bus route. You get out some money for the bus fare too.
 
-&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Research" tags="" position="1074,964.5" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Research" tags="" position="1072,963.5" size="100,100">&lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $research = true&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 [img[&quot;https://media.giphy.com/media/8dYmJ6Buo3lYY/giphy.gif&quot;]]
 
-You do some research on $company. You check out their blog and read a post about their struggles with starting a social media campaign. You know a thing or two about that, so you plan on asking them about it during the interview.
+You do some research on $company. You check out their blog and read a post about their struggles to start a social media campaign. You know a thing or two about that, so you plan on asking them about it during the interview.
 
 You also pull up the email from $company and make sure to write down the name and contact info of the interviewers.
 
-&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Interview Day" tags="" position="836,1168.5" size="100,100">[img[&quot;https://media.giphy.com/media/fC3ZmX9FDtAu4/giphy.gif&quot;]]
+&lt;&lt;include [[Prep Decisions]]&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Interview Day" tags="" position="834,1167.5" size="100,100">[img[&quot;https://media.giphy.com/media/fC3ZmX9FDtAu4/giphy.gif&quot;]]
 
 You fall asleep quickly and drift off into some pretty strange dreams.
 &lt;&lt;if $alarm === true&gt;&gt;
@@ -481,10 +495,10 @@ At a certain point, you hear a car alarm that just won&#39;t go away.
 [[Continue-&gt;Wake Up Late Without Alarm]]
 &lt;&lt;/if&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="9" name="Prep Decisions" tags="" position="172,986" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;if $outfit === false&gt;&gt;[[Plan your outfit-&gt;Plan Outfit]]&lt;br/&gt;&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="9" name="Prep Decisions" tags="" position="170,985" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;if $outfit === false&gt;&gt;[[Plan your outfit-&gt;Plan Outfit]]&lt;br/&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $alarm === false&gt;&gt;[[Set your alarm-&gt;Set alarm]]&lt;br/&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $route === false&gt;&gt;[[Plan your route tomorrow-&gt;Plan route]]&lt;br/&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $research === false&gt;&gt;[[Research the company-&gt;Research]]&lt;br/&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/nobr&gt;&gt;[[I&#39;m all set - time to sleep-&gt;Interview Day]]</tw-passagedata><tw-passagedata pid="10" name="Wake Up On Time" tags="" position="659,1390.5" size="100,100">[img[&quot;http://i.giphy.com/gBW8Qgfaa2ije.gif&quot;]]
+&lt;&lt;if $research === false&gt;&gt;[[Research the company-&gt;Research]]&lt;br/&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/nobr&gt;&gt;[[I&#39;m all set - time to sleep-&gt;Interview Day]]</tw-passagedata><tw-passagedata pid="10" name="Wake Up On Time" tags="" position="657,1389.5" size="100,100">[img[&quot;http://i.giphy.com/gBW8Qgfaa2ije.gif&quot;]]
 
 You realize that sound is your alarm going off. You get up with plenty of time to eat and get ready.
 
@@ -493,35 +507,35 @@ You realize that sound is your alarm going off. You get up with plenty of time t
 
 &lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $score += 1&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Wake Up Late" tags="" position="1053,1392.5" size="100,100">[img[https://media.giphy.com/media/GBxUeCnzdgIHS/giphy.gif]]
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Wake Up Late" tags="" position="1051,1391.5" size="100,100">[img[https://media.giphy.com/media/GBxUeCnzdgIHS/giphy.gif]]
 
 You ignore it and keep on sleeping. When you eventually get up, you realize you overslept! Better hurry to get ready.
 
-[[Pick your outfit-&gt;Pick outfit]]</tw-passagedata><tw-passagedata pid="12" name="Pick outfit" tags="" position="807,1557.5" size="100,100">[img[&quot;https://media.giphy.com/media/l2Je5hzZPPV0vkrv2/giphy.gif&quot;]]
+[[Pick your outfit-&gt;Pick outfit]]</tw-passagedata><tw-passagedata pid="12" name="Pick outfit" tags="" position="805,1556.5" size="100,100">[img[&quot;https://media.giphy.com/media/l2Je5hzZPPV0vkrv2/giphy.gif&quot;]]
 
 Time to get dressed.
 
 [[Grab something from your dresser-&gt;Bad outfit]]
-[[Grab something from your closet-&gt;Good outfit]]</tw-passagedata><tw-passagedata pid="13" name="Good outfit" tags="" position="681,1705.5" size="100,100">[img[&quot;http://i.giphy.com/tFtMkp2MvWAKI.gif&quot;]]
+[[Grab something from your closet-&gt;Good outfit]]</tw-passagedata><tw-passagedata pid="13" name="Good outfit" tags="" position="679,1704.5" size="100,100">[img[&quot;http://i.giphy.com/tFtMkp2MvWAKI.gif&quot;]]
 
-&lt;&lt;if $outfit === true&gt;&gt;You wear what you picked out last night. &lt;&lt;/if&gt;&gt;Your outfit is on fleek. Freshly ironed, neat and put together. You feel confident that what you&#39;re wearing will paint you in a postive light. 
+&lt;&lt;if $outfit === true&gt;&gt;You wear what you picked out last night. &lt;&lt;/if&gt;&gt;Your outfit is on fleek. Freshly ironed, neat and put together. You feel confident that what you&#39;re wearing will paint you in a positive light. 
 
 [[Time to head out.-&gt;Transit]]
 
 &lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $score += 1&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Bad outfit" tags="" position="945,1697.5" size="100,100">[img[&quot;http://i.giphy.com/14qGOyLfATB5ok.gif&quot;]]
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Bad outfit" tags="" position="943,1696.5" size="100,100">[img[&quot;http://i.giphy.com/14qGOyLfATB5ok.gif&quot;]]
 
 You grab whatever you can find in your dresser. On your way to $company, you see a stain on your jeans. You probably should have spent some time last night planning your outfit in order to look professional and make a good first impression.
 
-[[Time to head out.-&gt;Transit]]</tw-passagedata><tw-passagedata pid="15" name="Transit" tags="" position="807,1845.5" size="100,100">Time to head over to $company. How do you want to get there?
+[[Time to head out.-&gt;Transit]]</tw-passagedata><tw-passagedata pid="15" name="Transit" tags="" position="805,1844.5" size="100,100">Time to head over to $company. How do you want to get there?
 
 [[Bike there-&gt;Bike]]
-[[Take the bus-&gt;Bus]]</tw-passagedata><tw-passagedata pid="16" name="Bike" tags="" position="732,1994.5" size="100,100">[img[&quot;https://media.giphy.com/media/148x4ezZxvpIeA/giphy.gif&quot;]]
+[[Take the bus-&gt;Bus]]</tw-passagedata><tw-passagedata pid="16" name="Bike" tags="" position="730,1993.5" size="100,100">[img[&quot;https://media.giphy.com/media/148x4ezZxvpIeA/giphy.gif&quot;]]
 
 Oof. It&#39;s raining. You manage to get to $company on time, but you are soaked and frazzled.
 
-[[Look for the office-&gt;Look for Office]]</tw-passagedata><tw-passagedata pid="17" name="Bus" tags="" position="882,1994.5" size="100,100">[img[&quot;http://i.giphy.com/GZ654CUKywbHa.gif&quot;]]
+[[Look for the office-&gt;Look for Office]]</tw-passagedata><tw-passagedata pid="17" name="Bus" tags="" position="880,1993.5" size="100,100">[img[&quot;http://i.giphy.com/GZ654CUKywbHa.gif&quot;]]
 
 &lt;&lt;if $route === true&gt;&gt;You remembered the rainy weather forecast. &lt;&lt;/if&gt;&gt;You hop on the bus and settle in. The bus passes by some unhappy souls who decided to bike today -- they look drenched. You arrive at $company feeling relaxed and on point. 
 
@@ -529,55 +543,55 @@ Oof. It&#39;s raining. You manage to get to $company on time, but you are soaked
 
 &lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $score += 1&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Look for Office" tags="" position="793,2162.5" size="100,100">[img[&quot;https://media.giphy.com/media/XMseGGdTVMZ2w/giphy.gif&quot;]]
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Look for Office" tags="" position="791,2161.5" size="100,100">[img[&quot;https://media.giphy.com/media/XMseGGdTVMZ2w/giphy.gif&quot;]]
 
 The building has so many floors and offices. You are having trouble finding $company.
 
 [[Call the interviewer-&gt;Call]]
 [[Wander around-&gt;Wander]]
 
-</tw-passagedata><tw-passagedata pid="19" name="Call" tags="" position="717,2312.5" size="100,100">&lt;&lt;if $research&gt;&gt;
+</tw-passagedata><tw-passagedata pid="19" name="Call" tags="" position="715,2311.5" size="100,100">&lt;&lt;if $research&gt;&gt;
 	In your research last night, you wrote down the interviewer&#39;s contact info. You call them up and they direct you to the office. They tell you everyone gets lost in the building on their first visit. They are glad you called.&lt;&lt;silently&gt;&gt;&lt;&lt;set $score += 1&gt;&gt;&lt;&lt;/silently&gt;&gt;
 &lt;&lt;else&gt;&gt;
-	You can&#39;t find the interviewer&#39;s number. You know it was in an email somewhere but you can&#39;t find it. You wander around and eventually find the office, but you are late. Not the greatest first impression, but you refocus and get ready for the interview.
+	You can&#39;t find the interviewer&#39;s number. You know it was in an email somewhere, but you can&#39;t find it. You wander around and eventually find the office, but you are late. Not the greatest first impression, but you refocus and get ready for the interview.
 &lt;&lt;/if&gt;&gt;
 
-[[Head inside-&gt;Interview]]</tw-passagedata><tw-passagedata pid="20" name="Wander" tags="" position="867,2312.5" size="100,100">You wander around and eventually find the office, but you are late. Not the greatest first impression, but you refocus and get ready for the interview.
+[[Head inside-&gt;Interview]]</tw-passagedata><tw-passagedata pid="20" name="Wander" tags="" position="864,2311.5" size="100,100">You wander around and eventually find the office, but you are late. Not the greatest first impression, but you refocus and get ready for the interview.
 
-[[Head inside-&gt;Interview]]</tw-passagedata><tw-passagedata pid="21" name="Interview" tags="" position="795,2486.5" size="100,100">The interview is going well so far. They ask you if you have any questions for them...
+[[Head inside-&gt;Interview]]</tw-passagedata><tw-passagedata pid="21" name="Interview" tags="" position="793,2485.5" size="100,100">The interview is going well so far. They ask you if you have any questions for them...
 
 [[Ask about days off-&gt;bad question]]
 [[Ask about their social media strategy-&gt;Good question]]
-[[Tell them you don&#39;t have any questions-&gt;No question]]</tw-passagedata><tw-passagedata pid="22" name="bad question" tags="" position="645,2636.5" size="100,100">[img[&quot;https://media.giphy.com/media/80TEu4wOBdPLG/giphy.gif&quot;]]
+[[Tell them you don&#39;t have any questions-&gt;No question]]</tw-passagedata><tw-passagedata pid="22" name="bad question" tags="" position="643,2635.5" size="100,100">[img[&quot;https://media.giphy.com/media/80TEu4wOBdPLG/giphy.gif&quot;]]
 
-Yikes. They don&#39;t look happy that you are already asking about when you can take time off of work.
+Yikes. They don&#39;t look happy that you are already asking about when you can take time off work.
 
-[[Continue-&gt;Final question]]</tw-passagedata><tw-passagedata pid="23" name="Good question" tags="" position="795,2636.5" size="100,100">[img[&quot;https://media.giphy.com/media/3ohhwo4PzDFaz2sADu/giphy.gif&quot;]]
+[[Continue-&gt;Final question]]</tw-passagedata><tw-passagedata pid="23" name="Good question" tags="" position="793,2635.5" size="100,100">[img[&quot;https://media.giphy.com/media/3ohhwo4PzDFaz2sADu/giphy.gif&quot;]]
 
 You ask about their social media strategy and share how you&#39;d approach it. They are impressed that you knew that they were working on social media. They tell you that you are the only person they interviewed so far that actually did any research on the company.
 
 [[Continue-&gt;Final question]]
 
-&lt;&lt;silently&gt;&gt;&lt;&lt;set $score += 1&gt;&gt;&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="No question" tags="" position="945,2636.5" size="100,100">[img[&quot;https://media.giphy.com/media/80TEu4wOBdPLG/giphy.gif&quot;]]
+&lt;&lt;silently&gt;&gt;&lt;&lt;set $score += 1&gt;&gt;&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="No question" tags="" position="943,2635.5" size="100,100">[img[&quot;https://media.giphy.com/media/80TEu4wOBdPLG/giphy.gif&quot;]]
 
 Yikes. They don&#39;t look happy that you had no questions. It probably would have been better to do some research and ask an informed question.
 
-[[Continue-&gt;Final question]]</tw-passagedata><tw-passagedata pid="25" name="Final question" tags="" position="794,2786.5" size="100,100">[img[&quot;https://media.giphy.com/media/sRJ3wPAyIxICA/giphy.gif&quot;]]
+[[Continue-&gt;Final question]]</tw-passagedata><tw-passagedata pid="25" name="Final question" tags="" position="792,2785.5" size="100,100">[img[&quot;https://media.giphy.com/media/sRJ3wPAyIxICA/giphy.gif&quot;]]
 
 They tell you that they have one last question for you -- &quot;why do you want to work with us?&quot;
 
 [[Tell them about how you believe in their mission-&gt;Good final response]]
-[[Tell them you just need a job-&gt;Bad final response]]</tw-passagedata><tw-passagedata pid="26" name="Good final response" tags="" position="719,2936.5" size="100,100">[img[&quot;https://media.giphy.com/media/3oz8xJcPzeRutjp2BW/giphy.gif&quot;]]
+[[Tell them you just need a job-&gt;Bad final response]]</tw-passagedata><tw-passagedata pid="26" name="Good final response" tags="" position="717,2935.5" size="100,100">[img[&quot;https://media.giphy.com/media/3oz8xJcPzeRutjp2BW/giphy.gif&quot;]]
 
 They seem impressed with you and say they&#39;ll be in touch soon.
 
 [[Continue-&gt;Outro]]
 
-&lt;&lt;silently&gt;&gt;&lt;&lt;set $score += 1&gt;&gt;&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Bad final response" tags="" position="870,2936.5" size="100,100">[img[&quot;https://media.giphy.com/media/EhwFIP584mIBa/giphy.gif&quot;]]
+&lt;&lt;silently&gt;&gt;&lt;&lt;set $score += 1&gt;&gt;&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Bad final response" tags="" position="868,2935.5" size="100,100">[img[&quot;https://media.giphy.com/media/EhwFIP584mIBa/giphy.gif&quot;]]
 
 They don&#39;t seem impressed that you are just looking for a paycheck.
 
-[[Continue-&gt;Outro]]</tw-passagedata><tw-passagedata pid="28" name="Outro" tags="" position="788,3112.5" size="100,100">[img[&quot;http://i.giphy.com/SJz6dNDQ4bOiQ.gif&quot;]]
+[[Continue-&gt;Outro]]</tw-passagedata><tw-passagedata pid="28" name="Outro" tags="" position="786,3111.5" size="100,100">[img[&quot;http://i.giphy.com/SJz6dNDQ4bOiQ.gif&quot;]]
 
 As you head out of the office, you reflect on the day. Score: &#39;&#39;&lt;&lt;print $score&gt;&gt; points&#39;&#39; out of 6.
 
@@ -593,7 +607,16 @@ Looks like you can make some better choices, go back and see if you can get a pe
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 
-[[Start over-&gt;Start]] or close this tab and return to LRNG to complete the XP.</tw-passagedata><tw-passagedata pid="29" name="Wake Up Late Without Alarm" tags="" position="828,1385.5" size="100,100">[img[https://media.giphy.com/media/GBxUeCnzdgIHS/giphy.gif]]
+&lt;&lt;link &quot;Start over&quot;&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+  window.gtag(&#39;event&#39;, &#39;Game Restarted&#39;, { &#39;event_category&#39;: &#39;Game&#39; });
+  &lt;&lt;/script&gt;&gt;
+  &lt;&lt;goto [[Start]]&gt;&gt;
+&lt;&lt;/link&gt;&gt; or close this tab and return to LRNG to complete the XP.
+
+&lt;&lt;script&gt;&gt;
+window.gtag(&#39;event&#39;, &#39;Game Completed&#39;, { &#39;event_category&#39;: &#39;Game&#39; });
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Wake Up Late Without Alarm" tags="" position="826,1384.5" size="100,100">[img[https://media.giphy.com/media/GBxUeCnzdgIHS/giphy.gif]]
 
 Doh, you forgot to set an alarm. When you eventually get up, you realize you overslept! Better hurry to get ready.
 
