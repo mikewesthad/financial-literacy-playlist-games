@@ -133,33 +133,26 @@ img {
 
 a {
   color: #f38600 !important;
-  display: inline-block;
-  position: relative;
   text-decoration: none;
-  margin-bottom: 0.7rem;
-  line-height: 1.2;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-size 0.2s ease-in-out;
+  background-image: linear-gradient(to right, #f38600, #f38600);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  padding-bottom: 0.2rem;
 }
 
 a:hover {
   color: #b36200 !important;
   text-decoration: none;
+  background-size: 0% 2px;
 }
 
 a:before {
-  background-color: #f38600;
-  content: '';
-  height: 2px;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  transition: width 0.2s ease-in-out;
-  width: 100%;
-}
-
-a:hover:before {
-  width: 0;
-  background-color: #b36200;
+  /* Spacing between inline navigation links in passage */
+  content: "";
+  display: block;
+  height: 0.75rem;
 }
 
 #passages {
