@@ -408,10 +408,16 @@ window.gtag('event', 'Game Started', { 'event_category': 'Game' });
 &lt;input id=&quot;textbox-name&quot; type=&quot;text&quot; placeholder=&quot;Enter name&quot;&gt;
 
 &lt;input id=&quot;textbox-company&quot; type=&quot;text&quot; placeholder=&quot;Enter company&quot;&gt;
-@@
 
-@@#start-link;display: none;text-align: center;
-[[Start-&gt;Night Before]]
+&lt;&lt;link &quot;Start&quot;&gt;&gt;
+  &lt;&lt;if $name === &quot;&quot;&gt;&gt;
+  	&lt;&lt;script&gt;&gt;alert(&quot;Please enter a name!&quot;);&lt;&lt;/script&gt;&gt;
+  &lt;&lt;elseif $company === &quot;&quot;&gt;&gt;
+  	&lt;&lt;script&gt;&gt;alert(&quot;Please enter a company!&quot;);&lt;&lt;/script&gt;&gt;
+  &lt;&lt;else&gt;&gt;
+  	&lt;&lt;goto [[Night Before]]&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 @@
 
 &lt;&lt;silently&gt;&gt;
@@ -425,26 +431,15 @@ window.gtag('event', 'Game Started', { 'event_category': 'Game' });
 &lt;&lt;/silently&gt;&gt;
 
 &lt;&lt;script&gt;&gt;
-
 $(document).one(&#39;:passagedisplay&#39;, function (ev) {
-  var startLink = $(&quot;#start-link&quot;);
-  startLink.hide();
-
   $(&quot;#textbox-name&quot;).on(&quot;input&quot;, function (e) {
 	State.variables.name = $(e.target).val();
-	if (State.variables.name !== &quot;&quot; &amp;&amp; State.variables.company !== &quot;&quot;) {
-  		startLink.show(250);
-	}
   });
   
   $(&quot;#textbox-company&quot;).on(&quot;input&quot;, function (e) {
 	State.variables.company = $(e.target).val();
-	if (State.variables.name !== &quot;&quot; &amp;&amp; State.variables.company !== &quot;&quot;) {
-  		startLink.show(250);
-	}
   });
 });
-
 &lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Night Before" tags="" position="821,602.5" size="100,100">[img[&quot;https://i.giphy.com/ypqHf6pQ5kQEg.gif&quot;]]
 
 &#39;Sup $name!
