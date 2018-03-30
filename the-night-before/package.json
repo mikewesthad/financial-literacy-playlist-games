@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages --dist ./build --dest the-night-before --add"
+    "deploy": "gh-pages --dist ./twine-build --dest the-night-before --add"
   },
   "author": "",
   "license": "ISC",
