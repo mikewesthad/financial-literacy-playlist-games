@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Conversation from "./conversation";
 
-import QuestionCircle from "../images/question-circle.svg";
+import BackIcon from "../images/back-icon.svg";
 
 export default class Interview extends Component {
   componentDidMount() {
@@ -21,7 +21,9 @@ export default class Interview extends Component {
         <div className={`fixed-navbar ${bgColorClass}`}>
           <SvgAvatar className="fixed-navbar__portrait" />
           <div className="fixed-navbar__center">Interviewing {name}</div>
-          <QuestionCircle className="fixed-navbar__help" />
+          <Link to={menuRoute} className="fixed-navbar__back">
+            <BackIcon style={{ height: "100%" }} />
+          </Link>
         </div>
 
         <Conversation messages={conversationTree.conversationHistory.slice()} />

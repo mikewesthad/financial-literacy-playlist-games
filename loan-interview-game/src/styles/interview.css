@@ -40,6 +40,17 @@
   cursor: pointer;
 }
 
+.fixed-navbar__back {
+  height: 80%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.fixed-navbar__back:hover,
+.fixed-navbar__back:active {
+  opacity: 0.75;
+}
+
 .conversation {
   position: fixed;
   top: 80px;
