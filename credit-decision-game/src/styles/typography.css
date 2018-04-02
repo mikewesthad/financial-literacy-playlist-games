@@ -1,0 +1,38 @@
+html {
+  font-size: 65%;
+}
+
+@media (min-width: 375px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-weight: 400;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+input,
+button {
+  outline: 0;
+  font-family: "Raleway", sans-serif;
+}

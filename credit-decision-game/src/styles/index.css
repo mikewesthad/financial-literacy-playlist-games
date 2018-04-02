@@ -1,0 +1,13 @@
+@import "./reset.css";
+@import "./typography.css";
+@import "./general-layout.css";
+@import "./grid.css";
+@import "./page-transitions.css";
+
+#root {
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}

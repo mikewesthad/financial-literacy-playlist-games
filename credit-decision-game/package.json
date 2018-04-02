@@ -1,0 +1,26 @@
+{
+  "name": "credit-decision-game",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://www.mikewesthad.com/financial-literacy-playlist-games/credit-decision-game",
+  "dependencies": {
+    "cross-env": "^5.1.4",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-transition-group": "^2.3.0"
+  },
+  "prettier": {
+    "printWidth": 100
+  },
+  "scripts": {
+    "start": "cross-env REACT_APP_ENV=development react-scripts start",
+    "start:prod": "cross-env REACT_APP_ENV=production react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run \"build\"",
+    "deploy": "gh-pages --dist ./build --dest credit-decision-game --add"
+  }
+}

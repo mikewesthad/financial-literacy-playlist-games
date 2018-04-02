@@ -1,0 +1,50 @@
+/*
+  Helpful references/inspiration:
+
+  https://tylermcginnis.com/react-router-animated-transitions/
+  https://codepen.io/rachsmith/pen/PWxoLN
+  https://codepen.io/timrijkse/pen/ALgZpp
+  https://codepen.io/marcelo-ribeiro/pen/xOOKpO
+*/
+
+.fade-transition-enter {
+  transition: opacity 0.25s ease-in-out 0.25s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fade-transition-enter {
+  opacity: 0;
+}
+
+.fade-transition-enter-active {
+  opacity: 1;
+}
+
+.fade-transition-exit {
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+}
+
+.fade-transition-exit-active {
+  opacity: 0;
+}
+
+/* .slide-transition-enter,
+.slide-transition-exit {
+  transition: left 1s ease-in-out, opacity 0.25s ease-in-out;
+  position: absolute;
+}
+
+.slide-transition-enter {
+  left: 10%;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.slide-transition-enter-active {
+  left: 0;
+  opacity: 1;
+} */
