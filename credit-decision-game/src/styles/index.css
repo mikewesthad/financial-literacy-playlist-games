@@ -11,3 +11,7 @@
 .text-center {
   text-align: center;
 }
+
+body {
+  background: url("../images/background/doodles-background.png");
+}
