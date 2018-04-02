@@ -24,25 +24,41 @@ export default class DecisionMenu extends Component {
       <div className="fullscreen-container">
         <div className="content">
           <h1>Who will you recommend to your boss?</h1>
-          <div className="row">
-            <div className="col-3 text-center">
-              <Hannah className="button-image" onClick={this.selectHannah} />
-              <button className="button-link button-link--hannah" onClick={this.selectHannah}>
-                Hannah →
-              </button>
-            </div>
-            <div className="col-3 text-center">
-              <Anthony className="button-image" onClick={this.selectAnthony} />
-              <button className="button-link button-link--anthony" onClick={this.selectAnthony}>
-                Anthony →
-              </button>
-            </div>
-            <div className="col-3 text-center">
-              <Taylor className="button-image" onClick={this.selectTaylor} />
-              <button className="button-link button-link--taylor" onClick={this.selectTaylor}>
-                Taylor →
-              </button>
-            </div>
+          <div className="horizontal-avatar">
+            <Hannah
+              className="horizontal-avatar__portrait button-image"
+              onClick={this.selectHannah}
+            />
+            <button
+              className="horizontal-avatar__button button-link button-link--hannah"
+              onClick={this.selectHannah}
+            >
+              Choose Hannah →
+            </button>
+          </div>
+          <div className="horizontal-avatar text-center">
+            <Anthony
+              className="horizontal-avatar__portrait button-image"
+              onClick={this.selectAnthony}
+            />
+            <button
+              className="horizontal-avatar__button button-link button-link--anthony"
+              onClick={this.selectAnthony}
+            >
+              Choose Anthony →
+            </button>
+          </div>
+          <div className="horizontal-avatar text-center">
+            <Taylor
+              className="horizontal-avatar__portrait button-image"
+              onClick={this.selectTaylor}
+            />
+            <button
+              className="horizontal-avatar__button button-link button-link--taylor"
+              onClick={this.selectTaylor}
+            >
+              Choose Taylor →
+            </button>
           </div>
 
           <div className="text-center">

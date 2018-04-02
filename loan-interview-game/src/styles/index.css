@@ -10,6 +10,7 @@
 @import "./notebook.css";
 @import "./button-image.css";
 @import "./page-transitions.css";
+@import "./decision-page.css";
 
 #root {
   position: relative;

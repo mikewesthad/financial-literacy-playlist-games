@@ -2,7 +2,7 @@
   color: #2098e3;
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 4px solid #2098e3;
+  border: 0.25rem solid #2098e3;
   transition: background-color 0.25s ease, color 0.25s ease;
   cursor: pointer;
 }
@@ -14,7 +14,7 @@
 
 .button-link--anthony {
   color: #2098e3;
-  border: 4px solid #2098e3;
+  border: 0.25rem solid #2098e3;
 }
 
 .button-link--anthony:hover {
@@ -24,7 +24,7 @@
 
 .button-link--hannah {
   color: #90278e;
-  border: 4px solid #90278e;
+  border: 0.25rem solid #90278e;
 }
 
 .button-link--hannah:hover {
@@ -34,7 +34,7 @@
 
 .button-link--taylor {
   color: #f25a28;
-  border: 4px solid #f25a28;
+  border: 0.25rem solid #f25a28;
 }
 
 .button-link--taylor:hover {

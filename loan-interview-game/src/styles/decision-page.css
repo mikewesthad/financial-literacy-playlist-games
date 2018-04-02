@@ -1,0 +1,22 @@
+.horizontal-avatar {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.horizontal-avatar__portrait {
+  max-width: 25%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2rem;
+}
+
+@media (min-width: 500px) {
+  .horizontal-avatar__portrait {
+    max-width: 15%;
+  }
+}
+
+.horizontal-avatar__button {
+  display: inline-block;
+  vertical-align: middle;
+}
