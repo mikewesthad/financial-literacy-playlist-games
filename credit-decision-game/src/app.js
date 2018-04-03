@@ -4,6 +4,7 @@ import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-r
 import Timeline from "./components/timeline";
 import CreditPowerDisplay from "./components/credit-power-display";
 import SavingsDisplay from "./components/savings-display";
+import Interstitial from "./components/interstitial";
 
 const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
@@ -22,6 +23,22 @@ const App = class App extends Component {
             <CreditPowerDisplay />
             <SavingsDisplay />
           </div>
+
+          <Interstitial>
+            <div className="interstitial-section">
+              <h1 className="interstitial__title">Slow Down!</h1>
+            </div>
+            <div className="interstitial-section">
+              <p className="interstitial__message">
+                Whoa, you are close to maxing out your credit card. This won’t help your credit
+                power. Try putting less on your card.
+              </p>
+            </div>
+            <div className="interstitial-section">
+              <p className="interstitial__button">Continue</p>
+            </div>
+          </Interstitial>
+
           <Route
             render={({ location }) => (
               <TransitionGroup>

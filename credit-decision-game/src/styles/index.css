@@ -5,6 +5,7 @@
 @import "./page-transitions.css";
 @import "./timeline.css";
 @import "./score-display.css";
+@import "./interstitial.css";
 #root {
   position: relative;
 }
