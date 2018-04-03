@@ -5,7 +5,7 @@
 
 .score-display {
   color: white;
-  line-height: 1;
+  line-height: 0.95;
 }
 
 .score-display__right {
@@ -13,7 +13,7 @@
 }
 
 .score-display__label {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .score-display__value-container {
