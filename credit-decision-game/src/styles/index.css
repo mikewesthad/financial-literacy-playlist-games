@@ -3,7 +3,6 @@
 @import "./general-layout.css";
 @import "./grid.css";
 @import "./page-transitions.css";
-
 #root {
   position: relative;
 }
@@ -13,5 +12,5 @@
 }
 
 body {
-  background: url("../images/background/doodles-background.png");
+  background: url("../images/background/doodles-background.png") repeat;
 }

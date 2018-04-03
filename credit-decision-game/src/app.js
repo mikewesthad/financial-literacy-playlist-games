@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+import Timeline from "./components/timeline";
 
 const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
@@ -13,6 +14,7 @@ const App = class App extends Component {
           {/* <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
           {/* {!dev && <Route component={ForceVisitIndex} />} */}
 
+          <Timeline />
           <Route
             render={({ location }) => (
               <TransitionGroup>
