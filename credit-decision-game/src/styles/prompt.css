@@ -1,0 +1,38 @@
+.prompt {
+  color: white;
+  font-size: 4rem;
+  width: 100%;
+}
+
+.prompt__section {
+  margin: 2rem;
+}
+
+.prompt__title {
+  font-weight: 100;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.prompt__message {
+  font-size: 2.2rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.prompt__button {
+  font-size: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.75rem 2.25rem;
+  border: 0.25rem solid white;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.25s ease;
+  cursor: pointer;
+  background-color: #10263a;
+}
+
+.prompt__button:hover {
+  background-color: #051a2d;
+}

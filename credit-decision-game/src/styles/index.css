@@ -6,6 +6,8 @@
 @import "./timeline.css";
 @import "./score-display.css";
 @import "./interstitial.css";
+@import "./prompt.css";
+
 #root {
   position: relative;
 }
