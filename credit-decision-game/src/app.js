@@ -28,7 +28,11 @@ const App = class App extends Component {
             <Route
               render={({ location }) => (
                 <TransitionGroup>
-                  <CSSTransition key={location.pathname} timeout={500} classNames="fade-transition">
+                  <CSSTransition
+                    key={location.pathname}
+                    timeout={1000}
+                    classNames="fade-transition"
+                  >
                     <Switch location={location}>
                       <Route
                         exact
