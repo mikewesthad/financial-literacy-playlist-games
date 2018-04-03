@@ -3,6 +3,7 @@
 @import "./general-layout.css";
 @import "./grid.css";
 @import "./page-transitions.css";
+@import "./score-display.css";
 #root {
   position: relative;
 }
