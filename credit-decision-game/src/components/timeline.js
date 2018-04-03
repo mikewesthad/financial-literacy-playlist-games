@@ -4,6 +4,6 @@ import timelineSvg from "../images/timeline/timeline.svg";
 
 export default class Timeline extends Component {
   render() {
-    return <img src={timelineSvg} />;
+    return <img className="timeline" src={timelineSvg} />;
   }
 }
