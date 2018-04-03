@@ -1,0 +1,46 @@
+.score-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.score-display {
+  color: white;
+  line-height: 1;
+}
+
+.score-display__right {
+  text-align: right;
+}
+
+.score-display__label {
+  font-size: 1rem;
+}
+
+.score-display__value-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 4rem;
+}
+
+.score-display__value {
+  display: inline-block;
+}
+
+.score-display__icon {
+  display: inline-block;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 0.5rem;
+}
+
+.score-display__toast {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.score-display__toast--right {
+  left: initial;
+  right: 0;
+}
