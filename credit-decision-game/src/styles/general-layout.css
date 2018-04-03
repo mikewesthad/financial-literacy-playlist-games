@@ -4,6 +4,11 @@
   margin: 0 auto;
 }
 
+.page {
+  width: 100%;
+  position: relative;
+}
+
 .fullscreen-container {
   min-height: 100vh;
   min-width: 100vw;

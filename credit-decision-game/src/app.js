@@ -24,32 +24,64 @@ const App = class App extends Component {
             <SavingsDisplay />
           </div>
 
-          <Interstitial>
-            <div className="interstitial__section">
-              <h1 className="interstitial__title">Slow Down!</h1>
-            </div>
-            <div className="interstitial__section">
-              <p className="interstitial__message">
-                Whoa, you are close to maxing out your credit card. This won’t help your credit
-                power. Try putting less on your card.
-              </p>
-            </div>
-            <div className="interstitial__section">
-              <p className="interstitial__button">Continue</p>
-            </div>
-          </Interstitial>
+          <div className="page">
+            <Route
+              render={({ location }) => (
+                <TransitionGroup>
+                  <CSSTransition key={location.pathname} timeout={500} classNames="fade-transition">
+                    <Switch location={location}>
+                      <Route
+                        exact
+                        path="/"
+                        render={() => (
+                          <div className="prompt">
+                            <div className="prompt__section">
+                              <div className="prompt__title">Birthday Surprise</div>
+                            </div>
+                            <div className="prompt__section">
+                              <div className="prompt__message">
+                                Smooth sailing this month. You paid your credit card bill on time
+                                and in full. Since it was your birthday this month, your aunt and
+                                uncle sent you a check for $100 dollar.
+                              </div>
+                            </div>
+                            <div className="prompt__section text-center">
+                              <Link to="/interstitial" className="prompt__button">
+                                Continue
+                              </Link>
+                            </div>
+                          </div>
+                        )}
+                      />
 
-          <Route
-            render={({ location }) => (
-              <TransitionGroup>
-                <CSSTransition key={location.pathname} timeout={500} classNames="fade-transition">
-                  <Switch location={location}>
-                    <Route exact path="/" render={() => <p>Hi there</p>} />
-                  </Switch>
-                </CSSTransition>
-              </TransitionGroup>
-            )}
-          />
+                      <Route
+                        exact
+                        path="/interstitial"
+                        render={() => (
+                          <Interstitial>
+                            <div className="interstitial__section">
+                              <h1 className="interstitial__title">Slow Down!</h1>
+                            </div>
+                            <div className="interstitial__section">
+                              <p className="interstitial__message">
+                                Whoa, you are close to maxing out your credit card. This won’t help
+                                your credit power. Try putting less on your card.
+                              </p>
+                            </div>
+                            <div className="interstitial__section">
+                              <Link to="/" className="interstitial__button">
+                                Continue
+                              </Link>
+                            </div>
+                          </Interstitial>
+                        )}
+                      />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            />
+          </div>
         </div>
       </Router>
     );
