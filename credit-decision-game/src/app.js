@@ -10,6 +10,17 @@ const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
 
 const App = class App extends Component {
+  state = {
+    creditPower: 0
+  };
+
+  componentDidMount() {
+    setInterval(() => {
+      const delta = Math.random() < 0.5 ? -5 : 10;
+      this.setState(prev => ({ creditPower: prev.creditPower + delta }));
+    }, 2000);
+  }
+
   render() {
     return (
       <Router>
@@ -20,7 +31,7 @@ const App = class App extends Component {
           <Timeline />
 
           <div className="score-container">
-            <CreditPowerDisplay />
+            <CreditPowerDisplay value={this.state.creditPower} />
             <SavingsDisplay />
           </div>
 

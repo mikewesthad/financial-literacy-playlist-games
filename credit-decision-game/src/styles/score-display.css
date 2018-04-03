@@ -25,6 +25,7 @@
 
 .score-display__value {
   display: inline-block;
+  position: relative;
 }
 
 .score-display__icon {
@@ -38,9 +39,4 @@
   position: absolute;
   top: 100%;
   left: 0;
-}
-
-.score-display__toast--right {
-  left: initial;
-  right: 0;
 }
