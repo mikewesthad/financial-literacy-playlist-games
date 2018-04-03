@@ -25,16 +25,16 @@ const App = class App extends Component {
           </div>
 
           <Interstitial>
-            <div className="interstitial-section">
+            <div className="interstitial__section">
               <h1 className="interstitial__title">Slow Down!</h1>
             </div>
-            <div className="interstitial-section">
+            <div className="interstitial__section">
               <p className="interstitial__message">
                 Whoa, you are close to maxing out your credit card. This won’t help your credit
                 power. Try putting less on your card.
               </p>
             </div>
-            <div className="interstitial-section">
+            <div className="interstitial__section">
               <p className="interstitial__button">Continue</p>
             </div>
           </Interstitial>
