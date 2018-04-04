@@ -2,10 +2,19 @@
   color: white;
   font-size: 4rem;
   width: 100%;
+  margin: 1rem 0;
 }
 
 .prompt__section {
   margin: 2rem;
+}
+
+.prompt__section:first-child {
+  margin-top: 0;
+}
+
+.prompt__section:last-child {
+  margin-bottom: 0;
 }
 
 .prompt__title {
