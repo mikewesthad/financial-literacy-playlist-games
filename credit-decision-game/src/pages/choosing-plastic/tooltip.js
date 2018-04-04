@@ -19,7 +19,7 @@ export default class Tooltip extends Component {
 
   render() {
     const { isOpen } = this.state;
-    const { children, onClose, onOpen } = this.props;
+    const { children } = this.props;
     return (
       <div className="tooltip">
         <CSSTransition in={isOpen} classNames="tooltip__container-" timeout={200}>
@@ -39,6 +39,7 @@ export default class Tooltip extends Component {
           onMouseOver={this.open}
           onMouseOut={this.close}
           onClick={this.open}
+          alt="Tooltip Help"
         />
       </div>
     );

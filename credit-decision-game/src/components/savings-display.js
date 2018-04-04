@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import iconSvg from "../images/icons/credit-power.svg";
-
 export default class SavingsDisplay extends Component {
   render() {
     return (

@@ -53,12 +53,12 @@ export default class CreditPowerDisplay extends Component {
   }
 
   render() {
-    const { currentValue, targetValue, lastIncrement } = this.state;
+    const { currentValue, lastIncrement } = this.state;
     return (
       <div className="score-display">
         <div className="score-display__label">Credit Power</div>
         <div className="score-display__value-container">
-          <img className="score-display__icon" src={iconSvg} />
+          <img className="score-display__icon" src={iconSvg} alt="Credit Power" />
           <div className="score-display__value">
             {currentValue}
             <div
