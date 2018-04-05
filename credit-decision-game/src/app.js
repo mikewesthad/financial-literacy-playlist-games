@@ -28,10 +28,9 @@ const App = class App extends Component {
           {/* <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
           {/* {!dev && <Route component={ForceVisitIndex} />} */}
 
-          <Timeline />
-
-          <div className="score-container">
+          <div className="hud">
             <CreditPowerDisplay value={this.state.creditPower} />
+            <Timeline />
             <SavingsDisplay />
           </div>
 
