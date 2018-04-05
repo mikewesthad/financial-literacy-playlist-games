@@ -50,7 +50,7 @@ export default class Budgeting extends Component {
   };
 
   render() {
-    const { nextRoute } = this.props;
+    const { nextRoute, iterationNumber } = this.props;
     const { itemsSelected, finishSelection } = this.state;
     const total = this.getTotal();
 
@@ -62,16 +62,25 @@ export default class Budgeting extends Component {
       else if (percent <= 35) contents = <GreatResult nextRoute={nextRoute} />;
       else contents = <BadResult nextRoute={nextRoute} />;
     } else {
+      let title = iterationNumber === 0 ? "Budgeting & Charging" : "Charging Revisited";
+      let message =
+        iterationNumber === 0 ? (
+          <p>
+            It’s time to start using your card. You’ve got a $500 dollar credit limit, and you’ve
+            got a number of items in your budget that you’ll be buying one way or another. So what
+            will you put on your card this month?
+          </p>
+        ) : (
+          <p>
+            You'll want to keep using your card each month. So what will you put on your card this
+            month?
+          </p>
+        );
+
       contents = (
         <React.Fragment>
-          <Prompt title="Budgeting & Charging">
-            <PromptSection>
-              <p>
-                It’s time to start using your card. You’ve got a $500 dollar credit limit, and
-                you’ve got a number of items in your budget that you’ll be buying one way or
-                another. So what will you put on your card this month?
-              </p>
-            </PromptSection>
+          <Prompt title={title}>
+            <PromptSection>{message}</PromptSection>
           </Prompt>
           <div className="cart">
             {items.map(item => {
