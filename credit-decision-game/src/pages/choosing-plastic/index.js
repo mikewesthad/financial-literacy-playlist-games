@@ -60,6 +60,7 @@ export default class ChoosingPlastic extends Component {
   };
   chooseBadCard = () => {
     this.props.incrementCreditPower(10);
+    this.props.incrementSavings(-100);
     this.setState({ choice: "bad" });
   };
 
