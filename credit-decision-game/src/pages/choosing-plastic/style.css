@@ -4,6 +4,7 @@
   align-content: center;
   align-items: center;
   flex-direction: column;
+  color: black;
 }
 
 .choice-box {

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Tooltip from "./tooltip";
 import tips from "./tips";
+import { GoodResult, BadResult } from "./results";
+import { Prompt, PromptSection } from "../../components/decision";
+import Page from "../../components/page";
 import vipCardImage from "../../images/credit-cards/vip-card.svg";
 import firstBankCardImage from "../../images/credit-cards/first-bank-card.svg";
 import "./style.css";
@@ -47,39 +50,58 @@ const ChoiceBox = ({ cardSrc, creditLimit, apr, annualFee, rewards, onClick }) =
 );
 
 export default class ChoosingPlastic extends Component {
+  state = {
+    choice: null
+  };
+
+  chooseGoodCard = () => {
+    this.props.incrementCreditPower(10);
+    this.setState({ choice: "good" });
+  };
+  chooseBadCard = () => {
+    this.props.incrementCreditPower(10);
+    this.setState({ choice: "bad" });
+  };
+
   render() {
-    return (
-      <div>
-        <div className="prompt">
-          <div className="prompt__section">
-            <div className="prompt__title">Choosing Your Plastic</div>
-          </div>
-          <div className="prompt__section">
-            <div className="prompt__message">
+    const { nextRoute } = this.props;
+
+    let contents;
+    if (this.state.choice === "good") {
+      contents = <GoodResult nextRoute={nextRoute} />;
+    } else if (this.state.choice === "bad") {
+      contents = <BadResult nextRoute={nextRoute} />;
+    } else {
+      contents = (
+        <Prompt title="Choosing Your Plastic">
+          <PromptSection>
+            <p>
               You do some research and find two credit cards that you are eligible for. Which do you
               choose?
-            </div>
+            </p>
+          </PromptSection>
+          <div class="choices">
+            <ChoiceBox
+              cardSrc={vipCardImage}
+              creditLimit="$500"
+              apr="40%"
+              annualFee="$100"
+              rewards="1% Cash Back"
+              onClick={this.chooseBadCard}
+            />
+            <ChoiceBox
+              cardSrc={firstBankCardImage}
+              creditLimit="$500"
+              apr="15%"
+              annualFee="$0"
+              rewards="None"
+              onClick={this.chooseGoodCard}
+            />
           </div>
-        </div>
-        <div class="choices">
-          <ChoiceBox
-            cardSrc={vipCardImage}
-            creditLimit="$500"
-            apr="40%"
-            annualFee="$100"
-            rewards="1% Cash Back"
-            onClick={() => console.log("picked vip")}
-          />
-          <ChoiceBox
-            cardSrc={firstBankCardImage}
-            creditLimit="$500"
-            apr="15%"
-            annualFee="$0"
-            rewards="None"
-            onClick={() => console.log("picked first bank")}
-          />
-        </div>
-      </div>
-    );
+        </Prompt>
+      );
+    }
+
+    return <Page>{contents}</Page>;
   }
 }
