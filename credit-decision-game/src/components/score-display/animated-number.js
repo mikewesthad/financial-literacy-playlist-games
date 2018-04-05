@@ -25,14 +25,13 @@ export default class AnimatedNumber extends Component {
       if (this.valueTween) this.valueTween.kill();
       if (this.toastTween) this.toastTween.kill();
       this.gsapValue = this.state.currentValue;
-      this.valueTween = TweenLite.to(this, 1, {
+      this.valueTween = TweenLite.to(this, 2, {
         gsapValue: this.state.targetValue,
-        onUpdate: () => this.setState({ currentValue: Math.floor(this.gsapValue) }),
-        onComplete: () => this.setState({ lastIncrement: 0 })
+        onUpdate: () => this.setState({ currentValue: Math.floor(this.gsapValue) })
       });
       this.toastTween = TweenLite.fromTo(
         this.toastElement,
-        1,
+        5,
         {
           y: "50%",
           opacity: 1
