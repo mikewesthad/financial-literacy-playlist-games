@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-router-dom";
 import Timeline from "./components/timeline";
-import CreditPowerDisplay from "./components/credit-power-display";
-import SavingsDisplay from "./components/savings-display";
 import Interstitial from "./components/interstitial";
+import { CreditPowerDisplay, SavingsDisplay } from "./components/score-display/";
 
 const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
 
 const App = class App extends Component {
   state = {
-    creditPower: 0
+    creditPower: 0,
+    savings: 0
+  };
   };
 
   componentDidMount() {
@@ -31,7 +32,7 @@ const App = class App extends Component {
           <div className="hud">
             <CreditPowerDisplay value={this.state.creditPower} />
             <Timeline />
-            <SavingsDisplay />
+            <SavingsDisplay value={this.state.savings} />
           </div>
 
           <div className="page">

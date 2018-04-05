@@ -9,12 +9,12 @@
   width: 100%;
   max-width: 700px;
   display: block;
-  padding: 0 2rem;
 }
 
 .score-display {
   color: white;
   line-height: 0.95;
+  width: 12rem;
 }
 
 .score-display__label {
@@ -48,4 +48,9 @@
   position: absolute;
   top: 100%;
   left: 0;
+}
+
+.score-display__value-container--right .score-display__toast {
+  left: initial;
+  right: 0;
 }
