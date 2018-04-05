@@ -5,7 +5,7 @@ export function NoChangeResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Nothing Charged"
-      message="Nothing at all? Your credit level stays the same."
+      message="Nothing at all? Your credit power stays the same. Try putting more on your card each month."
       nextRoute={nextRoute}
       {...otherProps}
     />
