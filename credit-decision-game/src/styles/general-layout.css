@@ -4,6 +4,11 @@
   margin: 0 auto;
 }
 
+.page-wrapper {
+  width: 100%;
+  position: relative;
+}
+
 .page {
   width: 100%;
   position: relative;

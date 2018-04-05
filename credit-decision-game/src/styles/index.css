@@ -24,3 +24,21 @@
 body {
   background: url("../images/background/doodles-background.png") repeat;
 }
+
+.button {
+  font-size: 1.2rem;
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.75rem 2.25rem;
+  border: 0.25rem solid white;
+  margin: 0.5rem;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.25s ease;
+  cursor: pointer;
+  background-color: #10263a;
+}
+
+.button:hover {
+  background-color: #051a2d;
+}
