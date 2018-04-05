@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { TweenLite } from "gsap";
 import AnimatedNumber from "./animated-number";
 import creditPowerIcon from "../../images/icons/credit-power.svg";
 import "./style.css";
