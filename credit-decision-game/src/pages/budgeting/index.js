@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Prompt, PromptSection, PromptButton } from "../../components/decision";
+import { Prompt, PromptSection } from "../../components/decision";
 import Page from "../../components/page";
 import "./style.css";
 import LabeledBar from "./labeled-bar";

@@ -80,7 +80,7 @@ export default class ChoosingPlastic extends Component {
               choose?
             </p>
           </PromptSection>
-          <div class="choices">
+          <div className="choices">
             <ChoiceBox
               cardSrc={vipCardImage}
               creditLimit="$500"
