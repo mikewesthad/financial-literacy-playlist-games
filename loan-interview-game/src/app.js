@@ -7,6 +7,7 @@ import EnterName from "./pages/enter-name";
 import DecisionMenu from "./pages/decision-menu";
 import Interview from "./pages/interview";
 import InterviewMenu from "./pages/interview-menu";
+import DecisionOutcome from "./pages/decision-outcome/";
 import ConversationTree from "./conversation-tree/conversation-tree";
 import ReviewNotes from "./pages/review-notes";
 import dialogueData from "./conversation-tree/interview-dialogue-game.json";
@@ -119,7 +120,7 @@ const App = observer(
                       <Route
                         exact
                         path="/decision-outcome"
-                        render={() => <p>{gameData.selectedBorrower}</p>}
+                        render={() => <DecisionOutcome gameData={gameData} />}
                       />
                     </Switch>
                   </CSSTransition>
