@@ -7,6 +7,9 @@
 
 .prompt__section {
   margin: 2rem;
+  font-size: 2.2rem;
+  line-height: 1.45;
+  text-align: center;
 }
 
 .prompt__section:first-child {
@@ -23,19 +26,14 @@
   text-align: center;
 }
 
-.prompt__message {
-  font-size: 2.2rem;
-  line-height: 1.45;
-  text-align: center;
-}
-
 .prompt__button {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
   text-transform: uppercase;
   display: inline-block;
   padding: 0.75rem 2.25rem;
   border: 0.25rem solid white;
+  margin: 0.5rem;
   letter-spacing: 0.1rem;
   transition: background-color 0.25s ease;
   cursor: pointer;

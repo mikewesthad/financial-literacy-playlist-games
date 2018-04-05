@@ -4,7 +4,6 @@
 @import "./grid.css";
 @import "./page-transitions.css";
 @import "./hud.css";
-@import "./prompt.css";
 
 #root {
   position: relative;
