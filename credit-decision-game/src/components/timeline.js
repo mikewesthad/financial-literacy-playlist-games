@@ -1,11 +1,32 @@
 import React, { Component } from "react";
 
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
 const Dot = (
   x,
   y,
-  { addLeftConnector = true, addRightConnector = true, isActive = false, isComplete = false } = {}
+  {
+    addLeftConnector = true,
+    addRightConnector = true,
+    isActive = false,
+    isComplete = false,
+    name = ""
+  } = {}
 ) => (
-  <React.Fragment>
+  <React.Fragment key={name}>
     {addLeftConnector && (
       <rect x={isActive ? x - 55 : x - 45} y={y - 3} width="20" height="6" fill="#37BF86" />
     )}
@@ -26,7 +47,7 @@ const Dot = (
           fontSize="28"
           textAnchor="middle"
         >
-          April
+          {name}
         </text>
       </React.Fragment>
     )}
@@ -35,14 +56,17 @@ const Dot = (
 
 export default class Timeline extends Component {
   render() {
+    const { decisionNumber } = this.props;
+
     const dots = [];
     for (let i = 0; i < 12; i++) {
       dots.push(
         new Dot(50 + 90 * i, 40, {
           addLeftConnector: i !== 0,
           addRightConnector: i !== 11,
-          isActive: i === 2,
-          isComplete: i <= 2
+          isActive: i === decisionNumber,
+          isComplete: i <= decisionNumber,
+          name: monthNames[i]
         })
       );
     }
