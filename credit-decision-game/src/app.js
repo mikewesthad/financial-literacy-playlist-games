@@ -15,12 +15,6 @@ const App = class App extends Component {
   };
   };
 
-  componentDidMount() {
-    setInterval(() => {
-      const delta = Math.random() < 0.5 ? -5 : 10;
-      this.setState(prev => ({ creditPower: prev.creditPower + delta }));
-    }, 2000);
-  }
 
   render() {
     return (
