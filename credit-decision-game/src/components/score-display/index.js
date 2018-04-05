@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { TweenLite } from "gsap";
-
 import AnimatedNumber from "./animated-number";
-import iconSvg from "../../images/icons/credit-power.svg";
+import creditPowerIcon from "../../images/icons/credit-power.svg";
+import "./style.css";
 
 export class CreditPowerDisplay extends Component {
   render() {
@@ -11,7 +11,7 @@ export class CreditPowerDisplay extends Component {
       <div className="score-display">
         <div className="score-display__label">Credit Power</div>
         <div className="score-display__value-container">
-          <img className="score-display__icon" src={iconSvg} alt="Credit Power" />
+          <img className="score-display__icon" src={creditPowerIcon} alt="Credit Power" />
           <AnimatedNumber value={value} />
         </div>
       </div>
@@ -22,7 +22,6 @@ export class CreditPowerDisplay extends Component {
 export class SavingsDisplay extends Component {
   render() {
     const { value } = this.props;
-    console.log(value);
     return (
       <div className="score-display text-right">
         <div className="score-display__label">Savings</div>
