@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+import { MemoryRouter, HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Timeline from "./components/timeline";
-import Interstitial from "./components/interstitial";
 import { CreditPowerDisplay, SavingsDisplay } from "./components/score-display/";
+import ChoosingPlastic from "./pages/choosing-plastic/";
+import SavingFirst from "./pages/saving-first";
+import Budgeting from "./pages/budgeting";
+import TransactionDetective from "./pages/transaction-detective";
 import gameData from "./store";
 import { observer } from "mobx-react";
 
@@ -16,7 +19,7 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          {/* <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
+          {/* < render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
           {/* {!dev && <Route component={ForceVisitIndex} />} */}
 
           <div className="hud">
@@ -25,62 +28,49 @@ class App extends Component {
             <SavingsDisplay value={gameData.savings} />
           </div>
 
-          <div className="page">
+          <div className="page-wrapper">
             <Route
               render={({ location }) => (
-                <TransitionGroup>
-                  <CSSTransition
-                    key={location.pathname}
-                    timeout={1000}
-                    classNames="fade-transition"
-                  >
+                <TransitionGroup component={null}>
+                  <CSSTransition key={location.pathname} timeout={1200} classNames="fade-zoom-">
                     <Switch location={location}>
                       <Route
                         exact
-                        path="/"
-                        render={() => (
-                          <div className="prompt">
-                            <div className="prompt__section">
-                              <div className="prompt__title">Birthday Surprise</div>
-                            </div>
-                            <div className="prompt__section">
-                              <div className="prompt__message">
-                                Smooth sailing this month. You paid your credit card bill on time
-                                and in full. Since it was your birthday this month, your aunt and
-                                uncle sent you a check for $100 dollar.
-                              </div>
-                            </div>
-                            <div className="prompt__section text-center">
-                              <Link to="/interstitial" className="prompt__button">
-                                Continue
-                              </Link>
-                            </div>
-                          </div>
-                        )}
+                        path="/0"
+                        render={() => <SavingFirst gameData={gameData} nextRoute="1" />}
                       />
-
                       <Route
                         exact
-                        path="/interstitial"
+                        path="/1"
+                        render={() => <ChoosingPlastic gameData={gameData} nextRoute="2" />}
+                      />
+                      <Route
+                        exact
+                        path="/2"
                         render={() => (
-                          <Interstitial>
-                            <div className="interstitial__section">
-                              <h1 className="interstitial__title">Slow Down!</h1>
-                            </div>
-                            <div className="interstitial__section">
-                              <p className="interstitial__message">
-                                Whoa, you are close to maxing out your credit card. This won’t help
-                                your credit power. Try putting less on your card.
-                              </p>
-                            </div>
-                            <div className="interstitial__section">
-                              <Link to="/" className="interstitial__button">
-                                Continue
-                              </Link>
-                            </div>
-                          </Interstitial>
+                          <Budgeting gameData={gameData} nextRoute="3" iterationNumber={0} />
                         )}
                       />
+                      <Route
+                        exact
+                        path="/3"
+                        render={() => (
+                          <Budgeting gameData={gameData} nextRoute="4" iterationNumber={1} />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/4"
+                        render={() => (
+                          <Budgeting gameData={gameData} nextRoute="5" iterationNumber={2} />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/5"
+                        render={() => <TransactionDetective gameData={gameData} nextRoute="0" />}
+                      />
+                      <Redirect to="/0" />
                     </Switch>
                   </CSSTransition>
                 </TransitionGroup>
