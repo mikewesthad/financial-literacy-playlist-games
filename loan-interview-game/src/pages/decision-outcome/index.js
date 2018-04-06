@@ -32,9 +32,9 @@ export default class DecisionOutcome extends Component {
 
             <SequenceElement>
               <div className="text-center">
-                <Link className="button-link" to="/">
+                <button className="button-link" onClick={() => window.location.reload()}>
                   Play Again
-                </Link>
+                </button>
               </div>
             </SequenceElement>
           </div>
