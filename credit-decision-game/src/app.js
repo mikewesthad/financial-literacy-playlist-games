@@ -7,6 +7,7 @@ import ChoosingPlastic from "./pages/choosing-plastic/";
 import SavingFirst from "./pages/saving-first";
 import Budgeting from "./pages/budgeting";
 import TransactionDetective from "./pages/transaction-detective";
+import BirthdaySurprise from "./pages/birthday-suprise";
 import gameData from "./store";
 import { observer } from "mobx-react";
 
@@ -67,7 +68,12 @@ class App extends Component {
                       <Route
                         exact
                         path="/5"
-                        render={() => <TransactionDetective gameData={gameData} nextRoute="0" />}
+                        render={() => <TransactionDetective gameData={gameData} nextRoute="6" />}
+                      />
+                      <Route
+                        exact
+                        path="/6"
+                        render={() => <BirthdaySurprise gameData={gameData} nextRoute="7" />}
                       />
                       <Redirect to="/0" />
                     </Switch>
