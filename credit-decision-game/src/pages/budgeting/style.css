@@ -19,8 +19,13 @@
   margin: 1rem;
   border: 5px solid white;
   flex-grow: 0;
-  /* box-shadow: 0.5rem 0.5rem 0 rgba(35, 117, 83, 0.42); */
-  transition: border 0.2s ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0.3rem 0.3rem 0 rgba(35, 117, 83, 0.42);
+}
+
+.cart__item:hover {
+  box-shadow: 0.5rem 0.5rem 0 rgba(35, 117, 83, 0.42);
+  transform: scale(1.05);
 }
 
 .cart__item--selected {
