@@ -4,11 +4,14 @@ import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-r
 import Timeline from "./components/timeline";
 import Interstitial from "./components/interstitial";
 import { CreditPowerDisplay, SavingsDisplay } from "./components/score-display/";
+import gameData from "./store";
+import { observer } from "mobx-react";
 
 const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
 
-const App = class App extends Component {
+@observer
+class App extends Component {
   state = {
     creditPower: 0,
     savings: 0
@@ -95,6 +98,6 @@ const App = class App extends Component {
       </Router>
     );
   }
-};
+}
 
 export default App;
