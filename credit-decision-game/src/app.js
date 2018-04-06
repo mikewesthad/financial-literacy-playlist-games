@@ -9,6 +9,8 @@ import Budgeting from "./pages/budgeting";
 import TransactionDetective from "./pages/transaction-detective";
 import BirthdaySurprise from "./pages/birthday-suprise";
 import TheFluStrikes from "./pages/the-flu-strikes";
+import PlasticMail from "./pages/plastic-mail";
+import MissingCard from "./pages/missing-card";
 import gameData from "./store";
 import { observer } from "mobx-react";
 
@@ -79,9 +81,18 @@ class App extends Component {
                       <Route
                         exact
                         path="/7"
-                        render={() => <TheFluStrikes gameData={gameData} nextRoute="0" />}
+                        render={() => <TheFluStrikes gameData={gameData} nextRoute="8" />}
                       />
-
+                      <Route
+                        exact
+                        path="/8"
+                        render={() => <PlasticMail gameData={gameData} nextRoute="9" />}
+                      />
+                      <Route
+                        exact
+                        path="/9"
+                        render={() => <MissingCard gameData={gameData} nextRoute="0" />}
+                      />
                       <Redirect to="/0" />
                     </Switch>
                   </CSSTransition>
