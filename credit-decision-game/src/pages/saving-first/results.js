@@ -5,7 +5,7 @@ export function GoodResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Smart thinking!"
-      message="The $300 dollars you saved up this month will go a long way if you get into a bind later."
+      message="The $300 dollars you saved up this month will go a long way if you get into trouble later."
       nextRoute={nextRoute}
       {...otherProps}
     />
