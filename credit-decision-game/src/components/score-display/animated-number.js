@@ -31,7 +31,7 @@ export default class AnimatedNumber extends Component {
       });
       this.toastTween = TweenLite.fromTo(
         this.toastElement,
-        5,
+        10,
         {
           y: "50%",
           opacity: 1
