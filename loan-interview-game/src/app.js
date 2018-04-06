@@ -6,6 +6,8 @@ import { observer } from "mobx-react";
 import EnterName from "./pages/enter-name";
 import DecisionMenu from "./pages/decision-menu";
 import Interview from "./pages/interview";
+import Intro from "./pages/intro";
+import BossConversation from "./pages/boss-conversation";
 import InterviewMenu from "./pages/interview-menu";
 import DecisionOutcome from "./pages/decision-outcome/";
 import ConversationTree from "./conversation-tree/conversation-tree";
@@ -45,7 +47,21 @@ const App = observer(
                       <Route
                         exact
                         path="/"
-                        render={() => <EnterName gameData={gameData} nextRoute="/interview-menu" />}
+                        render={() => <EnterName gameData={gameData} nextRoute="/intro" />}
+                      />
+
+                      <Route
+                        exact
+                        path="/intro"
+                        render={() => <Intro gameData={gameData} nextRoute="/boss-conversation" />}
+                      />
+
+                      <Route
+                        exact
+                        path="/boss-conversation"
+                        render={() => (
+                          <BossConversation gameData={gameData} nextRoute="/interview-menu" />
+                        )}
                       />
 
                       <Route
