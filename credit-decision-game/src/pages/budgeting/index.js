@@ -5,15 +5,7 @@ import "./style.css";
 import LabeledBar from "./labeled-bar";
 import CartItem from "./cart-item";
 import { NoChangeResult, DecentResult, GreatResult, BadResult } from "./results";
-
-const items = [
-  { name: "Netflix", cost: 15, image: "" },
-  { name: "Groceries", cost: 75, image: "" },
-  { name: "Taxi", cost: 75, image: "" },
-  { name: "Clothes", cost: 50, image: "" }
-];
-const itemLookup = {};
-items.forEach(item => (itemLookup[item.name] = item));
+import { items, itemLookup } from "./item-info";
 
 export default class Budgeting extends Component {
   state = {

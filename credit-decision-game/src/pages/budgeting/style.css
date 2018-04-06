@@ -1,8 +1,9 @@
 .cart {
   display: flex;
   color: black;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .cart__item {
@@ -19,7 +20,6 @@
   border: 5px solid white;
   flex-grow: 0;
   /* box-shadow: 0.5rem 0.5rem 0 rgba(35, 117, 83, 0.42); */
-
   transition: border 0.2s ease;
 }
 
