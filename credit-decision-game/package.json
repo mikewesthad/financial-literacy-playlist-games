@@ -5,6 +5,7 @@
   "homepage": "https://www.mikewesthad.com/financial-literacy-playlist-games/credit-decision-game",
   "dependencies": {
     "cross-env": "^5.1.4",
+    "gh-pages": "^1.1.0",
     "gsap": "^1.20.4",
     "mobx": "^4.1.1",
     "mobx-react": "^5.0.0",
