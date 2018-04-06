@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { taylorOutcome, hannahOutcome, anthonyOutcome } from "./outcomes";
+import { FadeInSequence, SequenceElement } from "../../components/fade-in-sequence";
 
 export default class DecisionOutcome extends Component {
   render() {
@@ -17,19 +18,27 @@ export default class DecisionOutcome extends Component {
 
     return (
       <div className="fullscreen-container">
-        <div className="content">
-          <div>You recommended {formattedName} to your boss.</div>
+        <FadeInSequence defaultDuration={1} defaultDelay={0.5}>
+          <div className="content">
+            <SequenceElement delay={0}>
+              <div>You recommended {formattedName} to your boss.</div>
+            </SequenceElement>
 
-          {outcome}
+            {outcome}
 
-          <p>Close this tab and return to LRNG to complete this XP.</p>
+            <SequenceElement>
+              <p>Close this tab and return to LRNG to complete this XP.</p>
+            </SequenceElement>
 
-          <div className="text-center">
-            <Link className="button-link" to="/">
-              Play Again
-            </Link>
+            <SequenceElement>
+              <div className="text-center">
+                <Link className="button-link" to="/">
+                  Play Again
+                </Link>
+              </div>
+            </SequenceElement>
           </div>
-        </div>
+        </FadeInSequence>
       </div>
     );
   }
