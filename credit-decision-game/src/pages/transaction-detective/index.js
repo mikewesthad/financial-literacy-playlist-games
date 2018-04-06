@@ -59,7 +59,7 @@ const LastColumn = ({ selected, fakeItemNames, rowIndex, data, showFeedback, onC
 
 export default class TransactionDetective extends Component {
   state = {
-    mode: MODES.SELECTING,
+    mode: MODES.PROMPT,
     selected: [],
     transactions: [],
     fakeItemNames: []
@@ -67,8 +67,7 @@ export default class TransactionDetective extends Component {
 
   componentDidMount() {
     // Take only four purchased items
-    // const purchasedItemNames = this.props.gameData.transactions.slice(0, 4);
-    const purchasedItemNames = ["Taxi", "Groceries"];
+    const purchasedItemNames = this.props.gameData.transactions.slice(0, 4);
     const fakeItemNames = fakeItems.map(elem => elem.name);
     const itemNames = [...purchasedItemNames, ...fakeItemNames];
     const shuffledNames = itemNames
