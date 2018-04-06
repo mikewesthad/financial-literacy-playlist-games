@@ -1,27 +1,59 @@
 /* TODO: Slide left/right https://tympanus.net/Development/PageTransitions/ */
 
-.fade-transition-enter {
-  transition: opacity 0.5s ease-in-out 0.5s;
+.fade-left--enter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-45%);
+  opacity: 0;
+}
+
+.fade-left--enter-active {
+  transition: opacity 0.5s ease-out 0.7s, transform 0.5s ease-out 0.7s;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+.fade-left--exit {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
-}
-
-.fade-transition-enter-active {
   opacity: 1;
+  pointer-events: none; /* Stop interactivity on fading page */
 }
 
-.fade-transition-exit {
-  transition: opacity 0.5s ease-in-out;
+.fade-left--exit-active {
+  transition: opacity 0.5s ease-in, transform 0.5s ease-out;
+  opacity: 0;
+  transform: translateX(-55%);
+}
+
+.fade-zoom--enter {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
-  opacity: 1;
+  transform: translate(-50%, 0) scale(0.9);
+  opacity: 0;
 }
 
-.fade-transition-exit-active {
+.fade-zoom--enter-active {
+  transition: opacity 0.5s ease-out 0.7s, transform 0.5s ease-out 0.7s;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.fade-zoom--exit {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: none; /* Stop interactivity on fading page */
+}
+
+.fade-zoom--exit-active {
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
   opacity: 0;
+  transform: translateX(-50%) scale(1.1);
 }
