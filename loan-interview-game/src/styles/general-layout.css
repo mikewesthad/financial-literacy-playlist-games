@@ -24,7 +24,7 @@
   padding: 2rem;
 }
 
-@media (min-width: 725px) {
+@media (min-width: 930px) {
   .content {
     padding: 2rem 0;
   }
