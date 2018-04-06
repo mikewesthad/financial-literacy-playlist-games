@@ -26,7 +26,21 @@
   text-align: center;
 }
 
+.prompt__image {
+  display: block;
+  margin: 0 auto;
+  max-height: 150px;
+}
+
+@media (min-width: 500px) {
+  .prompt__image {
+    max-width: 25%;
+    max-height: initial;
+  }
+}
+
 .prompt__button {
+  font-weight: 700;
   font-size: 1.2rem;
   color: white;
   text-transform: uppercase;
