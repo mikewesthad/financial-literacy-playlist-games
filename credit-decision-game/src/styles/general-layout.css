@@ -2,6 +2,13 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  padding: 0.5rem 2rem 0 2rem;
+}
+
+@media (min-width: 950px) {
+  .container {
+    padding: 0;
+  }
 }
 
 .fullwidth {
