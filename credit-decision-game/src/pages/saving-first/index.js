@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Prompt, PromptSection, PromptButton } from "../../components/decision";
+import { Prompt, PromptSection, PromptButton, PromptImage } from "../../components/decision";
 import { GoodResult, BadResult } from "./results";
 import Page from "../../components/page";
+import saveImage from "../../images/gifs/save.gif";
 
 export default class SavingFirst extends Component {
   state = {
@@ -26,6 +27,7 @@ export default class SavingFirst extends Component {
       contents = (
         <Prompt title="To Save or Not to Save?">
           <PromptSection>
+            <PromptImage src={saveImage} alt="" />
             <p>
               You are planning on getting your first credit card next month. Do you spend this month
               building up some emergency savings?
