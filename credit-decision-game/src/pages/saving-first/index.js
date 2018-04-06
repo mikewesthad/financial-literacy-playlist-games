@@ -41,6 +41,6 @@ export default class SavingFirst extends Component {
       );
     }
 
-    return <Page>{contents}</Page>;
+    return <Page transitionKey={this.state.choice}>{contents}</Page>;
   }
 }

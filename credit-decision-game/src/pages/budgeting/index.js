@@ -78,7 +78,7 @@ export default class Budgeting extends Component {
         );
 
       contents = (
-        <React.Fragment>
+        <div className="fullwidth">
           <Prompt title={title}>
             <PromptSection>{message}</PromptSection>
           </Prompt>
@@ -110,10 +110,10 @@ export default class Budgeting extends Component {
               Set Budget
             </button>
           </div>
-        </React.Fragment>
+        </div>
       );
     }
 
-    return <Page>{contents}</Page>;
+    return <Page transitionKey={this.state.finishSelection}>{contents}</Page>;
   }
 }
