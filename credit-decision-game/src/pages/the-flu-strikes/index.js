@@ -37,15 +37,27 @@ export default class TheFluStrikes extends Component {
     } else {
       const savings = this.props.gameData.savings;
       let message;
-      let options = [<PromptButton onClick={this.chooseSkipPayment}>Skip Paying</PromptButton>];
+      let options = [
+        <PromptButton key="skip" onClick={this.chooseSkipPayment}>
+          Skip Paying
+        </PromptButton>
+      ];
       if (savings <= 0) {
         message = "You don't have any savings left... ";
       } else if (savings < billAmount) {
         message = "You don't have enough savings to cover the whole bill. What do you do?";
-        options.push(<PromptButton onClick={this.chooseSavings}>Use Savings</PromptButton>);
+        options.push(
+          <PromptButton key="save" onClick={this.chooseSavings}>
+            Use Savings
+          </PromptButton>
+        );
       } else {
         message = "You have enough savings to cover the whole bill. What do you do?";
-        options.push(<PromptButton onClick={this.chooseSavings}>Use Savings</PromptButton>);
+        options.push(
+          <PromptButton key="save" onClick={this.chooseSavings}>
+            Use Savings
+          </PromptButton>
+        );
       }
 
       contents = (
