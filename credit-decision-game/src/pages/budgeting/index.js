@@ -55,20 +55,30 @@ export default class Budgeting extends Component {
       else if (percent <= 35) contents = <GreatResult nextRoute={nextRoute} />;
       else contents = <BadResult nextRoute={nextRoute} />;
     } else {
-      let title = iterationNumber === 0 ? "Budgeting & Charging" : "Charging Revisited";
-      let message =
-        iterationNumber === 0 ? (
+      let title;
+      if (iterationNumber === 0) title = "Budgeting & Charging";
+      else if (iterationNumber === 1) title = "Charging Revisited";
+      else if (iterationNumber === 2) title = "Charging: One Last Time";
+
+      let message;
+      if (iterationNumber === 0) {
+        message = (
           <p>
-            It’s time to start using your card. You’ve got a $500 dollar credit limit, and you’ve
-            got a number of items in your budget that you’ll be buying one way or another. So what
-            will you put on your card this month?
+            Time to use your card. You have a $500 dollar credit limit, and you have a number of
+            items in your budget that you’ll be buying one way or another. So what will you put on
+            your card this month?
           </p>
-        ) : (
+        );
+      } else if (iterationNumber === 1) {
+        message = (
           <p>
             You'll want to keep using your card each month. So what will you put on your card this
             month?
           </p>
         );
+      } else {
+        message = <p>Once more - what will you put on your card this month?</p>;
+      }
 
       contents = (
         <div className="fullwidth">
