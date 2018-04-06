@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Prompt, PromptSection, PromptButton } from "../../components/decision";
+import { Prompt, PromptSection, PromptButton, PromptImage } from "../../components/decision";
 import { PaidInFullResult, PartiallyPaidResult, SkipPaymentResult } from "./results";
 import Page from "../../components/page";
 import sickImage from "../../images/gifs/sick.gif";
@@ -63,13 +63,9 @@ export default class TheFluStrikes extends Component {
       contents = (
         <Prompt title="The Flu Strikes">
           <PromptSection>
-            <img
-              style={{ maxWidth: "15%", display: "block", margin: "0 auto" }}
-              src={sickImage}
-              alt=""
-            />
+            <PromptImage src={sickImage} alt="" />
             <p>
-              You got sick and had to take off work. Unfortunately, that means you paycheck is
+              You got sick and had to take off work. Unfortunately, that means your paycheck is
               lighter. You were counting on that to pay off your credit card. You are ${billAmount}{" "}
               short...
             </p>
