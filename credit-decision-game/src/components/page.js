@@ -1,10 +1,14 @@
 import React from "react";
-import { TransitionGroup } from "react-transition-group";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-export default function Page({ children }) {
+export default function Page({ children, transitionKey }) {
   return (
     <div className="page">
-      <TransitionGroup>{children}</TransitionGroup>
+      <TransitionGroup component={null}>
+        <CSSTransition key={transitionKey} classNames="fade-zoom-" timeout={1200}>
+          {children}
+        </CSSTransition>
+      </TransitionGroup>
     </div>
   );
 }

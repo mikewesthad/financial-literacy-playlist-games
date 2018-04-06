@@ -1,5 +1,4 @@
 import React from "react";
-import { CSSTransition } from "react-transition-group";
 
 import "./style.css";
 
@@ -15,15 +14,13 @@ export const PromptButton = ({ children, className, ...otherProps }) => (
   </button>
 );
 
-export function Prompt({ title, children }) {
+export function Prompt({ title, children, ...otherProps }) {
   return (
-    <CSSTransition classNames="fade-" timeout={1000}>
-      <div className="prompt">
-        <PromptSection>
-          <div className="prompt__title">{title}</div>
-        </PromptSection>
-        {children}
-      </div>
-    </CSSTransition>
+    <div className="prompt">
+      <PromptSection>
+        <div className="prompt__title">{title}</div>
+      </PromptSection>
+      {children}
+    </div>
   );
 }
