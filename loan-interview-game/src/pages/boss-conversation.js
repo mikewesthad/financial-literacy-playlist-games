@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FadeInSequence, SequenceElement } from "../components/fade-in-sequence";
 
-export default class ReviewNotes extends Component {
+export default class BossConversation extends Component {
   render() {
     const { gameData, nextRoute } = this.props;
     const playerName = gameData.playerName !== "" ? gameData.playerName : "Player";

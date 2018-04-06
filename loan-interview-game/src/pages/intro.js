@@ -2,13 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FadeInSequence, SequenceElement } from "../components/fade-in-sequence";
 
-export default class ReviewNotes extends Component {
-  componentDidMount() {
-    if (this.props.gameData.playerName === "") {
-      this.props.gameData.setPlayerName("Ambrose");
-    }
-  }
-
+export default class Intro extends Component {
   render() {
     const { nextRoute } = this.props;
     return (
