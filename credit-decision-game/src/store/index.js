@@ -7,6 +7,14 @@ class GameData {
   @observable decisionNumber = 0;
 
   @action
+  reset = () => {
+    this.creditPower = 0;
+    this.savings = 0;
+    this.transactions = [];
+    this.decisionNumber = 0;
+  };
+
+  @action
   incrementCreditPower = delta => {
     this.creditPower += delta;
   };
