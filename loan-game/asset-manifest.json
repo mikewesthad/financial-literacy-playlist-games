@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.408dc3d6.css",
-  "main.css.map": "static/css/main.408dc3d6.css.map",
-  "main.js": "static/js/main.1235c450.js",
-  "main.js.map": "static/js/main.1235c450.js.map",
+  "main.css": "static/css/main.4d896fc9.css",
+  "main.css.map": "static/css/main.4d896fc9.css.map",
+  "main.js": "static/js/main.6fec54c6.js",
+  "main.js.map": "static/js/main.6fec54c6.js.map",
   "static\\media\\Raleway-Black-Italic.ttf": "static/media/Raleway-Black-Italic.0f629c96.ttf",
   "static\\media\\Raleway-Black.ttf": "static/media/Raleway-Black.d641109f.ttf",
   "static\\media\\Raleway-Bold-Italic.ttf": "static/media/Raleway-Bold-Italic.02d3658b.ttf",
@@ -20,6 +20,5 @@
   "static\\media\\Raleway-SemiBold-Italic.ttf": "static/media/Raleway-SemiBold-Italic.4bd987de.ttf",
   "static\\media\\Raleway-SemiBold.ttf": "static/media/Raleway-SemiBold.e18d3880.ttf",
   "static\\media\\Raleway-Thin-Italic.ttf": "static/media/Raleway-Thin-Italic.f8708e6a.ttf",
-  "static\\media\\Raleway-Thin.ttf": "static/media/Raleway-Thin.ebd07bb4.ttf",
-  "static\\media\\question-circle.svg": "static/media/question-circle.99dd5895.svg"
+  "static\\media\\Raleway-Thin.ttf": "static/media/Raleway-Thin.ebd07bb4.ttf"
 }
