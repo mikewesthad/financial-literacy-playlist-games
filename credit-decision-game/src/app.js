@@ -11,6 +11,7 @@ import BirthdaySurprise from "./pages/birthday-suprise";
 import TheFluStrikes from "./pages/the-flu-strikes";
 import PlasticMail from "./pages/plastic-mail";
 import MissingCard from "./pages/missing-card";
+import GettingOnline from "./pages/getting-online";
 import gameData from "./store";
 import { observer } from "mobx-react";
 
@@ -91,7 +92,12 @@ class App extends Component {
                       <Route
                         exact
                         path="/9"
-                        render={() => <MissingCard gameData={gameData} nextRoute="0" />}
+                        render={() => <MissingCard gameData={gameData} nextRoute="10" />}
+                      />
+                      <Route
+                        exact
+                        path="/10"
+                        render={() => <GettingOnline gameData={gameData} nextRoute="0" />}
                       />
                       <Redirect to="/0" />
                     </Switch>
