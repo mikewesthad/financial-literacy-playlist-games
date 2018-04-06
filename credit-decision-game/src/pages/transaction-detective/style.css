@@ -53,8 +53,12 @@
 }
 
 .bill-table__feedback {
-  font-size: 1.2rem;
-  margin-left: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.bill-table__feedback--good {
+  color: #37bf86;
 }
 
 .bill-table__feedback--bad {

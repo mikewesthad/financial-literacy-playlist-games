@@ -14,9 +14,15 @@ const items = [
   // { name: "Games", cost: 25, image: "" }
 ];
 
+const fakeItems = [
+  { name: "Amazon.com - Drone", cost: 50, image: "" },
+  { name: "iTunes Gift Card", cost: 50, image: "" }
+];
+
 // console.log(items.reduce((total, item) => (total += item.cost), 0));
 
 const itemLookup = {};
 items.forEach(item => (itemLookup[item.name] = item));
+fakeItems.forEach(item => (itemLookup[item.name] = item));
 
-export { items, itemLookup };
+export { items, fakeItems, itemLookup };

@@ -11,11 +11,23 @@ export function GoodResult({ nextRoute, ...otherProps }) {
     />
   );
 }
-export function BadResult({ nextRoute, ...otherProps }) {
+
+export function MissedFraudResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Whoops..."
-      message="This won’t hurt your credit level, but it’s always a good idea to have an emergency fund."
+      message="You missed a fraudulent charge, and it hurt your credit power."
+      nextRoute={nextRoute}
+      {...otherProps}
+    />
+  );
+}
+
+export function DisputedIncorrectlyResult({ nextRoute, ...otherProps }) {
+  return (
+    <Results
+      title="Whoops..."
+      message="You disputed a charge that you actually made last month, and it hurt your credit power."
       nextRoute={nextRoute}
       {...otherProps}
     />

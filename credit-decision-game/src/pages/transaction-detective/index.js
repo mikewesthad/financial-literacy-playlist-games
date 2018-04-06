@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Prompt, PromptSection, PromptButton } from "../../components/decision";
-// import { GoodResult, BadResult } from "./results";
+import { GoodResult, DisputedIncorrectlyResult, MissedFraudResult } from "./results";
 import Page from "../../components/page";
-import Checkbox from "./checkbox";
 import callIcon from "../../images/icons/call-icon.svg";
+import { items, fakeItems, itemLookup } from "../budgeting/item-info";
+import BillTable from "./bill-table";
+import Checkbox from "./checkbox";
+import { CSSTransition } from "react-transition-group";
 import "./style.css";
 
 const MODES = {
@@ -13,67 +16,87 @@ const MODES = {
   RESULTS: "results"
 };
 
-const items = [
-  { Description: "Netflix", Amount: 15, Date: "04-25-18" },
-  { Description: "Groceries", Amount: 75, Date: "04-25-18" },
-  { Description: "Taxi", Amount: 75, Date: "04-25-18" },
-  { Description: "Clothes", Amount: 50, Date: "04-25-18" }
+const tableMapping = [
+  { key: "date", label: "Date" },
+  { key: "name", label: "Description" },
+  { key: "cost", label: "Amount", formatter: val => `$${val}` }
 ];
 
-const BillTable = ({ data, labels, onClick, selected, answers }) => {
-  if (data.length === 0) return null;
+const LastColumn = ({ selected, fakeItemNames, rowIndex, data, showFeedback, onClick }) => {
+  const itemName = data[rowIndex].name;
+  const isSelected = selected.includes(itemName);
+  const isFake = fakeItemNames.includes(itemName);
+  const isCorrect = (isFake && isSelected) || (!isFake && !isSelected);
+
+  let feedback;
+  if (showFeedback) {
+    let text = "";
+    let className = "bill-table__feedback--";
+    if (isSelected && isFake) {
+      text = "Nice - fraud caught!";
+      className += "good";
+    } else if (isSelected && !isFake) {
+      text = "Wrong! You made this one.";
+      className += "bad";
+    } else if (!isSelected && isFake) {
+      text = "Uh oh - Fraud missed!";
+      className += "bad";
+    }
+    feedback = <div className={`bill-table__feedback ${className}`}>{text}</div>;
+  }
+
   return (
-    <table className="bill-table">
-      <thead>
-        <tr className="bill-table__header-row">
-          {labels.map(label => (
-            <th className="bill-table__header" key={label}>
-              {label}
-            </th>
-          ))}
-          <th className="bill-table__header" key="dispute">
-            Dispute?
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((row, i) => (
-          <tr className="bill-table__data-row" key={i}>
-            {labels.map((label, j) => (
-              <td className="bill-table__data" key={`${i}-${j}`}>
-                {row[label]}
-              </td>
-            ))}
-            <td className="bill-table__data" key={`${i}-dispute}`}>
-              <Checkbox
-                checked={selected.includes(data[i].Description)}
-                className="bill-table__checkbox"
-                onClick={() => onClick(data[i])}
-              />
-              {/* <span class="bill-table__feedback bill-table__feedback--good">Correct!</span> */}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <React.Fragment>
+      <Checkbox
+        checked={selected.includes(data[rowIndex].name)}
+        className="bill-table__checkbox"
+        onClick={() => onClick(data[rowIndex].name)}
+      />
+      {feedback}
+    </React.Fragment>
   );
 };
 
 export default class TransactionDetective extends Component {
   state = {
-    mode: MODES.PROMPT,
-    selected: []
+    mode: MODES.SELECTING,
+    selected: [],
+    transactions: [],
+    fakeItemNames: []
   };
+
+  componentDidMount() {
+    // Take only four purchased items
+    // const purchasedItemNames = this.props.gameData.transactions.slice(0, 4);
+    const purchasedItemNames = ["Taxi", "Groceries"];
+    const fakeItemNames = fakeItems.map(elem => elem.name);
+    const itemNames = [...purchasedItemNames, ...fakeItemNames];
+    const shuffledNames = itemNames
+      .map(a => [Math.random(), a])
+      .sort((a, b) => a[0] - b[0])
+      .map(a => a[1]);
+    const transactions = shuffledNames.map(itemName => ({
+      ...itemLookup[itemName],
+      date: "04-28-18"
+    }));
+    this.setState({ fakeItemNames, transactions });
+  }
 
   goToNextMode = () => {
     const { mode } = this.state;
     if (mode === MODES.PROMPT) this.setState({ mode: MODES.SELECTING });
-    else if (mode === MODES.SELECTING) this.setState({ mode: MODES.FEEDBACK });
-    else if (mode === MODES.FEEDBACK) this.setState({ mode: MODES.RESULTS });
+    else if (mode === MODES.SELECTING) this.setState({ mode: MODES.RESULTS });
+    else if (mode === MODES.RESULTS) {
+      const { selected, fakeItemNames } = this.state;
+      const allFakeCaught = fakeItemNames.every(name => selected.includes(name));
+      const onlyFakeCaught = selected.every(name => fakeItemNames.includes(name));
+      if (allFakeCaught && onlyFakeCaught) this.props.gameData.incrementCreditPower(10);
+      else this.props.gameData.incrementCreditPower(-10);
+      this.setState({ mode: MODES.FEEDBACK });
+    }
   };
 
-  toggleSelected = item => {
-    const name = item.Description;
+  toggleSelected = name => {
     this.setState(prevState => {
       const selected = prevState.selected;
       if (selected.includes(name)) {
@@ -86,7 +109,7 @@ export default class TransactionDetective extends Component {
 
   render() {
     const { nextRoute } = this.props;
-    const { mode, selected } = this.state;
+    const { mode, selected, transactions, fakeItemNames } = this.state;
 
     let contents;
     if (mode === MODES.PROMPT) {
@@ -105,53 +128,63 @@ export default class TransactionDetective extends Component {
           </div>
         </Prompt>
       );
-    } else if (mode === MODES.SELECTING) {
+    } else if (mode === MODES.SELECTING || mode === MODES.RESULTS) {
+      let header;
+      const style = { textAlign: "center", color: "white", marginTop: 0, fontSize: "2rem" };
+      if (mode === MODES.SELECTING)
+        header = (
+          <p style={style}>
+            Click the box in the last column to select transactions that you didn't make, and then
+            click the button to call the credit card company.
+          </p>
+        );
+      else if (mode === MODES.RESULTS) {
+        if (
+          selected.length === fakeItemNames.length &&
+          selected.every(name => fakeItemNames.includes(name))
+        ) {
+          header = <p style={style}>You caught everything!</p>;
+        } else {
+          header = <p style={style}>You missed something!</p>;
+        }
+      }
       contents = (
         <div className="fullwidth">
-          <PromptSection>
-            <p style={{ color: "white" }}>
-              Click the box in the last column to select transactions that you didn't make, and then
-              click the button to call the credit card company.
-            </p>
-          </PromptSection>
+          {header}
           <BillTable
-            data={items}
-            labels={["Date", "Description", "Amount"]}
+            data={transactions}
+            mapping={tableMapping}
             onClick={this.toggleSelected}
             selected={selected}
+            LastColumn={props => (
+              <LastColumn
+                selected={selected}
+                fakeItemNames={fakeItemNames}
+                showFeedback={mode === MODES.RESULTS}
+                onClick={this.toggleSelected}
+                {...props}
+              />
+            )}
           />
           <PromptSection>
             <div className="text-center">
               <button className="button" onClick={this.goToNextMode}>
-                Call Company
-              </button>
-            </div>
-          </PromptSection>
-        </div>
-      );
-    } else if (mode === MODES.RESULTS) {
-      contents = (
-        <div className="fullwidth">
-          <PromptSection>
-            <p style={{ color: "white" }}>Nice job!</p>
-          </PromptSection>
-          <BillTable
-            data={items}
-            labels={["Date", "Description", "Amount"]}
-            onClick={this.toggleSelected}
-            selected={selected}
-          />
-          <PromptSection>
-            <div className="text-center">
-              <button className="button" onClick={this.goToNextMode}>
-                Call Company
+                {mode === MODES.SELECTING ? "Call Company" : "Continue"}
               </button>
             </div>
           </PromptSection>
         </div>
       );
     } else {
-      contents = null;
+      const allFakeCaught = fakeItemNames.every(name => selected.includes(name));
+      const onlyFakeCaught = selected.every(name => fakeItemNames.includes(name));
+      if (allFakeCaught && onlyFakeCaught) {
+        contents = <GoodResult nextRoute={nextRoute} />;
+      } else if (!allFakeCaught) {
+        contents = <MissedFraudResult nextRoute={nextRoute} />;
+      } else {
+        contents = <DisputedIncorrectlyResult nextRoute={nextRoute} />;
+      }
     }
 
     return <Page transitionKey={this.state.mode}>{contents}</Page>;

@@ -21,7 +21,6 @@ class App extends Component {
         <div className="container">
           {/* < render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
           {/* {!dev && <Route component={ForceVisitIndex} />} */}
-
           <div className="hud">
             <CreditPowerDisplay value={gameData.creditPower} />
             <Timeline decisionNumber={gameData.decisionNumber} />
