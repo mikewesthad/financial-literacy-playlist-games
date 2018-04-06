@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+.fullwidth {
+  width: 100%;
+}
+
 .page-wrapper {
   width: 100%;
   position: relative;
