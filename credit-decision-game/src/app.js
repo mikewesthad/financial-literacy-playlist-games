@@ -12,13 +12,6 @@ const Router = dev ? HashRouter : MemoryRouter;
 
 @observer
 class App extends Component {
-  state = {
-    creditPower: 0,
-    savings: 0
-  };
-  };
-
-
   render() {
     return (
       <Router>
@@ -27,9 +20,9 @@ class App extends Component {
           {/* {!dev && <Route component={ForceVisitIndex} />} */}
 
           <div className="hud">
-            <CreditPowerDisplay value={this.state.creditPower} />
-            <Timeline />
-            <SavingsDisplay value={this.state.savings} />
+            <CreditPowerDisplay value={gameData.creditPower} />
+            <Timeline decisionNumber={gameData.decisionNumber} />
+            <SavingsDisplay value={gameData.savings} />
           </div>
 
           <div className="page">

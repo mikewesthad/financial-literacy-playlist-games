@@ -9,7 +9,7 @@ export default class SavingFirst extends Component {
   };
 
   chooseSaveOption = () => {
-    this.props.incrementSavings(300);
+    this.props.gameData.incrementSavings(300);
     this.setState({ choice: "save" });
   };
   chooseSpendOption = () => this.setState({ choice: "spend" });

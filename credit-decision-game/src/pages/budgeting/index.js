@@ -34,10 +34,10 @@ export default class Budgeting extends Component {
   finishSelection = () => {
     const total = this.getTotal();
     const percent = total / 500 * 100;
-    if (percent === 0) this.props.incrementCreditPower(0);
-    else if (percent <= 20) this.props.incrementCreditPower(5);
-    else if (percent <= 35) this.props.incrementCreditPower(10);
-    else this.props.incrementCreditPower(-5);
+    if (percent === 0) this.props.gameData.incrementCreditPower(0);
+    else if (percent <= 20) this.props.gameData.incrementCreditPower(5);
+    else if (percent <= 35) this.props.gameData.incrementCreditPower(10);
+    else this.props.gameData.incrementCreditPower(-5);
     this.setState({ finishSelection: true });
   };
 
