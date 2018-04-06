@@ -1,0 +1,62 @@
+.bill-table {
+  min-width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  border: 0;
+  font-size: 1.2rem;
+}
+
+.bill-table__header-row {
+  background-color: white;
+  border-bottom: 0.3rem solid #c0cae2;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 450px) {
+  .bill-table {
+    font-size: 1.5rem;
+  }
+  .bill-table__header-row {
+    font-size: 1.3rem;
+  }
+}
+
+.bill-table__data-row {
+  background-color: white;
+}
+
+.bill-table__data-row:nth-child(even) {
+  background-color: #e7eeff;
+}
+
+.bill-table__data {
+  text-align: left;
+  padding: 1rem 1rem;
+  border: 0;
+}
+
+.bill-table__header {
+  text-align: left;
+  font-weight: 700;
+  padding: 1.5rem 1rem;
+  border: 0;
+}
+
+.bill-table__data:first-child,
+.bill-table__header:first-child {
+  padding-left: 2rem;
+}
+
+.bill-table__data:last-child,
+.bill-table__header:last-child {
+  padding-right: 2rem;
+}
+
+.bill-table__feedback {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.bill-table__feedback--bad {
+  color: #ec5353;
+}
