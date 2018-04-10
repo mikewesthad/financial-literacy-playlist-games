@@ -1,14 +1,13 @@
 .prompt {
   color: white;
-  font-size: 4rem;
   width: 100%;
   margin: 0rem 0 1rem 0;
 }
 
 .prompt__section {
   margin: 2rem;
-  font-size: 2.2rem;
-  line-height: 1.45;
+  font-size: 1.9rem;
+  line-height: 1.25;
   text-align: center;
 }
 
@@ -22,7 +21,7 @@
 
 .prompt__title {
   font-weight: 100;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -34,8 +33,7 @@
 
 @media (min-width: 500px) {
   .prompt__image {
-    max-width: 25%;
-    max-height: initial;
+    max-height: 15vh;
   }
 }
 
@@ -51,7 +49,7 @@
   letter-spacing: 0.1rem;
   transition: background-color 0.25s ease;
   cursor: pointer;
-  background-color: #10263a;
+  background-color: #2d87d8;
 }
 
 .prompt__button:hover {
