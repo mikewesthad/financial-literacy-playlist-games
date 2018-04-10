@@ -44,9 +44,9 @@ class App extends Component {
           {/* {!dev && <Route component={ForceVisitIndex} />} */}
           <div className="hud">
             <CreditPowerDisplay value={gameData.creditPower} />
-            <Timeline decisionNumber={gameData.decisionNumber} />
             <SavingsDisplay value={gameData.savings} />
           </div>
+                <Timeline decisionNumber={location.pathname.slice(1)} />
 
           <div className="page-wrapper">
             <Route

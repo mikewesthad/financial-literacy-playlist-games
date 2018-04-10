@@ -56,7 +56,8 @@ const Dot = (
 
 export default class Timeline extends Component {
   render() {
-    const { decisionNumber } = this.props;
+    let { decisionNumber } = this.props;
+    decisionNumber = parseInt(decisionNumber, 10);
 
     const dots = [];
     for (let i = 0; i < 12; i++) {
