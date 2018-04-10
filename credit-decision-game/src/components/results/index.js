@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 export default function Results({ title, message, nextRoute, ...otherProps }) {
+  const units = window.innerWidth > window.innerHeight ? "vh" : "vw";
   return (
-    <div className="results">
+    <div className="results" style={{ width: `70${units}`, height: `70${units}` }}>
       <div className="results__content">
         <div className="results__section">
           <div className="results__title">{title}</div>

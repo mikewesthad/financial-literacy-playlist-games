@@ -2,8 +2,8 @@
   background-color: #e09e1d;
   border: 0.75rem solid white;
   border-radius: 50%;
-  width: 70vh;
-  height: 70vh;
+  width: 60vh;
+  height: 60vh;
   padding: 4rem;
   margin: 0 auto;
 }
@@ -20,11 +20,11 @@
 
 .results__title {
   font-weight: 100;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .results__button {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   background-color: #e09e1d;
   transition: background-color 0.25s ease;
@@ -42,8 +42,8 @@
 }
 
 .results__message {
-  font-size: 2.2rem;
-  line-height: 1.45;
+  font-size: 1.9rem;
+  line-height: 1.25;
 }
 
 .fade--transition-enter {
