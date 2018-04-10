@@ -35,7 +35,7 @@ export default class PlasticMail extends Component {
             <PromptImage src={computerImage} />
             <p>
               After last month, you realize you should have registered an online account with your
-              credit card company. You log on and see an option for enabling alerts for when you
+              credit card company. You log on and see an option for enabling alerts for when your
               card is used. What do you do?
             </p>
           </PromptSection>

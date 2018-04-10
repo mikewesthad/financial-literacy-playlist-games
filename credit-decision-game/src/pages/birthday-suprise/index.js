@@ -22,7 +22,7 @@ export default class BirthdaySurprise extends Component {
       contents = (
         <Results
           title="Surprise Savings"
-          message="You save the $100 dollars and enjoy your birthday."
+          message="You save the $100 and enjoy your birthday."
           nextRoute={nextRoute}
         />
       );
@@ -30,10 +30,14 @@ export default class BirthdaySurprise extends Component {
       contents = (
         <Prompt title="Birthday Surprise">
           <PromptSection>
-            <img style={{ maxWidth: "25%", display: "block", margin: "0 auto" }} src={birthdayImage} alt="" />
+            <img
+              style={{ maxWidth: "25%", display: "block", margin: "0 auto" }}
+              src={birthdayImage}
+              alt=""
+            />
             <p>
-              Smooth sailing this month. You paid your bill on time and in full. Since
-              it was your birthday this month, your aunt and uncle sent you a check for $100 dollar.
+              Smooth sailing this month. You paid your bill on time and in full. Since it was your
+              birthday this month, your aunt and uncle sent you a check for $100.
             </p>
           </PromptSection>
           <PromptSection className="text-center">

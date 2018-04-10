@@ -5,7 +5,7 @@ export function GoodResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Smart choice!"
-      message="While this card may not seem fancy, it’s the smart choice. It does not have with any fees and it has a low interest rate. Now you can start building credit."
+      message="While this card may not seem fancy, it’s the smart choice. It does not have any fees and it has a low interest rate. Now you can start building credit."
       nextRoute={nextRoute}
       {...otherProps}
     />
