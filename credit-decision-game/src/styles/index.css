@@ -27,6 +27,7 @@ body {
 
 .button {
   font-size: 1.2rem;
+  font-weight: 700;
   color: white;
   text-transform: uppercase;
   display: inline-block;
@@ -36,7 +37,7 @@ body {
   letter-spacing: 0.1rem;
   transition: background-color 0.25s ease;
   cursor: pointer;
-  background-color: #10263a;
+  background-color: #2d87d8;
 }
 
 .button:hover {
