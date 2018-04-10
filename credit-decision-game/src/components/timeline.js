@@ -61,7 +61,7 @@ export default class Timeline extends Component {
     const dots = [];
     for (let i = 0; i < 12; i++) {
       dots.push(
-        new Dot(50 + 90 * i, 40, {
+        new Dot(70 + 90 * i, 40, {
           addLeftConnector: i !== 0,
           addRightConnector: i !== 11,
           isActive: i === decisionNumber,
@@ -71,7 +71,7 @@ export default class Timeline extends Component {
       );
     }
     return (
-      <svg className="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1090 130">
+      <svg className="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 130">
         {dots}
       </svg>
     );
