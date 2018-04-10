@@ -22,7 +22,7 @@ const Router = dev ? HashRouter : MemoryRouter;
 const decisions = [
   SavingFirst,
   ChoosingPlastic,
-  Budgeting,
+  props => <Budgeting iterationNumber={0} {...props} />,
   props => <Budgeting iterationNumber={1} {...props} />,
   props => <Budgeting iterationNumber={2} {...props} />,
   TransactionDetective,
