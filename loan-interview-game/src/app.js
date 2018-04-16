@@ -47,7 +47,9 @@ const App = observer(
                       <Route
                         exact
                         path="/"
-                        render={() => <EnterName gameData={gameData} nextRoute="/intro" />}
+                        render={props => (
+                          <EnterName gameData={gameData} nextRoute="/intro" {...props} />
+                        )}
                       />
 
                       <Route
