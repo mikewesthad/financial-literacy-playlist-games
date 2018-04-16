@@ -5,6 +5,7 @@
   border: 0.25rem solid #2098e3;
   transition: background-color 0.25s ease, color 0.25s ease;
   cursor: pointer;
+  max-width: 100%;
 }
 
 .button-link:hover {
