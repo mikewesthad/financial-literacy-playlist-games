@@ -7,6 +7,7 @@ import EnterName from "./pages/enter-name";
 import DecisionMenu from "./pages/decision-menu";
 import Interview from "./pages/interview";
 import Intro from "./pages/intro";
+import ScrollToTop from "./components/scroll-to-top";
 import BossConversation from "./pages/boss-conversation";
 import InterviewMenu from "./pages/interview-menu";
 import DecisionOutcome from "./pages/decision-outcome/";
@@ -36,6 +37,7 @@ const App = observer(
       return (
         <Router>
           <div>
+            <ScrollToTop />
             {/* <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
             {/* {!dev && <Route component={ForceVisitIndex} />} */}
 
