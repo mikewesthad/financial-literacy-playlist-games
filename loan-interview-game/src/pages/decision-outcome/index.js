@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { taylorOutcome, hannahOutcome, anthonyOutcome } from "./outcomes";
 import { FadeInSequence, SequenceElement } from "../../components/fade-in-sequence";
 

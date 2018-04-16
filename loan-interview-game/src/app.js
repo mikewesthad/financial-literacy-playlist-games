@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { MemoryRouter, HashRouter, Route, Link, Switch, Redirect } from "react-router-dom";
+import { MemoryRouter, HashRouter, Route, Switch } from "react-router-dom";
 import gameData from "./store";
 import { observer } from "mobx-react";
 import EnterName from "./pages/enter-name";

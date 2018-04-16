@@ -12,7 +12,13 @@ export default class Intro extends Component {
             <div className="section">
               <p>
                 <SequenceElement delay={0}>
-                  <span>Things have been 👍👍 at work recently. </span>
+                  <span>
+                    Things have been{" "}
+                    <span role="img" aria-label="Thumbs up">
+                      👍👍
+                    </span>{" "}
+                    at work recently.{" "}
+                  </span>
                 </SequenceElement>
                 <SequenceElement>
                   <span>
