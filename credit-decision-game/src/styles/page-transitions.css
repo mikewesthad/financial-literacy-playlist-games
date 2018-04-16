@@ -1,5 +1,10 @@
 /* TODO: Slide left/right https://tympanus.net/Development/PageTransitions/ */
 
+.transition-container {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 .fade-left--enter {
   position: absolute;
   top: 0;

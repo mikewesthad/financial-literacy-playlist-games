@@ -45,7 +45,7 @@ class App extends Component {
         {/* {!dev && <Route component={ForceVisitIndex} />} */}
         <Route
           render={({ location }) => (
-            <div className="container">
+            <div className="container transition-container">
               <div className="hud">
                 <CreditPowerDisplay value={creditPower} />
                 <Timeline decisionNumber={location.pathname.slice(1)} />
