@@ -15,8 +15,8 @@ const items = [
 ];
 
 const fakeItems = [
-  { name: "Amazon.com - Drone", cost: 50, image: "" },
-  { name: "iTunes Gift Card", cost: 50, image: "" }
+  { name: "Amazon.com - Drone", cost: 100, image: "" },
+  { name: "iTunes Gift Card", cost: 100, image: "" }
 ];
 
 // console.log(items.reduce((total, item) => (total += item.cost), 0));
