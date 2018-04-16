@@ -24,6 +24,14 @@
   padding: 2rem;
 }
 
+.content > *:first-child {
+  margin-top: 0;
+}
+
+.content > *:last-child {
+  margin-bottom: 0;
+}
+
 @media (min-width: 930px) {
   .content {
     padding: 2rem 0;
@@ -40,11 +48,11 @@
   }
 }
 
-.section *:first-child {
+.section > *:first-child {
   margin-top: 0;
 }
 
-.section *:last-child {
+.section > *:last-child {
   margin-bottom: 0;
 }
 
