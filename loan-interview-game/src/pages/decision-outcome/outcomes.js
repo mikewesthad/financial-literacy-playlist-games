@@ -22,8 +22,8 @@ const taylorOutcome = (
     </SequenceElement>
     <SequenceElement delay={2}>
       <p>
-        Next time, try looking for someone with a clear plan to repay the loan and who has a history
-        of making payments on time.
+        Next time, try looking for someone with a clear plan to repay the loan, a stable job and a
+        history of making payments on time.
       </p>
     </SequenceElement>
   </div>
