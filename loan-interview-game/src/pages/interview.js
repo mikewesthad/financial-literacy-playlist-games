@@ -31,6 +31,7 @@ export default class Interview extends Component {
         <div className="options-menu">
           <SvgAvatar className="options-menu__portrait" />
           <ul className="options-menu__list">
+            <div className="options-menu__heading">What do you want to ask?</div>
             {choices.map((node, i) => {
               const { id, text, completed } = node;
               return (
