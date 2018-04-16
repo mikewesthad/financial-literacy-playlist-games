@@ -46,41 +46,47 @@ export default class InterviewMenu extends Component {
 
         <div className="content">
           <h1>{heading}</h1>
-          <div className="row">
-            <div className="col-3 text-center">
+          <div className="interview-choices">
+            <div className="interview-choices__choice text-center">
               <Link to="/interview-hannah">
                 <Hannah className="button-image" />
               </Link>
               <Link className="button-link button-link--hannah" to="/interview-hannah">
-                Hannah →
+                Hannah
               </Link>
             </div>
-            <div className="col-3 text-center" to="/interview-anthony">
+            <div className="interview-choices__choice text-center" to="/interview-anthony">
               <Link to="/interview-anthony">
                 <Anthony className="button-image" />
               </Link>
               <Link className="button-link button-link--anthony" to="/interview-anthony">
-                Anthony →
+                Anthony
               </Link>
             </div>
-            <div className="col-3 text-center" to="/interview-taylor">
+            <div className="interview-choices__choice text-center" to="/interview-taylor">
               <Link to="/interview-taylor">
                 <Taylor className="button-image" />
               </Link>
               <Link className="button-link button-link--taylor" to="/interview-taylor">
-                Taylor →
+                Taylor
               </Link>
             </div>
           </div>
 
           <div className="text-center">
             <h1>Or, ready to make a decision?</h1>
-            <Link className="button-link" to="/review-notes" style={{ marginRight: "2rem" }}>
-              Review Notes →
-            </Link>
-            <button className="button-link" onClick={this.goToDecisionPage}>
-              Make Decision →
-            </button>
+            <div className="decision-choices">
+              <div className="decision-choices__choice">
+                <Link className="button-link" to="/review-notes">
+                  Review Notes
+                </Link>
+              </div>
+              <div className="decision-choices__choice">
+                <button className="button-link" onClick={this.goToDecisionPage}>
+                  Make Decision
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
