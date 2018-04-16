@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { MemoryRouter, HashRouter, Route, Switch, Redirect, withRouter } from "react-router-dom";
+import { MemoryRouter, HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Timeline from "./components/timeline";
 import { CreditPowerDisplay, SavingsDisplay } from "./components/score-display/";
 import ChoosingPlastic from "./pages/choosing-plastic/";

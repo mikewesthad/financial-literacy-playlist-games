@@ -14,8 +14,8 @@ export const PromptButton = ({ children, className, ...otherProps }) => (
   </button>
 );
 
-export const PromptImage = ({ children, className, ...otherProps }) => (
-  <img className={`prompt__image ${className || ""}`} {...otherProps}>
+export const PromptImage = ({ children, alt, className, ...otherProps }) => (
+  <img className={`prompt__image ${className || ""}`} alt={alt} {...otherProps}>
     {children}
   </img>
 );

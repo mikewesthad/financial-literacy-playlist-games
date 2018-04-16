@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Prompt, PromptSection, PromptButton, PromptImage } from "../../components/decision";
-import Results from "../../components/results/";
 import Page from "../../components/page";
 import determinedImage from "../../images/gifs/determined.gif";
 

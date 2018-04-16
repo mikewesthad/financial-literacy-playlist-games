@@ -29,7 +29,7 @@ export default class PlasticMail extends Component {
 
   render() {
     const { nextRoute } = this.props;
-    const { decision, paidInFull } = this.state;
+    const { decision } = this.state;
 
     let contents;
     if (decision !== null) {

@@ -1,5 +1,4 @@
 import React from "react";
-import Checkbox from "./checkbox";
 
 const DataElement = ({ children, ...props }) => (
   <td className="bill-table__data" {...props}>
@@ -7,9 +6,8 @@ const DataElement = ({ children, ...props }) => (
   </td>
 );
 
-const DataRow = ({ data, rowIndex, labels, mapping, isSelected, onClick, LastColumn }) => {
+const DataRow = ({ data, rowIndex, labels, mapping, isSelected, LastColumn }) => {
   const row = data[rowIndex];
-  const itemName = row.name;
 
   const columns = labels.map((label, colIndex) => {
     const { key, formatter } = mapping[colIndex];
@@ -30,7 +28,7 @@ const DataRow = ({ data, rowIndex, labels, mapping, isSelected, onClick, LastCol
 };
 
 export default function BillTable(props) {
-  const { data, onClick, mapping, selected, LastColumn } = props;
+  const { data, mapping, selected } = props;
   if (data.length === 0) return null;
 
   const labels = mapping.map(elem => elem.label);

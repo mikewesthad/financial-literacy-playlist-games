@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { Prompt, PromptSection, PromptButton } from "../../components/decision";
+import { Prompt, PromptSection } from "../../components/decision";
 import { GoodResult, DisputedIncorrectlyResult, MissedFraudResult } from "./results";
 import Page from "../../components/page";
-import callIcon from "../../images/icons/call-icon.svg";
-import { items, fakeItems, itemLookup } from "../budgeting/item-info";
+import { fakeItems, itemLookup } from "../budgeting/item-info";
 import BillTable from "./bill-table";
 import Checkbox from "./checkbox";
-import { CSSTransition } from "react-transition-group";
 import "./style.css";
 
 const MODES = {
@@ -26,7 +24,6 @@ const LastColumn = ({ selected, fakeItemNames, rowIndex, data, showFeedback, onC
   const itemName = data[rowIndex].name;
   const isSelected = selected.includes(itemName);
   const isFake = fakeItemNames.includes(itemName);
-  const isCorrect = (isFake && isSelected) || (!isFake && !isSelected);
 
   let feedback;
   if (showFeedback) {

@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import { Prompt, PromptSection, PromptButton, PromptImage } from "../../components/decision";
-import { Link } from "react-router-dom";
-import Results from "../../components/results/";
+import { Prompt, PromptSection, PromptImage } from "../../components/decision";
 import Page from "../../components/page";
 import happyImage from "../../images/gifs/happy.gif";
 
 export default class CreditCheck extends Component {
   render() {
-    const { gameData, nextRoute } = this.props;
+    const { gameData } = this.props;
     const creditPower = gameData.creditPower;
 
     let feedback;
