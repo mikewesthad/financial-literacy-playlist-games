@@ -14,6 +14,12 @@ html {
   }
 }
 
+body {
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
 h1,
 h2,
 h3,
@@ -25,10 +31,25 @@ h6 {
   font-weight: 400;
 }
 
-body {
-  font-size: 1rem;
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
+h1 {
+  font-size: 2.441rem;
+}
+
+h2 {
+  font-size: 1.953rem;
+}
+
+h3 {
+  font-size: 1.563rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+small,
+.font_small {
+  font-size: 0.8rem;
 }
 
 input,
