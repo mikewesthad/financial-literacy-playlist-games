@@ -16,18 +16,19 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0 25px;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
-.fixed-navbar__portrait {
-  height: 80%;
+.fixed-navbar__portrait,
+.fixed-navbar__back {
+  height: 70%;
 }
 
 .fixed-navbar__portrait #outline {
@@ -35,13 +36,7 @@
   stroke: white;
 }
 
-.fixed-navbar__help {
-  height: 65%;
-  cursor: pointer;
-}
-
 .fixed-navbar__back {
-  height: 80%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -53,7 +48,7 @@
 
 .conversation {
   position: fixed;
-  top: 80px;
+  top: 60px;
   bottom: 180px;
   width: 100%;
   background: #fafafa;
@@ -228,7 +223,13 @@
 }
 
 @media (min-width: 475px) {
+  .fixed-navbar {
+    font-size: 2rem;
+    height: 70px;
+  }
+
   .conversation {
+    top: 70px;
     bottom: 200px;
   }
 
