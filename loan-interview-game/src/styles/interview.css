@@ -239,11 +239,12 @@
 
   .fixed-navbar {
     font-size: 2rem;
-    height: 70px;
+    padding: 0 2rem;
+    height: 80px;
   }
 
   .conversation {
-    top: 70px;
+    top: 80px;
     bottom: 200px;
   }
 
