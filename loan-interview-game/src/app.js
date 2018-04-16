@@ -9,7 +9,7 @@ import Interview from "./pages/interview";
 import Intro from "./pages/intro";
 import ScrollToTop from "./components/scroll-to-top";
 import BossConversation from "./pages/boss-conversation";
-import InterviewMenu from "./pages/interview-menu";
+import InterviewMenu from "./pages/interview-menu/";
 import DecisionOutcome from "./pages/decision-outcome/";
 import ConversationTree from "./conversation-tree/conversation-tree";
 import ReviewNotes from "./pages/review-notes";

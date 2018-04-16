@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Modal from "../components/modal";
-import Hannah from "../images/avatars/hannah.svg";
-import Anthony from "../images/avatars/anthony.svg";
-import Taylor from "../images/avatars/taylor.svg";
+import Modal from "../../components/modal";
+import Hannah from "../../images/avatars/hannah.svg";
+import Anthony from "../../images/avatars/anthony.svg";
+import Taylor from "../../images/avatars/taylor.svg";
+import "./style.css";
 
 export default class InterviewMenu extends Component {
   state = {

@@ -11,7 +11,6 @@
 @import "./button-image.css";
 @import "./page-transitions.css";
 @import "./decision-page.css";
-@import "./interview-menu.css";
 
 #root {
   position: relative;
