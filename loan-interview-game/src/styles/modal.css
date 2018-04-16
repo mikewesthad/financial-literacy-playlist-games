@@ -25,7 +25,8 @@
   transform: translate(-50%, -50%);
   padding: 3rem 3rem;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  min-width: 85%;
 }
 
 .modal__close {
@@ -34,4 +35,10 @@
   right: 1.25rem;
   width: 1.5rem;
   cursor: pointer;
+}
+
+@media (min-width: 550px) {
+  .modal__content {
+    min-width: 60%;
+  }
 }
