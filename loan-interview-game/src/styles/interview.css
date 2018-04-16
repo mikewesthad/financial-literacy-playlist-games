@@ -75,17 +75,17 @@
 }
 
 .conversation__message {
-  width: 50%;
+  width: 75%;
 }
 
 .conversation__message--left {
-  margin-right: 50%;
-  text-align: right;
+  margin-right: 25%;
+  text-align: left;
 }
 
 .conversation__message--right {
-  margin-left: 50%;
-  text-align: left;
+  margin-left: 25%;
+  text-align: right;
 }
 
 .conversation__bubble {
@@ -223,6 +223,20 @@
 }
 
 @media (min-width: 475px) {
+  .conversation__message {
+    width: 50%;
+  }
+
+  .conversation__message--left {
+    margin-right: 50%;
+    text-align: right;
+  }
+
+  .conversation__message--right {
+    margin-left: 50%;
+    text-align: left;
+  }
+
   .fixed-navbar {
     font-size: 2rem;
     height: 70px;
