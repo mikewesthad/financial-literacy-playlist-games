@@ -5,9 +5,9 @@ import { FadeInSequence, SequenceElement } from "../../components/fade-in-sequen
 export default class DecisionOutcome extends Component {
   render() {
     const { gameData } = this.props;
-    let { selectedBorrower } = gameData;
+    const { selectedBorrower } = gameData;
 
-    const outcome;
+    let outcome;
     if (selectedBorrower === "hannah") outcome = hannahOutcome;
     else if (selectedBorrower === "taylor") outcome = taylorOutcome;
     else if (selectedBorrower === "anthony") outcome = anthonyOutcome;
