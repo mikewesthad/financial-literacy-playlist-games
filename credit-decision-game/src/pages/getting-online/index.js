@@ -39,9 +39,11 @@ export default class PlasticMail extends Component {
               card is used. What do you do?
             </p>
           </PromptSection>
-          <PromptSection className="text-center card-choice">
-            <PromptButton onClick={this.chooseEnableAlerts}>Enable Alerts</PromptButton>
-            <PromptButton onClick={this.chooseSkipAlerts}>Skip Alerts</PromptButton>
+          <PromptSection>
+            <div className="text-center">
+              <PromptButton onClick={this.chooseEnableAlerts}>Enable Alerts</PromptButton>
+              <PromptButton onClick={this.chooseSkipAlerts}>Skip Alerts</PromptButton>
+            </div>
           </PromptSection>
         </Prompt>
       );
