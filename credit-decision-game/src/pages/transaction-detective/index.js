@@ -73,7 +73,7 @@ export default class TransactionDetective extends Component {
       .map(a => a[1]);
     const transactions = shuffledNames.map(itemName => ({
       ...itemLookup[itemName],
-      date: "04-28-18"
+      date: "04-28"
     }));
     this.setState({ fakeItemNames, transactions });
   }
@@ -126,7 +126,7 @@ export default class TransactionDetective extends Component {
       );
     } else if (mode === MODES.SELECTING || mode === MODES.RESULTS) {
       let header;
-      const style = { textAlign: "center", color: "white", marginTop: 0, fontSize: "2rem" };
+      const style = { textAlign: "center", color: "white", marginTop: 0, fontSize: "1.4rem" };
       if (mode === MODES.SELECTING)
         header = (
           <p style={style}>

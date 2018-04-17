@@ -31,7 +31,7 @@
 
 .bill-table__data {
   text-align: left;
-  padding: 1rem 1rem;
+  padding: 0.7rem 0.5rem;
   border: 0;
 }
 
@@ -44,12 +44,27 @@
 
 .bill-table__data:first-child,
 .bill-table__header:first-child {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .bill-table__data:last-child,
 .bill-table__header:last-child {
-  padding-right: 2rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 500px) {
+  .bill-table__data:first-child,
+  .bill-table__header:first-child {
+    padding-left: 2rem;
+  }
+
+  .bill-table__data:last-child,
+  .bill-table__header:last-child {
+    padding-right: 2rem;
+  }
+  .bill-table__data {
+    padding: 1rem 1rem;
+  }
 }
 
 .bill-table__feedback {
