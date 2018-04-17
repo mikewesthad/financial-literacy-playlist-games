@@ -31,7 +31,7 @@
 
 .results__title {
   font-weight: 100;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .results__button {
@@ -53,6 +53,6 @@
 }
 
 .results__message {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   line-height: 1.25;
 }
