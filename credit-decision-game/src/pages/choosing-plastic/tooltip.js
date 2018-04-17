@@ -5,29 +5,16 @@ import closeIcon from "../../images/icons/close-icon.svg";
 
 export default class Tooltip extends Component {
   state = {
-    isHoverOpen: false,
-    isTouchOpen: false,
-    hasTouched: false
+    isOpen: false
   };
 
-  onTouch = e => {
-    this.setState(prevState => ({ hasTouched: true, isTouchOpen: !prevState.isTouchOpen }));
-  };
-
-  onStartHover = () => {
-    this.setState({ isHoverOpen: true });
-  };
-
-  onEndHover = () => {
-    this.setState({ isHoverOpen: false });
+  toggle = () => {
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   };
 
   render() {
-    const { isHoverOpen, hasTouched, isTouchOpen } = this.state;
+    const { isOpen } = this.state;
     const { children } = this.props;
-
-    // If touched, rely on touch state to drive the tooltip
-    const isOpen = hasTouched ? isTouchOpen : isHoverOpen;
 
     return (
       <div className="tooltip">
@@ -36,27 +23,18 @@ export default class Tooltip extends Component {
             const style = state === "exited" ? { display: "none" } : {};
             return (
               <div className="tooltip__container" style={style}>
-                {isTouchOpen && (
-                  <img
-                    src={closeIcon}
-                    alt="Close Tip"
-                    className="tooltip__close"
-                    onClick={this.onTouch}
-                  />
-                )}
+                <img
+                  src={closeIcon}
+                  alt="Close Tip"
+                  className="tooltip__close"
+                  onClick={this.toggle}
+                />
                 <div className="tooltip__content">{children}</div>
               </div>
             );
           }}
         </CSSTransition>
-        <img
-          src={helpIcon}
-          className="tooltip__help"
-          onTouchStart={this.onTouch}
-          onMouseOver={this.onStartHover}
-          onMouseOut={this.onEndHover}
-          alt="Tooltip Help"
-        />
+        <img src={helpIcon} className="tooltip__help" onClick={this.toggle} alt="Tooltip Help" />
       </div>
     );
   }

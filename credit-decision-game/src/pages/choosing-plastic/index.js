@@ -79,7 +79,7 @@ export default class ChoosingPlastic extends Component {
           <PromptSection>
             <p>
               You do some research and find two credit cards that you are eligible for. Which do you
-              choose?
+              choose? (Click on the question marks to learn more.)
             </p>
           </PromptSection>
           <div className="choices">
