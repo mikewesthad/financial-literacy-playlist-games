@@ -2,10 +2,21 @@
   background-color: #e09e1d;
   border: 0.75rem solid white;
   border-radius: 50%;
-  width: 60vh;
-  height: 60vh;
+  width: 85vh;
+  height: 85vh;
   padding: 4rem;
   margin: 0 auto;
+  max-width: 700px;
+  max-height: 700px;
+}
+
+.results--sm-screen {
+  padding: 2rem;
+  border-radius: 2rem;
+  width: 100%;
+  height: auto;
+  max-width: initial;
+  max-height: initial;
 }
 
 .results__content {
