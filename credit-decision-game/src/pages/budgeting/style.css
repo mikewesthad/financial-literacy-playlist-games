@@ -9,18 +9,26 @@
 .cart__item {
   position: relative;
   cursor: pointer;
-  width: 20%;
+  max-width: 33%;
   background-color: white;
   padding: 1rem;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1;
   flex-grow: 0;
-  margin: 1rem;
+  margin: 0.5rem;
   border: 5px solid white;
   flex-grow: 0;
   transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   box-shadow: 0.3rem 0.3rem 0 rgba(35, 117, 83, 0.42);
+}
+
+@media (min-width: 500px) {
+  .cart__item {
+    width: 20%;
+    margin: 1rem;
+    font-size: 1.4rem;
+  }
 }
 
 .cart__item:hover {
@@ -81,7 +89,7 @@
 
 .bar__label {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .bar__arrow {
