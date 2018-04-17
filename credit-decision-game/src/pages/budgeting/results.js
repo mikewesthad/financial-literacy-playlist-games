@@ -16,7 +16,7 @@ export function DecentResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="A Good Start"
-      message="That’s a good start, but you can put more on your card."
+      message="That’s a good start towards building your credit, but you can put more on your card."
       nextRoute={nextRoute}
       {...otherProps}
     />
@@ -38,7 +38,7 @@ export function BadResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Slow Down!"
-      message="Whoa, you are close to maxing out your credit card. This won’t help your credit."
+      message="Whoa, you are spending more than 30% of your credit limit. Keep your balance to 30% or less of your limit in order to build your credit power."
       nextRoute={nextRoute}
       {...otherProps}
     />
