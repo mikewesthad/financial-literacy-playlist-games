@@ -27,7 +27,7 @@ export function SkipPaymentResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Ouch..."
-      message="Your credit power dropped when you skipped paying. You are also going to get hit with a late payment fee and interest charges. You’ll want to pay it off as fast as possible."
+      message="Your credit dropped a lot when you skipped paying. Paying on time is essential to building good credit. You are also going to get hit with a late payment fee and interest charges. You’ll want to pay it off as fast as possible."
       nextRoute={nextRoute}
       {...otherProps}
     />

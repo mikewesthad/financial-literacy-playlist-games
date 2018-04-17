@@ -5,7 +5,7 @@ export function ThreeNewCardsResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Too Many Cards"
-      message="Each new card you open adds a credit inquiry which can hurt your credit power. You’ll also have to manage putting purchases on and paying off a total of four cards."
+      message="Each new card you apply for opens a credit inquiry. Too many credit inquiries can hurt your credit power. You’ll also have to manage putting purchases on and paying off a total of four cards."
       nextRoute={nextRoute}
       {...otherProps}
     />

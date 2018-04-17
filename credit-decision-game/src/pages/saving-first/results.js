@@ -15,7 +15,7 @@ export function BadResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Beware"
-      message="This won’t hurt your credit level, but it’s always a good idea to have an emergency fund."
+      message="This won't hurt your credit level, but an emergency fund can help you pay your credit card bill in an emergency and avoid interest charges."
       nextRoute={nextRoute}
       {...otherProps}
     />
