@@ -87,7 +87,7 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, -100%);
-  min-width: 35vw;
+  min-width: 50vw;
 }
 
 .tooltip__container--enter {
