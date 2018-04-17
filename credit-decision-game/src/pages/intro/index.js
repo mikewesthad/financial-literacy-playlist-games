@@ -23,15 +23,14 @@ export default class Intro extends Component {
         <Prompt title="Credit Power XP">
           <PromptSection>
             <p>
-              Your <em>credit record</em> is the history of your current & past borrowing and
-              payment activities - including loans, credit cards and some utility payments. Having a
-              good credit record is important for renting an apartment, getting a car loan and even
+              Your <u>credit record</u> is the history of your current & past borrowing and payment
+              activities - including loans, credit cards and some utility payments. Having a good
+              credit record is important for renting an apartment, getting a car loan and even
               sometimes for getting a job.
             </p>
             <p>
-              Your <em>credit score</em> is a number that represents the quality of your credit and
-              payment history. In this game, <em>credit power</em> will increase as you make choices
-              that help build and maintain your credit.
+              In this game, <u>credit power</u> will increase as you make choices that help build
+              and maintain your credit.
             </p>
             <p>Ready to build up some credit?</p>
           </PromptSection>
