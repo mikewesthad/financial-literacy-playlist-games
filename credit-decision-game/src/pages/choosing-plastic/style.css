@@ -20,17 +20,22 @@
   flex-grow: 0;
 }
 
+.choice-box__image {
+  width: 75%;
+}
+
 @media (min-width: 500px) {
   .choices {
     flex-direction: row;
   }
+
   .choice-box {
     width: 35%;
   }
-}
 
-.choice-box__image {
-  width: 100%;
+  .choice-box__image {
+    width: 100%;
+  }
 }
 
 .choice-box__row {
