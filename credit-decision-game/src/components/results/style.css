@@ -56,29 +56,3 @@
   font-size: 1.9rem;
   line-height: 1.25;
 }
-
-.fade--transition-enter {
-  transition: opacity 0.5s ease-in-out 0.5s;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-}
-
-.fade--transition-enter-active {
-  opacity: 1;
-}
-
-.fade--transition-exit {
-  transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 1;
-}
-
-.fade--transition-exit-active {
-  opacity: 0;
-}
