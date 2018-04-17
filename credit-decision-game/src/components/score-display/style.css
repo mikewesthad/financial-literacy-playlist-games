@@ -2,6 +2,7 @@
   color: white;
   line-height: 0.95;
   width: 12rem;
+  z-index: 1;
 }
 
 .score-display__label {
