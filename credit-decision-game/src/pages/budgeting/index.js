@@ -100,10 +100,16 @@ export default class Budgeting extends Component {
             })}
           </div>
 
-          <h1 className="text-center" style={{ color: "white", fontWeight: 400 }}>
+          <h1
+            className="text-center"
+            style={{ color: "white", fontSize: "1.6rem", fontWeight: 400 }}
+          >
             Total Cost: ${total}
           </h1>
-          <h1 className="text-center" style={{ color: "white", fontWeight: 400 }}>
+          <h1
+            className="text-center"
+            style={{ color: "white", fontSize: "1.6rem", fontWeight: 400 }}
+          >
             Percent of Credit Limit Used:
           </h1>
           <LabeledBar value={total} maxValue={500} format={value => `${value.toFixed(0)}%`} />
