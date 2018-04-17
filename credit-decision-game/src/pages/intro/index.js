@@ -30,8 +30,8 @@ export default class Intro extends Component {
             </p>
             <p>
               Your <em>credit score</em> is a number that represents the quality of your credit and
-              payment history. In this game <em>credit power</em> is an approximation of credit
-              score.
+              payment history. In this game, <em>credit power</em> will increase as you make choices
+              that help build and maintain your credit.
             </p>
             <p>Ready to build up some credit?</p>
           </PromptSection>
@@ -50,9 +50,9 @@ export default class Intro extends Component {
               you until you build your credit.
             </p>
             <p>
-              You’ve had a job and a debit card for a while now, but you learn that you need to get
-              a credit card to start building your credit... You set your sights on the apartment
-              and start building your credit.
+              You’ve had a job and a debit card for a while now, but you decide to get a credit card
+              to build your credit... You set your sights on that apartment and start building your
+              credit.
             </p>
             <PromptImage src={determinedImage} alt="" />
           </PromptSection>
