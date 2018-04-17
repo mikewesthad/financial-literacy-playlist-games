@@ -1,3 +1,7 @@
+.results__wrapper {
+  width: 100%;
+}
+
 .results {
   background-color: #e09e1d;
   border: 0.75rem solid white;

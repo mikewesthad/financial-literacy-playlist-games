@@ -7,7 +7,7 @@ import "./style.css";
 // Transition is applied to this component, so it must have a wrapper element that can be styled
 export default function Results({ title, message, nextRoute, ...otherProps }) {
   return (
-    <div>
+    <div className="results__wrapper">
       <SizeTracker
         render={({ width, height }) => {
           const minViewUnits = window.innerWidth > window.innerHeight ? "vh" : "vw";
