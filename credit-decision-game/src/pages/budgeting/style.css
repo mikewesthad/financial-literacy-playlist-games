@@ -23,14 +23,6 @@
   box-shadow: 0.3rem 0.3rem 0 rgba(35, 117, 83, 0.42);
 }
 
-@media (min-width: 500px) {
-  .cart__item {
-    width: 20%;
-    margin: 1rem;
-    font-size: 1.4rem;
-  }
-}
-
 .cart__item:hover {
   box-shadow: 0.5rem 0.5rem 0 rgba(35, 117, 83, 0.42);
   transform: scale(1.05);
@@ -46,10 +38,24 @@
 
 .cart__item-button {
   position: absolute;
-  top: 0.3rem;
-  right: 0.3rem;
-  width: 1.3rem;
+  top: 0.15rem;
+  right: 0.15rem;
+  width: 1rem;
   cursor: pointer;
+}
+
+@media (min-width: 500px) {
+  .cart__item {
+    width: 20%;
+    margin: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .cart__item-button {
+    top: 0.3rem;
+    right: 0.3rem;
+    width: 1.3rem;
+  }
 }
 
 /* @media (min-width: 500px) {
