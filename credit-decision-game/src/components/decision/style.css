@@ -19,6 +19,14 @@
   margin-bottom: 0;
 }
 
+.prompt__section > *:first-child {
+  margin-top: 0;
+}
+
+.prompt__section > *:last-child {
+  margin-bottom: 0;
+}
+
 .prompt__title {
   font-weight: 100;
   font-size: 2.5rem;
