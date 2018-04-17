@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SizeTracker from "./size-tracker/";
 
 const monthNames = [
   "January",
@@ -72,9 +73,19 @@ export default class Timeline extends Component {
       );
     }
     return (
-      <svg className="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 130">
-        {dots}
-      </svg>
+      <SizeTracker
+        render={({ width }) => {
+          if (width <= 480) {
+            return <div className="timeline-text">{monthNames[decisionNumber] || ""}</div>;
+          } else {
+            return (
+              <svg className="timeline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 130">
+                {dots}
+              </svg>
+            );
+          }
+        }}
+      />
     );
   }
 }
