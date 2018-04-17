@@ -58,15 +58,6 @@
   }
 }
 
-/* @media (min-width: 500px) {
-  .choices {
-    flex-direction: row;
-  }
-  .choice-box {
-    width: 35%;
-  }
-} */
-
 .bar {
   position: relative;
   background-color: white;
