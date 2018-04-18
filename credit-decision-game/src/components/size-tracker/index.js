@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import resizeEvent from "./resize-event";
 
 export default class SizeTracker extends Component {
