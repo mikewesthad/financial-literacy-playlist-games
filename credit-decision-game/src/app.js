@@ -16,6 +16,7 @@ import CreditCheck from "./pages/credit-check";
 import Intro from "./pages/intro";
 import gameData from "./store";
 import { observer } from "mobx-react";
+import Analytics from "./components/analytics";
 
 const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
@@ -41,8 +42,6 @@ class App extends Component {
     const { creditPower, savings } = gameData;
     return (
       <Router>
-        {/* < render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
-        {/* {!dev && <Route component={ForceVisitIndex} />} */}
         <Route
           render={({ location }) => {
             const route = location.pathname.slice(1);
@@ -50,6 +49,16 @@ class App extends Component {
 
             return (
               <div className="container transition-container">
+                <Route
+                  render={props => (
+                    <Analytics
+                      trackingId="UA-114340105-4"
+                      gameStartRoute="/"
+                      gameEndRoute="/11"
+                      {...props}
+                    />
+                  )}
+                />
                 <div className="hud">
                   <CreditPowerDisplay value={creditPower} />
                   <Timeline decisionNumber={decisionNumber} />

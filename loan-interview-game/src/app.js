@@ -3,6 +3,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { MemoryRouter, HashRouter, Route, Switch } from "react-router-dom";
 import gameData from "./store";
 import { observer } from "mobx-react";
+import Analytics from "./components/analytics";
 import EnterName from "./pages/enter-name";
 import DecisionMenu from "./pages/decision-menu";
 import Interview from "./pages/interview";
@@ -38,8 +39,16 @@ const App = observer(
         <Router>
           <div>
             <ScrollToTop />
-            {/* <Route render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
-            {/* {!dev && <Route component={ForceVisitIndex} />} */}
+            <Route
+              render={props => (
+                <Analytics
+                  trackingId="UA-114340105-5"
+                  gameStartRoute="/"
+                  gameEndRoute="/decision-outcome"
+                  {...props}
+                />
+              )}
+            />
 
             <Route
               render={({ location }) => (
