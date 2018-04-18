@@ -2,6 +2,8 @@
 
 A budget guessing game for a financial learning playlist.
 
+[Link to live game](https://www.mikewesthad.com/financial-literacy-playlist-games/budget-guessing/)
+
 Built with React & GSAP.
 
 ## Running
