@@ -1,0 +1,30 @@
+{
+  "name": "financial-literacy-playlist-games",
+  "version": "1.0.0",
+  "description":
+    "A series of educational web games for a financial literacy learning playlist around understanding budgets & credit.",
+  "main": "deploy.js",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "minimist": "^1.2.0",
+    "vinyl-ftp": "^0.6.1",
+    "vinyl-fs": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url":
+      "git+https://github.com/mikewesthad/financial-literacy-playlist-games.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url":
+      "https://github.com/mikewesthad/financial-literacy-playlist-games/issues"
+  },
+  "homepage":
+    "https://github.com/mikewesthad/financial-literacy-playlist-games#readme"
+}
