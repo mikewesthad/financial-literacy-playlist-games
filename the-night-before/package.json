@@ -3,22 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "config": {
-    "ftp_dest": "/usr/home/convergence/public_html/convergencedesignlab.org/web-resources/lrng"
+    "ftp_dest":
+      "/usr/home/convergence/public_html/convergencedesignlab.org/web-resources/lrng"
   },
   "main": "index.js",
   "scripts": {
     "deploy": "npm run \"deploy:gh-pages\" && npm run \"deploy:ftp\"",
-    "deploy:gh-pages": "cross-var gh-pages --dist ./twine-build --dest $npm_package_name --add",
-    "deploy:ftp": "cross-var node ./scripts/deploy.js --src ./twine-build/** --dest $npm_package_config_ftp_dest/$npm_package_name"
+    "deploy:gh-pages":
+      "cross-var gh-pages --dist ./twine-build --dest $npm_package_name --add",
+    "deploy:ftp":
+      "cross-var node ../deploy.js --src ./twine-build/** --dest $npm_package_config_ftp_dest/$npm_package_name"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cross-var": "^1.1.0",
-    "dotenv": "^5.0.1",
-    "gh-pages": "^1.1.0",
-    "minimist": "^1.2.0",
-    "vinyl-fs": "^3.0.2",
-    "vinyl-ftp": "^0.6.1"
+    "gh-pages": "^1.1.0"
   }
 }

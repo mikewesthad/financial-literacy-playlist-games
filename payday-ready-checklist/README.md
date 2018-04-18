@@ -2,6 +2,8 @@
 
 An interactive, mad-libs style checklist to review 2017 payday masters material for 2018 students.
 
+[Link to live game](https://www.mikewesthad.com/financial-literacy-playlist-games/payday-ready-checklist/)
+
 Built with React & GSAP.
 
 ## Running

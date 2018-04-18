@@ -2,6 +2,8 @@
 
 An interview game checklist to teach the basic concept of credit for 2018 students.
 
+[Link to live game](https://www.mikewesthad.com/financial-literacy-playlist-games/what-is-credit/)
+
 Built with React & GSAP.
 
 ## Dialogue

@@ -1,10 +1,14 @@
 {
-  "name": "credit-decision-game",
+  "name": "credit-power",
+  "config": {
+    "ftp_dest": "/usr/home/convergence/public_html/convergencedesignlab.org/web-resources/lrng"
+  },
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.mikewesthad.com/financial-literacy-playlist-games/credit-decision-game",
+  "homepage": ".",
   "dependencies": {
     "cross-env": "^5.1.4",
+    "cross-var": "^1.1.0",
     "gh-pages": "^1.1.0",
     "gsap": "^1.20.4",
     "lodash.throttle": "^4.1.1",
@@ -28,6 +32,9 @@
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
     "predeploy": "npm run \"build\"",
-    "deploy": "gh-pages --dist ./build --dest credit-decision-game --add"
+    "deploy:ftp":
+      "cross-var node ../deploy.js --src ./build/** --dest $npm_package_config_ftp_dest/$npm_package_name",
+    "deploy:gh-pages": "cross-var gh-pages --dist ./build --dest $npm_package_name --add",
+    "deploy": "npm run \"deploy:gh-pages\" && npm run \"deploy:ftp\""
   }
 }

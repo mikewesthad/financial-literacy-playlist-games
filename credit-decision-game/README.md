@@ -2,6 +2,8 @@
 
 A game to teach the basic ideas of managing credit for 2018 students.
 
+[Link to live game](https://www.mikewesthad.com/financial-literacy-playlist-games/credit-power/)
+
 Built with React & GSAP.
 
 ## Running
