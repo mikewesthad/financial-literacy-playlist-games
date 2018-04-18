@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { MemoryRouter, HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import Timeline from "./components/timeline";
+import Timeline from "./components/timeline/";
 import { CreditPowerDisplay, SavingsDisplay } from "./components/score-display/";
 import ChoosingPlastic from "./pages/choosing-plastic/";
 import SavingFirst from "./pages/saving-first";
@@ -44,50 +44,59 @@ class App extends Component {
         {/* < render={props => <Analytics trackingId="UA-114340105-2" {...props} />} /> */}
         {/* {!dev && <Route component={ForceVisitIndex} />} */}
         <Route
-          render={({ location }) => (
-            <div className="container transition-container">
-              <div className="hud">
-                <CreditPowerDisplay value={creditPower} />
-                <Timeline decisionNumber={location.pathname.slice(1)} />
-                <SavingsDisplay value={savings} />
-              </div>
+          render={({ location }) => {
+            const route = location.pathname.slice(1);
+            const decisionNumber = route ? parseInt(route, 10) : undefined;
 
-              <div className="page-wrapper">
-                <Route
-                  render={({ location }) => (
-                    <TransitionGroup component={null}>
-                      <CSSTransition key={location.pathname} timeout={1200} classNames="fade-zoom-">
-                        <Switch location={location}>
-                          <Route
-                            key="intro"
-                            exact
-                            path="/"
-                            render={() => <Intro gameData={gameData} nextRoute="/0" />}
-                          />
+            return (
+              <div className="container transition-container">
+                <div className="hud">
+                  <CreditPowerDisplay value={creditPower} />
+                  <Timeline decisionNumber={decisionNumber} />
+                  <SavingsDisplay value={savings} />
+                </div>
 
-                          {decisions.map((Component, i) => (
+                <div className="page-wrapper">
+                  <Route
+                    render={({ location }) => (
+                      <TransitionGroup component={null}>
+                        <CSSTransition
+                          key={location.pathname}
+                          timeout={1200}
+                          classNames="fade-zoom-"
+                        >
+                          <Switch location={location}>
                             <Route
-                              key={i}
+                              key="intro"
                               exact
-                              path={`/${i}`}
-                              render={() => (
-                                <Component
-                                  gameData={gameData}
-                                  nextRoute={i >= decisions.length - 1 ? "/" : `/${i + 1}`}
-                                />
-                              )}
+                              path="/"
+                              render={() => <Intro gameData={gameData} nextRoute="/0" />}
                             />
-                          ))}
 
-                          <Redirect to="/" />
-                        </Switch>
-                      </CSSTransition>
-                    </TransitionGroup>
-                  )}
-                />
+                            {decisions.map((Component, i) => (
+                              <Route
+                                key={i}
+                                exact
+                                path={`/${i}`}
+                                render={() => (
+                                  <Component
+                                    gameData={gameData}
+                                    nextRoute={i >= decisions.length - 1 ? "/" : `/${i + 1}`}
+                                  />
+                                )}
+                              />
+                            ))}
+
+                            <Redirect to="/" />
+                          </Switch>
+                        </CSSTransition>
+                      </TransitionGroup>
+                    )}
+                  />
+                </div>
               </div>
-            </div>
-          )}
+            );
+          }}
         />
       </Router>
     );
