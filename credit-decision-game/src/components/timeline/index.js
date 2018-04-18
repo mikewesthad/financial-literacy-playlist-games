@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import SizeTracker from "../size-tracker/";
 import monthNames from "./month-names";
 import MonthIndicator from "./month-indicator";
