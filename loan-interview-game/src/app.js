@@ -60,7 +60,7 @@ const App = observer(
             <Route
               render={({ location }) => (
                 <TransitionGroup>
-                  <CSSTransition key={location.pathname} timeout={500} classNames="fade-transition">
+                  <CSSTransition key={location.pathname} timeout={900} classNames="fade-">
                     <Switch location={location}>
                       <Route
                         exact

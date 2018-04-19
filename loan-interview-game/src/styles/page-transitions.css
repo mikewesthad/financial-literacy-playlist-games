@@ -7,44 +7,31 @@
   https://codepen.io/marcelo-ribeiro/pen/xOOKpO
 */
 
-.fade-transition-enter {
-  transition: opacity 0.25s ease-in-out 0.25s;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.fade-transition-enter {
-  opacity: 0;
-}
-
-.fade-transition-enter-active {
-  opacity: 1;
-}
-
-.fade-transition-exit {
-  transition: opacity 0.25s ease-in-out;
-  opacity: 1;
-}
-
 .fade-transition-exit-active {
   opacity: 0;
 }
 
-/* .slide-transition-enter,
-.slide-transition-exit {
-  transition: left 1s ease-in-out, opacity 0.25s ease-in-out;
+.fade--enter {
   position: absolute;
-}
-
-.slide-transition-enter {
-  left: 10%;
   top: 0;
-  z-index: 1;
+  left: 0;
   opacity: 0;
 }
 
-.slide-transition-enter-active {
+.fade--enter-active {
+  transition: opacity 0.4s ease-out 0.5s;
+  opacity: 1;
+}
+
+.fade--exit {
+  position: absolute;
+  top: 0;
   left: 0;
   opacity: 1;
-} */
+  pointer-events: none; /* Stop interactivity on fading page */
+}
+
+.fade--exit-active {
+  transition: opacity 0.4s ease-in; /* Applying transition in fade--exit is too early */
+  opacity: 0;
+}
