@@ -7,17 +7,23 @@ export default class Analytics extends Component {
     ReactGA.initialize(this.props.trackingId);
   }
 
+  getNormalizedPathname(pathname) {
+    const { basePath } = this.props;
+    if (pathname.startsWith(basePath)) return pathname.replace(basePath, "");
+    else return pathname;
+  }
+
   componentDidMount() {
-    ReactGA.pageview(this.props.location.pathname);
+    ReactGA.pageview(this.getNormalizedPathname(this.props.location.pathname));
     ReactGA.event({ category: "Game", action: "Game Started" });
   }
 
   componentDidUpdate(prevProps) {
     const prevPathname = prevProps.location.pathname;
     const { location, gameStartRoute, gameEndRoute } = this.props;
-    const pathname = location.pathname;
+    const pathname = this.getNormalizedPathname(location.pathname);
 
-    if (prevPathname !== pathname) {
+    if (prevPathname !== location.pathname) {
       ReactGA.pageview(pathname);
       if (pathname === gameStartRoute) {
         ReactGA.event({ category: "Game", action: "Game Restarted" });

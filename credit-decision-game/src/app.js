@@ -36,6 +36,12 @@ const decisions = [
   CreditCheck
 ];
 
+const getBasePath = location => {
+  let parts = location.split("/");
+  parts.pop();
+  return parts.join("/");
+};
+
 @observer
 class App extends Component {
   render() {
@@ -52,6 +58,7 @@ class App extends Component {
                 <Route
                   render={props => (
                     <Analytics
+                      basePath={getBasePath(location.pathname)}
                       trackingId="UA-114340105-4"
                       gameStartRoute="/"
                       gameEndRoute="/11"

@@ -32,6 +32,12 @@ const anthonyTree = new ConversationTree(dialogueData, anthonyStartingNode.id);
 const dev = process.env.REACT_APP_ENV === "development";
 const Router = dev ? HashRouter : MemoryRouter;
 
+const getBasePath = location => {
+  let parts = location.split("/");
+  parts.pop();
+  return parts.join("/");
+};
+
 const App = observer(
   class App extends Component {
     render() {
@@ -42,6 +48,7 @@ const App = observer(
             <Route
               render={props => (
                 <Analytics
+                  basePath={getBasePath(props.location.pathname)}
                   trackingId="UA-114340105-5"
                   gameStartRoute="/"
                   gameEndRoute="/decision-outcome"
