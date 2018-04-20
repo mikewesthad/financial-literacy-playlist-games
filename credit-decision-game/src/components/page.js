@@ -1,14 +1,16 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import ScrollToTop from "./scroll-to-top";
 
 export default function Page({ children, transitionKey }) {
   return (
-    <div className="page">
+    <React.Fragment>
+      <ScrollToTop scrollKey={transitionKey} />
       <TransitionGroup component={null}>
         <CSSTransition key={transitionKey} classNames="fade-zoom-" timeout={1200}>
           {children}
         </CSSTransition>
       </TransitionGroup>
-    </div>
+    </React.Fragment>
   );
 }
