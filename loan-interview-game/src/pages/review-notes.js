@@ -23,7 +23,11 @@ const Notes = ({ Svg, name, cluesFound, totalClues }) => {
         <div className="notebook__name text-center">{name}</div>
       </div>
       <ul className="notebook__clues-list">
-        {cluesFound.map(clue => <li className="notebook__clues-item">{clue}</li>)}
+        {cluesFound.map((clue, i) => (
+          <li key={`clue${i}`} className="notebook__clues-item">
+            {clue}
+          </li>
+        ))}
       </ul>
       <div className="notebook__clues-message text-center">{message}</div>
     </div>
