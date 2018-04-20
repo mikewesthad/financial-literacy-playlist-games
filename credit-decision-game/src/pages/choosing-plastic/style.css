@@ -82,6 +82,17 @@
   font-size: 1.5rem;
 }
 
+.tooltip__help,
+.tooltip__close {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tooltip__help:hover,
+.tooltip__close:hover {
+  opacity: 0.6;
+  transform: scale(1.05);
+}
+
 .tooltip__container {
   position: absolute;
   top: 0;
