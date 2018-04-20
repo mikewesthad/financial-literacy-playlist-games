@@ -43,6 +43,12 @@
 .notebook__portrait {
   margin: 0 auto;
   display: block;
-  max-width: 200px;
+  max-width: 100px;
   width: 70%;
+}
+
+@media (min-width: 500px) {
+  .notebook__portrait {
+    max-width: 200px;
+  }
 }
