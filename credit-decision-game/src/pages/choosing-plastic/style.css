@@ -24,7 +24,7 @@
   width: 75%;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 575px) {
   .choices {
     flex-direction: row;
   }
