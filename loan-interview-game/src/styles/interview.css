@@ -85,7 +85,7 @@
 
 .conversation__message--right {
   margin-left: 25%;
-  text-align: right;
+  text-align: left;
 }
 
 .conversation__bubble {
@@ -95,6 +95,7 @@
   border-radius: 0.4em;
   padding: 0.55rem 1.5rem;
   margin: 0.35rem;
+  text-align: left;
 }
 
 .conversation__message:last-child {
