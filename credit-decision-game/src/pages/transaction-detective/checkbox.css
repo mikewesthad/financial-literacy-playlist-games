@@ -6,16 +6,24 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  cursor: pointer;
   transition: border 0.2s ease;
 }
 
-.checkbox:hover {
+.checkbox--interactive {
+  cursor: pointer;
+}
+
+.checkbox--interactive:hover {
   border-color: #37bf86;
 }
 
 .checkbox--checked {
   border-color: #3abe85;
+}
+
+.checkbox--disabled {
+  opacity: 0.9;
+  cursor: initial;
 }
 
 .checkbox__checkmark {
