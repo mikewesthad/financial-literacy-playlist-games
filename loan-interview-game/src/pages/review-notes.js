@@ -13,7 +13,8 @@ const Notes = ({ Svg, name, cluesFound, totalClues }) => {
   } else if (numCluesFound === 0) {
     message = `No clues uncovered yet. Go interview ${name}!`;
   } else {
-    message = `${totalClues - numCluesFound} clues left to uncover!`;
+    const numRemaining = totalClues - numCluesFound;
+    message = `${numRemaining} ${numRemaining === 1 ? "clue" : "clues"} left to uncover!`;
   }
 
   return (
