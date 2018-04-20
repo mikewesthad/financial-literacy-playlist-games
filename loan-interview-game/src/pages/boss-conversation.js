@@ -21,10 +21,7 @@ export default class BossConversation extends Component {
                   <span>It seems like everyone knows how well we’ve been doing... </span>
                 </SequenceElement>
                 <SequenceElement>
-                  <span>
-                    friends, estranged family members, and even strangers have been asking me for
-                    money.
-                  </span>
+                  <span>everyone has been asking me for money.</span>
                 </SequenceElement>
               </p>
 
