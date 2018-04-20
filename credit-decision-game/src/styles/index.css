@@ -3,7 +3,6 @@
 @import "./general-layout.css";
 @import "./grid.css";
 @import "./page-transitions.css";
-@import "./hud.css";
 
 #root {
   position: relative;
