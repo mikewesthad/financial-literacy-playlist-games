@@ -8,7 +8,7 @@ export default function Page({ children, transitionKey }) {
       <ScrollToTop scrollKey={transitionKey} />
       <TransitionGroup component={null}>
         <CSSTransition key={transitionKey} classNames="fade-zoom-" timeout={1200}>
-          {children}
+          <div className="page">{children}</div>
         </CSSTransition>
       </TransitionGroup>
     </React.Fragment>

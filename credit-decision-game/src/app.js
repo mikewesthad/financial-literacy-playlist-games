@@ -54,7 +54,7 @@ class App extends Component {
             const decisionNumber = route ? parseInt(route, 10) : undefined;
 
             return (
-              <div className="container transition-container">
+              <div className="container">
                 <Route
                   render={props => (
                     <Analytics

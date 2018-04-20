@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 100vw; /* Prevent content from jittering on transition */
   max-width: 900px;
   margin: 0 auto;
   padding: 0 2rem 0 2rem;
@@ -22,13 +22,20 @@
   height: 6rem;
 }
 
+.page,
 .page-wrapper {
   width: 100%;
-  position: relative;
+  min-height: calc(100vh - 12rem);
 }
 
 .page {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+.page-wrapper {
   position: relative;
 }
 
