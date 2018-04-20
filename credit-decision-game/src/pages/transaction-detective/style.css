@@ -42,16 +42,6 @@
   border: 0;
 }
 
-.bill-table__data:first-child,
-.bill-table__header:first-child {
-  padding-left: 1rem;
-}
-
-.bill-table__data:last-child,
-.bill-table__header:last-child {
-  padding-right: 1rem;
-}
-
 @media (min-width: 500px) {
   .bill-table__data:first-child,
   .bill-table__header:first-child {
