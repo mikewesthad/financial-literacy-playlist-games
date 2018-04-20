@@ -24,6 +24,7 @@ const LastColumn = ({ selected, fakeItemNames, rowIndex, data, showFeedback, onC
   const itemName = data[rowIndex].name;
   const isSelected = selected.includes(itemName);
   const isFake = fakeItemNames.includes(itemName);
+  const onCheckClick = () => onClick(itemName);
 
   let feedback;
   if (showFeedback) {
@@ -47,7 +48,8 @@ const LastColumn = ({ selected, fakeItemNames, rowIndex, data, showFeedback, onC
       <Checkbox
         checked={selected.includes(data[rowIndex].name)}
         className="bill-table__checkbox"
-        onClick={() => onClick(data[rowIndex].name)}
+        onClick={showFeedback ? undefined : onCheckClick}
+        disabled={showFeedback}
       />
       {feedback}
     </React.Fragment>
