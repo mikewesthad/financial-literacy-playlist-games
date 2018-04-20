@@ -14,6 +14,7 @@ import InterviewMenu from "./pages/interview-menu/";
 import DecisionOutcome from "./pages/decision-outcome/";
 import ConversationTree from "./conversation-tree/conversation-tree";
 import ReviewNotes from "./pages/review-notes";
+import Outro from "./pages/outro";
 import dialogueData from "./conversation-tree/interview-dialogue-game.json";
 
 const hannahStartingNode = dialogueData.find(
@@ -159,6 +160,8 @@ const App = observer(
                         path="/decision-outcome"
                         render={() => <DecisionOutcome gameData={gameData} />}
                       />
+
+                      <Route exact path="/outro" render={() => <Outro gameData={gameData} />} />
                     </Switch>
                   </CSSTransition>
                 </TransitionGroup>
