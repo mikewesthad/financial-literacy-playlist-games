@@ -78,7 +78,7 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: text-top;
   font-size: 1.5rem;
 }
 
