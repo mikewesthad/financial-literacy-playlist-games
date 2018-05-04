@@ -34,7 +34,7 @@ export default class SplittingPay extends Component {
 
           <div className="section puzzle">
             <CyclingPuzzle onSolve={this.onSolved}>
-              <p>I will consider splitting my pay to into</p>
+              <p>I will consider splitting my pay into</p>
               <CyclingList>
                 <CyclingItem>shoeboxes</CyclingItem>
                 <CyclingItem>my pockets</CyclingItem>
