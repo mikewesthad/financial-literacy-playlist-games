@@ -12,12 +12,12 @@ export default class CreditCheck extends Component {
     if (creditPower >= 90) {
       feedback =
         "Perfect score! When you look for an apartment again, you find one right away and the landlord compliments you on your credit power.";
-    } else if (creditPower >= 50) {
+    } else if (creditPower >= 30) {
       feedback =
-        "When you look for an apartment again, you eventually find one, but miss out on your top choice because of your credit power. Go back and see if you can get a perfect score!";
+        "Nice job! That's a pretty good credit power. When you look for an apartment again, you find a nice one, but miss out on your top choice. Go back and see if you can get a perfect score of 90!";
     } else {
       feedback =
-        "Looks like you can make some better choices. When you look for an apartment again, you are told you still need to build up your credit. Go back and see if you can get a perfect score!";
+        "Looks like you can make some better choices. When you look for an apartment again, you are told you still need to build up your credit. Go back and see if you can get a perfect score of 90!";
     }
 
     return (
