@@ -9,7 +9,9 @@
     "vinyl-fs": "^3.0.2",
     "vinyl-ftp": "^0.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^1.2.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
