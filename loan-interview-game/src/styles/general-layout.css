@@ -17,6 +17,12 @@
   }
 }
 
+.outro {
+  text-decoration: underline;
+  color: #2098e3;
+  font-weight: 600;
+}
+
 .content {
   max-width: 900px;
   width: 100%;

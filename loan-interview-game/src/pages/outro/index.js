@@ -20,7 +20,7 @@ export default class DecisionOutcome extends Component {
             {outcome}
 
             <SequenceElement>
-              <p>Close this tab and return to LRNG to complete this XP.</p>
+              <p className="outro">Close this tab and return to LRNG to complete this XP.</p>
             </SequenceElement>
 
             <SequenceElement>
