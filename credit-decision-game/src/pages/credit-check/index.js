@@ -33,7 +33,7 @@ export default class CreditCheck extends Component {
               Final credit power: <strong>{creditPower}</strong>
             </p>
             <p>{feedback}</p>
-            <p>Close this tab and return to LRNG to complete this XP.</p>
+            <p className="outro">Close this tab and return to LRNG to complete this XP.</p>
           </PromptSection>
           <PromptSection className="text-center">
             <button onClick={() => window.location.reload()} className="button">
