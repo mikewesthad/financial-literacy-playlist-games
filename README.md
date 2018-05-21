@@ -10,3 +10,9 @@ Built with React & GSAP.
 ## Installing & Running
 
 See individual game instructions.
+
+## Deploying
+
+In the root, `npm i` and copy `example.env` to `.env` and fill in with the server info.
+
+TODO: move this to a package.
