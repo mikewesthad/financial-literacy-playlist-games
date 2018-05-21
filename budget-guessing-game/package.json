@@ -31,8 +31,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run \"build\"",
-    "deploy:ftp":
-      "cross-var node ../deploy.js --src ./build/** --dest $npm_package_config_ftp_dest/$npm_package_name",
+    "deploy:ftp": "cross-var node ../deploy.js --src ./build/** --dest $npm_package_config_ftp_dest/$npm_package_name",
     "deploy:gh-pages": "cross-var gh-pages --dist ./build --dest $npm_package_name --add",
     "deploy": "npm run \"deploy:gh-pages\" && npm run \"deploy:ftp\""
   }
