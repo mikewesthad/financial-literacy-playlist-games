@@ -32,6 +32,14 @@ export default class DirectDeposit extends Component {
             <img className="centered-image" src={depositGif} alt="Deposit GIF" />
           </div>
 
+          <div className="section">
+            <p style={{ fontStyle: "italic" }}>
+              Click the <strong className="purple-text">purple</strong> text below to cycle through
+              possibilities. When you find the right option, the text will turn{" "}
+              <strong>white</strong>, a message will appear and you can advance.
+            </p>
+          </div>
+
           <div className="section puzzle">
             <CyclingPuzzle onSolve={this.onSolved}>
               <p>I will bring in proof of</p>
@@ -42,13 +50,6 @@ export default class DirectDeposit extends Component {
               </CyclingList>
               <p>again to re-enroll in direct deposit.</p>
             </CyclingPuzzle>
-          </div>
-
-          <div className="section">
-            <p style={{ fontStyle: "italic" }}>
-              (Click the <span className="purple-text">purple</span> text above to cycle through
-              possibilities.)
-            </p>
           </div>
 
           <div className="section">

@@ -32,6 +32,13 @@ export default class SplittingPay extends Component {
             <img className="centered-image" src={splittingGif} alt="Splitting GIF" />
           </div>
 
+          <div className="section">
+            <p style={{ fontStyle: "italic" }}>
+              Slighty harder now - solve both together. When all are correct, the text will turn
+              white, a message will appear and you can advance.
+            </p>
+          </div>
+
           <div className="section puzzle">
             <CyclingPuzzle onSolve={this.onSolved}>
               <p>I will consider splitting my pay into</p>
@@ -48,13 +55,6 @@ export default class SplittingPay extends Component {
               </CyclingList>
               <p>Youth who split their pay save more.</p>
             </CyclingPuzzle>
-          </div>
-
-          <div className="section">
-            <p style={{ fontStyle: "italic" }}>
-              (Slighty harder now - solve both together. When all are correct, the text will turn
-              white, a message will appear and you can advance.)
-            </p>
           </div>
 
           <div className="section">
