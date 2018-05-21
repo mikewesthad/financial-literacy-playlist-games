@@ -40,7 +40,7 @@ export default class PlasticMail extends Component {
           </PromptSection>
           <div className="text-center">
             <PromptButton onClick={this.chooseWait}>Wait</PromptButton>
-            <PromptButton onClick={this.chooseCancel}>Cancel</PromptButton>
+            <PromptButton onClick={this.chooseCancel}>Cancel Card</PromptButton>
           </div>
         </Prompt>
       );

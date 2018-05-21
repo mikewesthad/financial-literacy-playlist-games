@@ -41,7 +41,7 @@ export default class PlasticMail extends Component {
           </PromptSection>
           <PromptSection>
             <div className="text-center">
-              <PromptButton onClick={this.chooseEnableAlerts}>Enable Alerts</PromptButton>
+              <PromptButton onClick={this.chooseEnableAlerts}>Turn On Alerts</PromptButton>
               <PromptButton onClick={this.chooseSkipAlerts}>Skip Alerts</PromptButton>
             </div>
           </PromptSection>
