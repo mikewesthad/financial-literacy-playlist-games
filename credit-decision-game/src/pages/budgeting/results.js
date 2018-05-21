@@ -27,7 +27,7 @@ export function GreatResult({ nextRoute, ...otherProps }) {
   return (
     <Results
       title="Nice Job!"
-      message="That’s the sweet spot! You want to aim to use about 30% of your available credit each month."
+      message="That’s the sweet spot! You are using less than 30% of your available credit. (Remember, paying your balance in full each month saves money and helps keep your overall balance and credit utilization low.)"
       nextRoute={nextRoute}
       {...otherProps}
     />

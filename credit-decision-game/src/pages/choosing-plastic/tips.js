@@ -3,7 +3,7 @@ import React from "react";
 const tips = {
   creditLimit: (
     <div>
-      <strong>Credit limit</strong> is the maximum amount that you can put on your card without a
+      <strong>Credit limit</strong> is the maximum amount that you can borrow on your card without a
       penalty.
     </div>
   ),
