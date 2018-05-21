@@ -22,7 +22,7 @@ export default class Outro extends Component {
                 </SequenceElement>
               </p>
               <SequenceElement>
-                <p>Close this tab and return to LRNG to complete this XP.</p>
+                <p className="outro">Close this tab and return to LRNG to complete this XP.</p>
               </SequenceElement>
             </div>
           </FadeInSequence>

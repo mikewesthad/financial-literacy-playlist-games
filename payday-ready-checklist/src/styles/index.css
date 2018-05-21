@@ -18,6 +18,11 @@
   width: auto;
 }
 
+.outro {
+  font-weight: 900;
+  text-decoration: underline;
+}
+
 .text-center {
   text-align: center;
 }
