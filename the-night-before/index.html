@@ -478,7 +478,8 @@ You arrive at a little early. It&#39;s a good thing too as you know that your em
 
 &lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $score += 1&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Summary" tags="" position="1322,1682" size="100,100">[img[&quot;https://i.giphy.com/SJz6dNDQ4bOiQ.gif&quot;]]
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Summary" tags="" position="1319,1681" size="100,100">&lt;&lt;script&gt;&gt;Config.debug = false&lt;&lt;/script&gt;&gt;
+[img[&quot;https://i.giphy.com/SJz6dNDQ4bOiQ.gif&quot;]]
 
 You’ve made it to work. What choices helped you get there on time and looking professional?
 
@@ -496,12 +497,17 @@ Looks like you can make some better choices, go back and see if you can get a pe
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 
-&lt;&lt;link &quot;Start over&quot;&gt;&gt;
+&lt;b&gt;&lt;u&gt;To complete this XP&lt;/u&gt;&lt;/b&gt;:
+# Take a screenshot of this page and save it. 
+# Close this tab and return to LRNG. 
+# Submit the screenshot in the LRNG submission box.
+\
+Or, if you want to play again, you can &lt;&lt;link &quot;start over&quot;&gt;&gt;
   &lt;&lt;script&gt;&gt;
   window.gtag(&#39;event&#39;, &#39;Game Restarted&#39;, { &#39;event_category&#39;: &#39;Game&#39; });
   &lt;&lt;/script&gt;&gt;
   &lt;&lt;goto [[Night Before]]&gt;&gt;
-&lt;&lt;/link&gt;&gt; or &lt;b&gt;&lt;u&gt;close this tab and return to LRNG to complete the XP.&lt;/u&gt;&lt;/b&gt;
+&lt;&lt;/link&gt;&gt;.
 
 &lt;&lt;script&gt;&gt;
 window.gtag(&#39;event&#39;, &#39;Game Completed&#39;, { &#39;event_category&#39;: &#39;Game&#39; });
